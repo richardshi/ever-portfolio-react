@@ -1,14 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LandingAnimation from './components/LandingAnimation/LandingAnimation'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <LandingAnimation></LandingAnimation>
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          Richard loves EVER memeda
         </p>
         <a
           className="App-link"
