@@ -1,12 +1,27 @@
 import React, {Component} from 'react';
-import logo from 'assets/images/logo.svg';
+
 import 'assets/sass/main.scss';
 import 'assets/sass/components/LandingAnimation.scss';
 
+
+import TileGroup from 'components/LandingAnimation/TileGroup/TileGroup'
+import logo from 'assets/images/logo.svg';
+
 class LandingAnimation extends Component {
+    constructor(props){
+        super(props);
+        this.state = {};        
+    }
+
+
+
     render() {
 
-        return <img src={logo} className="App-logo" alt="logo" />;
+
+        return <div>
+            <img src={logo} className="App-logo" alt="logo" />
+			<TileGroup></TileGroup>
+        </div>;
     }
 
 }
