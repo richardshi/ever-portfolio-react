@@ -17,16 +17,23 @@ class TileGroup extends Component {
             columSize: props.solumSize,
             centerMap: props.centerMap,
             tileList: [],
+            tileListDisplay: [],
+            isPlayed: false,
             
         };
 
         this.getTileList = this.getTileList.bind(this);
-        this.showTileGroup = this.showTileGroup.bind(this);
+        //this.showTileGroup = this.showTileGroup.bind(this);
+        this.flipNeighbors = this.flipNeighbors.bind(this);
     }
 
     componentWillMount(){
-        this.state.tileList = this.getTileList();
+        this.setState({tileList : this.getTileList()});
+        //this.setState({tileListDisplay : this.showTileGroup()});
         //console.log("test1" + this.state.tileList);
+    }
+    componentDidMount(){
+        this.setState({isPlayed : true});
     }
 
     getTileList () {
@@ -44,6 +51,7 @@ class TileGroup extends Component {
             let tileObject = {
                 index: index,
                 tileType: 0,
+                isPlayed: false,
                 neighbors: [],
             }
             return tileObject;
@@ -74,6 +82,31 @@ class TileGroup extends Component {
         return tileList;
     }
 
+    flipNeighbors (currentIndex) {
+        let tileList = this.state.tileList;
+        let tileObject = tileList[currentIndex];
+        if ( !tileObject || !tileObject.neighbors ){
+            return;
+        }
+
+        for(var i = 0; i < tileObject.neighbors.length; i++){
+            let neighborIndex = tileObject.neighbors[i];
+            if ( !neighborIndex ){
+                continue;
+            }
+            
+            let neighborTileObject = tileList[neighborIndex];
+            if ( !neighborTileObject ){
+                continue;
+            }
+
+            neighborTileObject.isPlayed = true;
+            tileList[neighborIndex] = neighborTileObject;
+        }
+        this.setState({tileList: tileList})
+    }
+
+    /*
     showTileGroup () {
         let tileListDisplay = null;
         let rowSize = this.state.rowSize;
@@ -85,17 +118,46 @@ class TileGroup extends Component {
                 tileListDisplay = Array.apply(null, Array(rowSize * columSize)).map(function(value, index){
                     let tileType = 0;
                     let tileSize = 80;
-                    return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} tileType={tileType}/>;
+                    return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} tileType={tileType} isPlayed={this.state.isPlayed}/>;
                 })
             }
         } 
         return tileListDisplay;
     }
+    */
 
     render() {
+        let {rowSize, columSize, centerMap, tileList, isPlayed} = this.state;
+
+        console.log("isPlayed state:" + this.state.isPlayed);
+        let tileListDisplay = [];
+        if (!this.state.centerMap){
+            if (!rowSize || !columSize){
+                rowSize = 10;
+                columSize = 10;
+                tileListDisplay = tileList.map((tileObject, index) => {
+                    let tileType = tileObject.tileType;
+                    let tileSize = 80;
+                    let tilePlay = tileObject.isPlayed;
+                    
+
+                    if (    index === 0 || 
+                            index === (rowSize * columSize - 1) ||
+                            index === (0 + columSize - 1 ) ||
+                            index === ((rowSize-1)*columSize)) {
+                        tilePlay = isPlayed;
+
+                    }
+
+                    console.log("isPlayed state passed to tiles:" + tilePlay);
+                    return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} tileType={tileType} isPlayed={tilePlay} flipNeighbors={this.flipNeighbors}/>;
+                })
+            }
+        }
+
         return (
             <div className="tile_group">
-                {this.showTileGroup()}
+                {tileListDisplay}
             </div>
         );
     }
