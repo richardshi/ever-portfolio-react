@@ -29,14 +29,9 @@ class Tile extends Component {
             tileIndex: props.tileIndex,
             tileLogoType: props.tileLogoType,
             tileLogoTypeColor: props.tileLogoTypeColor,
-
             flipDirection: props.flipDirection,
-            isPlayed: props.isPlayed,
-
-            //flipNeighbors: props.flipNeighbors,
+            isStarted: props.isStarted,
             flipWaitTime: props.flipWaitTime,
-
-
         };
 
         this.handleFilpTile = this.handleFilpTile.bind(this);
@@ -45,39 +40,24 @@ class Tile extends Component {
         this.filpByTime = this.filpByTime.bind(this);
     }
 
-    // Flip by trigger
-    /*
-    componentWillReceiveProps (nextProps) {
-        //this.setState({isPlayed: nextProps.isPlayed});
-
-        if (nextProps.isPlayed) {
-            this.handleFilpTile(nextProps.flipDirection);
-        }
-    }
-    */
     componentDidMount(){
        this.filpByTime(this.state.flipWaitTime);
     }
 
     filpByTime(flipWaitTime){
-        setTimeout( this.flipTile, flipWaitTime);
+        setTimeout(this.flipTile, flipWaitTime);
     }
 
     handleFilpTile (flipDirection) {
-        if (this.state.isPlayed)
+        if (this.state.isStarted)
             return;
-
-
         this.setState({flipDirection: flipDirection}, () => {
-            setTimeout( this.flipTile, 50);
+            setTimeout(this.flipTile, 50);
         });
-        //this.flipTile();
     }
 
     flipTile(){
-
-        this.setState({isPlayed: true})
-
+        this.setState({isStarted: true})
     }
 
     getRandom ( min, max ) {
@@ -91,8 +71,6 @@ class Tile extends Component {
             return "";
         }
 
-
-        //console.log(tileLogoType);
         let logoClassList = [];
         logoClassList.push("tile_logo");
         switch(tileLogoType){
@@ -114,19 +92,6 @@ class Tile extends Component {
             default:
                 break;
         }
-
-        /*
-        switch(tileLogoTypeColor){
-            case tileLogoColors.LIGHT:
-                logoClassList.push("logo_light");
-            case tileLogoColors.NORMAL:
-                logoClassList.push("logo_normal");
-            case tileLogoColors.DEEP:
-                logoClassList.push("logo_deep");
-            default:
-                logoClassList.push("logo_light");
-        }
-        */
         return logoClassList.join(' ');
     }
 
@@ -213,7 +178,7 @@ class Tile extends Component {
 
 
     render() {
-        const {rowSize, columSize, tileSize, tileIndex, tileLogoType, tileLogoTypeColor, flipDirection, isPlayed} = this.state;
+        const {rowSize, columSize, tileSize, tileIndex, tileLogoType, tileLogoTypeColor, flipDirection, isStarted} = this.state;
         const width = tileSize + "px";
         const height = tileSize + "px";
         const top = (~~ (tileIndex / columSize)) * tileSize;
@@ -250,11 +215,11 @@ class Tile extends Component {
 
         //console.log(this.state);
 
-        //console.log("Tile isPlayed state:" + isPlayed);
+        //console.log("Tile isStarted state:" + isStarted);
 
         const tileClassName = "tile " + directionClassName + (tileLogoClassName == "" ? "" : " "+tileLogoClassName);
-        //const inlayClassName = "inlay " + ( isPlayed ? "show " : " ") + inlayColorClassName;
-        const inlayClassName = "inlay " + ( isPlayed ? "show " : " ") + ( tileLogoClassName == "" ? inlayColorClassName:"");
+        //const inlayClassName = "inlay " + ( isStarted ? "show " : " ") + inlayColorClassName;
+        const inlayClassName = "inlay " + ( isStarted ? "show " : " ") + ( tileLogoClassName == "" ? inlayColorClassName:"");
         const coverClassName = (tileLogoClassName == "" ? "cover" : "");
 
         //const inlayFrontClassName = ( tileLogoClassName == "" ? "" : inlayColorClassName + " inlay_front");

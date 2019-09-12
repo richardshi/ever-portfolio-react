@@ -10,7 +10,7 @@ const orientation  = {
     BOTTOM: 3,
     LEFT: 4
 };
-const timeOffset = 1000;
+const timeOffset = 500;
 
 class TileGroup extends Component {
     constructor(props){
@@ -22,7 +22,7 @@ class TileGroup extends Component {
             tileSize: props.tileSize,
             tileList: [],
             tileListDisplay: [],
-            isPlayed: false,
+            isStarted: false,
             
         };
 
@@ -40,7 +40,7 @@ class TileGroup extends Component {
         //console.log("test1" + this.state.tileList);
     }
     componentDidMount(){
-        this.setState({isPlayed : true}, () => {
+        this.setState({isStarted : true}, () => {
             this.setState({tileList : this.flipFromCorner()});
         });
     }
@@ -89,7 +89,7 @@ class TileGroup extends Component {
                 tileLogoTypeColor: ~~(Math.random() * 3),
                 flipDirection: flipDirection,
                 flipWaitTime: flipWaitTime,
-                isPlayed: tilePlay,
+                isStarted: tilePlay,
                 neighbors: [],
             }
             return tileObject;
@@ -146,7 +146,7 @@ class TileGroup extends Component {
         let cornerIndexs = [columSize - 1, rowSize * columSize - 1, (rowSize - 1) * columSize, 0];
 
         for (var i = 0; i < cornerIndexs.length; i++) {
-            tileList[cornerIndexs[i]].tilePlay = this.state.isPlayed;
+            tileList[cornerIndexs[i]].tilePlay = this.state.isStarted;
             tileList[cornerIndexs[i]].flipDirection = i;
         }
         return tileList;
@@ -170,10 +170,10 @@ class TileGroup extends Component {
                 continue;
             }
 
-            if (neighborTileObject.isPlayed){
+            if (neighborTileObject.isStarted){
                 continue;
             }
-            neighborTileObject.isPlayed = true;
+            neighborTileObject.isStarted = true;
             neighborTileObject.flipDirection = i;
             tileList[neighborIndex] = neighborTileObject;
             //setTimeout(this.setState({tileList: tileList}), 10 + Math.random() * ( 200 - 10 ));
@@ -348,7 +348,7 @@ class TileGroup extends Component {
                 tileListDisplay = Array.apply(null, Array(rowSize * columSize)).map(function(value, index){
                     let tileLogoType = 0;
                     let tileSize = 80;
-                    return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} tileLogoType={tileLogoType} isPlayed={this.state.isPlayed}/>;
+                    return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} tileLogoType={tileLogoType} isStarted={this.state.isStarted}/>;
                 })
             }
         } 
@@ -357,9 +357,9 @@ class TileGroup extends Component {
     */
 
     render() {
-        let {rowSize, columSize, centerMap, tileSize, tileList, isPlayed} = this.state;
+        let {rowSize, columSize, centerMap, tileSize, tileList, isStarted} = this.state;
 
-        //console.log("isPlayed state:" + this.state.isPlayed);
+        //console.log("isStarted state:" + this.state.isStarted);
         let tileListDisplay = [];
         if (!this.state.centerMap){
         }
@@ -373,18 +373,13 @@ class TileGroup extends Component {
         }
 
         tileListDisplay = tileList.map((tileObject, index) => {
-            let tilePlay = tileObject.isPlayed;
+            let tilePlay = tileObject.isStarted;
             let tileLogoType = tileObject.tileLogoType;
             let tileLogoTypeColor = tileObject.tileLogoTypeColor;
             let flipDirection = tileObject.flipDirection;
             let flipWaitTime = tileObject.flipWaitTime;
 
-            
-
-            //console.log("isPlayed state passed to tiles:" + tilePlay);
-
-            //return <TileCSS key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} flipDirection={flipDirection} flipWaitTime={flipWaitTime} tileLogoType={tileLogoType} isPlayed={tilePlay} flipNeighbors={this.flipNeighbors}/>;
-            return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} flipDirection={flipDirection} flipWaitTime={flipWaitTime} tileLogoType={tileLogoType} tileLogoTypeColor={tileLogoTypeColor} isPlayed={tilePlay} flipNeighbors={this.flipNeighbors}/>;
+            return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} flipDirection={flipDirection} flipWaitTime={flipWaitTime} tileLogoType={tileLogoType} tileLogoTypeColor={tileLogoTypeColor} isStarted={tilePlay}/>;
         })
 
         return (
