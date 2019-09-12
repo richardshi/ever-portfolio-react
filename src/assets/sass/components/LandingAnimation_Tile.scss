@@ -9,13 +9,13 @@
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  .tile.from-top {
+  .tile.to-top {
     display: block;
     -moz-perspective-origin: 50% 0;
     -webkit-perspective-origin: 50% 0;
     perspective-origin: 50% 0;
   }
-  .tile.from-top .inlay {
+  .tile.to-top .inlay {
     -moz-transform-origin: 50% 0 0;
     -webkit-transform-origin: 50% 0 0;
     transform-origin: 50% 0 0;
@@ -24,53 +24,53 @@
     //-webkit-transform: rotateX(-90deg);
     //transform: rotateX(-90deg);
   }
-  /*
-  .tile.from-bottom {
+  
+  .tile.to-bottom {
     display: block;
     -moz-perspective-origin: 50% 100%;
     -webkit-perspective-origin: 50% 100%;
     perspective-origin: 50% 100%;
   }
-  .tile.from-bottom .inlay {
+  .tile.to-bottom .inlay {
     -moz-transform-origin: 50% 100% 0;
     -webkit-transform-origin: 50% 100% 0;
     transform-origin: 50% 100% 0;
-    -moz-transform: rotateX(90deg);
-    -ms-transform: rotateX(90deg);
-    -webkit-transform: rotateX(90deg);
-    transform: rotateX(90deg);
+    //-moz-transform: rotateX(90deg);
+    //-ms-transform: rotateX(90deg);
+    //-webkit-transform: rotateX(90deg);
+    //transform: rotateX(90deg);
   }
-  .tile.from-left {
+  .tile.to-left {
     display: block;
     -moz-perspective-origin: 0 50%;
     -webkit-perspective-origin: 0 50%;
     perspective-origin: 0 50%;
   }
-  .tile.from-left .inlay {
+  .tile.to-left .inlay {
     -moz-transform-origin: 0 50% 0;
     -webkit-transform-origin: 0 50% 0;
     transform-origin: 0 50% 0;
-    -moz-transform: rotateY(90deg);
-    -ms-transform: rotateY(90deg);
-    -webkit-transform: rotateY(90deg);
-    transform: rotateY(90deg);
+    //-moz-transform: rotateY(90deg);
+    //-ms-transform: rotateY(90deg);
+    //-webkit-transform: rotateY(90deg);
+    //@at-roottransform: rotateY(90deg);
   }
-  .tile.from-right {
+  .tile.to-right {
     display: block;
     -moz-perspective-origin: 100% 50%;
     -webkit-perspective-origin: 100% 50%;
     perspective-origin: 100% 50%;
   }
-  .tile.from-right .inlay {
+  .tile.to-right .inlay {
     -moz-transform-origin: 100% 50% 0;
     -webkit-transform-origin: 100% 50% 0;
     transform-origin: 100% 50% 0;
-    -moz-transform: rotateY(-90deg);
-    -ms-transform: rotateY(-90deg);
-    -webkit-transform: rotateY(-90deg);
-    transform: rotateY(-90deg);
+    //-moz-transform: rotateY(-90deg);
+    //-ms-transform: rotateY(-90deg);
+    //-webkit-transform: rotateY(-90deg);
+    //transform: rotateY(-90deg);
   }
-  */
+  
   
   .inlay {
     width: 100%;
@@ -79,13 +79,140 @@
     -o-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    //backface-visibility: hidden;
+    position: relative;
+    transform-style: preserve-3d;
   }
-  .tile .inlay.show{
+  .tile.to-top .inlay.show{
     -moz-transform: rotateX(-90deg);
     -ms-transform: rotateX(-90deg);
     -webkit-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
+    background-color: transparent;
   }
+  .tile.to-bottom .inlay.show{
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    background-color: transparent;
+  }
+  .tile.to-left .inlay.show{
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    background-color: transparent;
+  }
+  .tile.to-right .inlay.show{
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    background-color: transparent;
+  }
+  
+  .inlay_front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //perspective-origin: center center center;
+    //background: blue;
+    backface-visibility: hidden;
+
+  }
+  .inlay_back{
+    position: absolute;
+    /*
+    width: 100%;
+    height: 100%;
+    background: red;
+
+    transform: rotateY( 180deg );
+    //perspective-origin: 50% 50%;
+    backface-visibility: hidden;
+    */
+
+    width: 0;
+    height: 0;
+/*
+    border-style: solid;
+    border-width: 50px 0 0 50px;
+    border-color: transparent transparent transparent #007bff;
+    */
+
+    backface-visibility: hidden;
+    transform: rotateY( 180deg );
+
+  }
+
+  .tile.logo_top_left{
+    display: block;
+    -moz-perspective-origin: 50% 50%;
+    -webkit-perspective-origin:  50% 50%;
+    //perspective-origin: top left center;
+    perspective-origin: 50% 50%;
+    //transform: rotate3d(-1, 1, 0, 0);
+    //background-color: red;
+  }
+  .tile.logo_top_left .inlay.show{
+    -moz-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -ms-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -webkit-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    transform: rotate3d(-1, 1, 0, -180deg);
+    //background-color: transparent;
+  }
+  .tile.logo_top_right{
+    display: block;
+    -moz-perspective-origin: 50% 50%;
+    -webkit-perspective-origin:  50% 50%;
+    perspective-origin: 50% 50%;
+  }
+  .tile.logo_top_right .inlay.show{
+    -moz-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -ms-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -webkit-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    transform: rotate3d(-1, -1, 0, 180deg);
+  }
+  
+  .tile.logo_bottom_left{
+    display: block;
+    -moz-perspective-origin: 50% 50%;
+    -webkit-perspective-origin:  50% 50%;
+    perspective-origin: 50% 50%;
+  }
+  .tile.logo_bottom_left .inlay.show{
+    -moz-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -ms-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -webkit-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    transform: rotate3d(-1, -1, 0, -180deg);
+  }
+  .tile.logo_bottom_right{
+    display: block;
+    -moz-perspective-origin: 50% 50%;
+    -webkit-perspective-origin:  50% 50%;
+    perspective-origin: 50% 50%;
+  }
+  .tile.logo_bottom_right .inlay.show{
+    -moz-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -ms-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    -webkit-transform: rotateY(90deg) rotateZ(-45deg) rotateX(-45deg);
+    transform: rotate3d(-1, 1, 0, 180deg);
+  }
+
+
+
+
+  .logo_background_light{
+    background-color: #7fc252,
+  }
+  .logo_background_normal{
+    background-color: #199b4e,
+  }
+  .logo_background_deep{
+    background-color: #0d5734,
+  }
+  
   
   /*
   .cover {
@@ -102,7 +229,11 @@
   }
   */
   
-
+  /*
+  .tile .inlay.show{
+    background-color: transparent;
+  }
+  */
 
   .cover {
     background-color: transparent;
@@ -110,9 +241,25 @@
   .tile .inlay.show .cover {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    -moz-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
+    //background-color: rgba(0, 0, 0, 0.4);
+    -moz-transition: tileCoverAnimation 0.3s ease-in-out;
+    -o-transition: tileCoverAnimation 0.3s ease-in-out;
+    -webkit-transition: tileCoverAnimation 0.3s ease-in-out;
+    transition: tileCoverAnimation 0.3s ease-in-out;
+  }
+
+  @keyframes tileCoverAnimation{
+    0% {
+      background-color: transparent;
+    }
+    80% {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+
+  .tile_logo{
+      display: block;
   }
