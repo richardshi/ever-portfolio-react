@@ -142,7 +142,8 @@
     */
 
     backface-visibility: hidden;
-    transform: rotateY( 180deg );
+    perspective-origin: 50% 50%;
+    transform: rotate3d(0, -1, 0, -180deg);
 
   }
 

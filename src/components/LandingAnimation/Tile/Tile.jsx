@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import 'assets/sass/components/LandingAnimation_Tile.scss'
 
-const transitionMin = 200;
-const transitionMax = 300;
 const tileDirections = ["", "to-top", "to-right", "to-bottom", "to-left"]
 const tileLogoTypes = {
 	NONE: 0,
@@ -66,8 +64,7 @@ class Tile extends Component {
 
     renderTileLogoClass(){
         let tileLogoType = this.state.tileLogoType;
-        let tileLogoTypeColor = this.state.tileLogoTypeColor;
-        if (tileLogoType == tileLogoTypes.NONE){
+        if (tileLogoType === tileLogoTypes.NONE){
             return "";
         }
 
@@ -134,7 +131,7 @@ class Tile extends Component {
         let state = this.state;
         let inlayBackStyle = {}
         let tileLogoType = state.tileLogoType;
-        if (tileLogoType == tileLogoTypes.NONE){
+        if (tileLogoType === tileLogoTypes.NONE){
             return inlayBackStyle;
         }
 
@@ -178,7 +175,7 @@ class Tile extends Component {
 
 
     render() {
-        const {rowSize, columSize, tileSize, tileIndex, tileLogoType, tileLogoTypeColor, flipDirection, isStarted} = this.state;
+        const {rowSize, columSize, tileSize, tileIndex, flipDirection, isStarted} = this.state;
         const width = tileSize + "px";
         const height = tileSize + "px";
         const top = (~~ (tileIndex / columSize)) * tileSize;
@@ -196,7 +193,7 @@ class Tile extends Component {
             left: left,
         }
         const inlayStyle = {
-            //backgroundColor: this.renderTileLogoColor(),
+            
         }
         let inlayBackStyle = this.renderTileLogoInlayBackStyle();
 
@@ -204,37 +201,25 @@ class Tile extends Component {
         let directionClassName =  "" ;
         if (flipDirection) {
             directionClassName = tileDirections[flipDirection];
-            //console.log(directionClassName);
-        }
 
+        }
 
 
         const tileID = "ROW_" + rowSize + "COL_" + columSize + "IDX_" + tileIndex;
 
 
+        const tileClassName = "tile " + directionClassName + (tileLogoClassName === "" ? "" : " "+tileLogoClassName);
+        const inlayClassName = "inlay " + ( isStarted ? "show " : " ") + ( tileLogoClassName === "" ? inlayColorClassName:"");
+        const coverClassName = (tileLogoClassName === "" ? "cover" : "");
 
-        //console.log(this.state);
-
-        //console.log("Tile isStarted state:" + isStarted);
-
-        const tileClassName = "tile " + directionClassName + (tileLogoClassName == "" ? "" : " "+tileLogoClassName);
-        //const inlayClassName = "inlay " + ( isStarted ? "show " : " ") + inlayColorClassName;
-        const inlayClassName = "inlay " + ( isStarted ? "show " : " ") + ( tileLogoClassName == "" ? inlayColorClassName:"");
-        const coverClassName = (tileLogoClassName == "" ? "cover" : "");
-
-        //const inlayFrontClassName = ( tileLogoClassName == "" ? "" : inlayColorClassName + " inlay_front");
-        const inlayFrontClassName = inlayColorClassName + ( tileLogoClassName == "" ? "" : " inlay_front");
-        const inlayBackClassName = ( tileLogoClassName == "" ? "" : " inlay_back");
+        const inlayFrontClassName = inlayColorClassName + ( tileLogoClassName === "" ? "" : " inlay_front");
+        const inlayBackClassName = ( tileLogoClassName === "" ? "" : " inlay_back");
         
 
         return (
             <div id={tileID} className={tileClassName} style={tileStyle}>
                 <div className={inlayClassName} style={inlayStyle}>
-                    <div className={coverClassName}>
-
-                    </div>
-
-
+                    <div className={coverClassName}></div>
                     <div className={inlayFrontClassName}></div>
                     <div className={inlayBackClassName} style={inlayBackStyle}></div>
                 </div>
