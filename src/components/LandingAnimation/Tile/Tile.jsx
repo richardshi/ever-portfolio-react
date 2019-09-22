@@ -147,22 +147,18 @@ class Tile extends Component {
             case tileLogoTypes.TRI_TOP_LEFT: 
                 inlayBackStyle.borderWidth = tileSize + 'px 0 0 ' + tileSize + 'px ';
                 inlayBackStyle.borderColor = 'transparent transparent transparent' + ' ' +  backgroundColor;
-                console.log(inlayBackStyle);
                 break;
             case tileLogoTypes.TRI_TOP_RIGHT: 
                 inlayBackStyle.borderWidth = '0 0 ' + tileSize + 'px '+ tileSize + 'px ';
                 inlayBackStyle.borderColor = 'transparent transparent' + ' ' + backgroundColor + ' ' + 'transparent' ;
-                console.log(inlayBackStyle);
                 break;
             case tileLogoTypes.TRI_BOTTOM_LEFT: 
                 inlayBackStyle.borderWidth = tileSize + 'px ' + tileSize + 'px ' + '0 0 ';
                 inlayBackStyle.borderColor = backgroundColor + ' ' + 'transparent transparent transparent';
-                console.log(inlayBackStyle);
                 break;
             case tileLogoTypes.TRI_BOTTOM_RIGHT: 
                 inlayBackStyle.borderWidth =  '0 ' + tileSize + 'px ' + tileSize + 'px ' + '0 ';
                 inlayBackStyle.borderColor = 'transparent' + ' ' + backgroundColor + ' ' + 'transparent transparent' ;
-                console.log(inlayBackStyle);
                 break;
             default:
                 inlayBackStyle = {};
@@ -206,7 +202,6 @@ class Tile extends Component {
 
 
         const tileID = "ROW_" + rowSize + "COL_" + columSize + "IDX_" + tileIndex;
-
 
         const tileClassName = "tile " + directionClassName + (tileLogoClassName === "" ? "" : " "+tileLogoClassName);
         const inlayClassName = "inlay " + ( isStarted ? "show " : " ") + ( tileLogoClassName === "" ? inlayColorClassName:"");

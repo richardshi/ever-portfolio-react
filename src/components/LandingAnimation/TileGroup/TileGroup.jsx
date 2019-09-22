@@ -23,11 +23,13 @@ class TileGroup extends Component {
             tileListDisplay: [],
             isStarted: false,
             
+            setAnimationCompleted: props.setAnimationCompleted,
+            
         };
 
         this.getTileList = this.getTileList.bind(this);
         //this.showTileGroup = this.showTileGroup.bind(this);
-        this.flipNeighbors = this.flipNeighbors.bind(this);
+        //this.flipNeighbors = this.flipNeighbors.bind(this);
         this.flipFromCorner = this.flipFromCorner.bind(this);
         this.BFSFlipNeighbors = this.BFSFlipNeighbors.bind(this);
         this.insertCenterMap = this.insertCenterMap.bind(this);
@@ -35,8 +37,6 @@ class TileGroup extends Component {
 
     componentWillMount(){
         this.setState({tileList : this.getTileList()});
-        //this.setState({tileListDisplay : this.showTileGroup()});
-        //console.log("test1" + this.state.tileList);
     }
     componentDidMount(){
         this.setState({isStarted : true}, () => {
@@ -116,6 +116,7 @@ class TileGroup extends Component {
         return tileList;
     }
 
+    /*
     flipNeighbors (currentIndex) {
         let tileList = this.state.tileList;
         let tileObject = tileList[currentIndex];
@@ -140,20 +141,18 @@ class TileGroup extends Component {
             neighborTileObject.isStarted = true;
             neighborTileObject.flipDirection = i;
             tileList[neighborIndex] = neighborTileObject;
-            //setTimeout(this.setState({tileList: tileList}), 10 + Math.random() * ( 200 - 10 ));
             this.setState({tileList: tileList})
         }
-        //this.setState({tileList: tileList})
-        //setTimeout(this.setState({tileList: tileList}), 10 + Math.random() * ( 200 - 10 ));
     }
+    */
 
+    // Can optimize animation by FFT, to forced the num of threads triggered at the same time.
     BFSFlipNeighbors(tileList){
-
         let rowSize = this.state.rowSize;
         let columSize = this.state.columSize;
 
-
         let BFSLevel = [columSize - 1, rowSize * columSize - 1, (rowSize - 1) * columSize, 0];
+        let maxWaitTime = 0;
 
         while (BFSLevel.length !== 0){
             let length = BFSLevel.length;
@@ -164,11 +163,15 @@ class TileGroup extends Component {
                     continue;
                 }
                 let flipWaitTime = tileObject.flipWaitTime;
-
+                if ( flipWaitTime > maxWaitTime ) {
+                    maxWaitTime = flipWaitTime;
+                }
+/*
                 if (tileObject.flipWaitTime !== 0 && tileObject.flipWaitTime < flipWaitTime ){
                     continue
                 }
                 tileObject.flipWaitTime = flipWaitTime;
+                */
 
 
                 let row = ~~( tileIndex / columSize );
@@ -232,7 +235,7 @@ class TileGroup extends Component {
             }
         }
 
-
+        this.state.setAnimationCompleted(maxWaitTime);
         return tileList;
     }
 
@@ -244,7 +247,6 @@ class TileGroup extends Component {
         let mapRowSize = centerMap.length;
         let mapColumSize = centerMap[0].length;
 
-        console.log(mapRowSize + " " + mapColumSize);
         if (mapRowSize > rowSize || mapColumSize > columSize){
             return;
         }
@@ -259,17 +261,12 @@ class TileGroup extends Component {
                     continue;
                 }
                 let tileObject = tileList[(r + rowOffSet) * columSize + (c + columOffSet)];
-
-                console.log(r + " " + c);
-                console.log((r + rowOffSet) + " " + (c + columOffSet))
-
                 tileObject.tileLogoType = mapObject.type;
                 tileObject.tileLogoTypeColor = mapObject.color;
                 tileObject.flipDirection = orientation.NONE;
-                console.log(tileObject)
             }
         }
-
+        
         return tileList;
     }
 

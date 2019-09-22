@@ -1,6 +1,6 @@
 
 .tile {
-    position: absolute;
+    //position: absolute;
     display: none;
     -moz-perspective: 300px;
     -webkit-perspective: 300px;
@@ -246,7 +246,7 @@
     -moz-transition: tileCoverAnimation 0.3s ease-in-out;
     -o-transition: tileCoverAnimation 0.3s ease-in-out;
     -webkit-transition: tileCoverAnimation 0.3s ease-in-out;
-    transition: tileCoverAnimation 0.3s ease-in-out;
+    animation: tileCoverAnimation 0.3s ease-in-out;
   }
 
   @keyframes tileCoverAnimation{

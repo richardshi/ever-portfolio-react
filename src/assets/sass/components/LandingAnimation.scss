@@ -1,7 +1,27 @@
 .LandingAnimationContainer{
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+
+
+  
+}
+.LandingAnimationContainer.rotateLogo{
+  -webkit-animation: rotateLogoFrames 1s ease-in-out forwards;
+  -moz-animation: rotateLogoFrames 1s ease-in-out forwards;
+  -ms-animation: rotateLogoFrames 1s ease-in-out forwards;
+  -o-animation: rotateLogoFrames 2s ease-in-out forwards;
+  animation: rotateLogoFrames 2s ease-in-out forwards;
+}
+
+@keyframes rotateLogoFrames{
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-60deg);
+  }
 }

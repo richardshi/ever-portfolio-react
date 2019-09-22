@@ -5,8 +5,12 @@ import 'assets/sass/components/LandingAnimation.scss';
 
 
 import TileGroup from 'components/LandingAnimation/TileGroup/TileGroup'
-import logo from 'assets/images/logo.svg';
+import logo from 'assets/images/logo_ever.png';
 
+const containerStyle = {
+	width: window.innerWidth + "px",
+	height: window.innerHeight + "px",
+}
 const tileColors = {
 	LIGHT: 0,
 	NORMAL: 1,
@@ -29,6 +33,7 @@ class LandingAnimation extends Component {
 			rowSize: 20,
 			columSize: 20,
 			tileSize: 40,
+			animationCompleted: false,
 			centerMap: [
 				[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_BOTTOM_LEFT }],
 				[ { color: tileColors.DEEP, type: tileLogoType.TRI_BORROM_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_TOP_LEFT }],
@@ -39,7 +44,9 @@ class LandingAnimation extends Component {
 				[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_BOTTOM_LEFT }],
 				[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_LEFT }],
 			],
-		};        
+		};   
+		this.setAnimationCompleted = this.setAnimationCompleted.bind(this);     
+		this.handelAnimationCompleted = this.handelAnimationCompleted.bind(this);
     }
 
 	componentWillMount(){
@@ -58,16 +65,40 @@ class LandingAnimation extends Component {
 		})
 	}
 
+	setAnimationCompleted(animationCompleteTime){
+
+		console.log(this);
+		setTimeout(this.handelAnimationCompleted, animationCompleteTime * 1.1);
+	}
+
+	handelAnimationCompleted(){
+			console.log("animation completed");
+			this.setState({animationCompleted:true});
+	}
+
 
     render() {
-		const {rowSize, columSize, tileSize, centerMap} = this.state;
+		const {rowSize, columSize, tileSize, centerMap, animationCompleted} = this.state;
 
-		
 
-        return <div class="LandingAnimationContainer">
-            
-			<TileGroup rowSize={rowSize} columSize={columSize} tileSize={tileSize} centerMap={centerMap}></TileGroup>
-        </div>;
+
+		let containerClassName = "LandingAnimationContainer";
+		if (animationCompleted) {
+			containerClassName = containerClassName + " rotateLogo";
+			/*
+			return(
+				<div className="LandingAnimationContainer">
+					<img src={logo}>
+					</img>
+				</div>
+			)
+			*/
+		}
+
+        return (
+		<div className={containerClassName} style={containerStyle}>    
+			<TileGroup rowSize={rowSize} columSize={columSize} tileSize={tileSize} centerMap={centerMap} setAnimationCompleted={this.setAnimationCompleted}></TileGroup>
+		</div>);
     }
 
 }
