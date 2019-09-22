@@ -19,6 +19,9 @@ class TileGroup extends Component {
             columSize: props.columSize,
             centerMap: props.centerMap,
             tileSize: props.tileSize,
+			rowOffSet: props.rowOffSet,
+            columOffSet: props.columOffSet,
+            
             tileList: [],
             tileListDisplay: [],
             isStarted: false,
@@ -271,7 +274,7 @@ class TileGroup extends Component {
     }
 
     render() {
-        let {rowSize, columSize, tileSize, tileList} = this.state;
+        let {rowSize, columSize, tileSize, rowOffSet, columOffSet, tileList} = this.state;
 
         let tileListDisplay = [];
 
@@ -293,8 +296,14 @@ class TileGroup extends Component {
             return <Tile key={index} rowSize={rowSize} columSize={columSize} tileSize={tileSize} tileIndex={index} flipDirection={flipDirection} flipWaitTime={flipWaitTime} tileLogoType={tileLogoType} tileLogoTypeColor={tileLogoTypeColor} isStarted={tilePlay}/>;
         })
 
+        let tileGroupStyle = {
+            position: "absolute",
+            top: - rowOffSet * tileSize + "px",
+            left: - columOffSet * tileSize + "px",
+        }
+
         return (
-            <div className="tile_group">
+            <div className="tile_group" style={tileGroupStyle}>
                 {tileListDisplay}
             </div>
         );

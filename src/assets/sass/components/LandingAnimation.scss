@@ -1,12 +1,31 @@
 .LandingAnimationContainer{
   margin: 0;
   padding: 0;
-  overflow: hidden;
-
-
-  
+  //overflow: hidden;
+  .LandingAnimationContainer__Rotate{
+    width:100%;
+    height:100%;
+    transform-origin: center center;
+  }
 }
-.LandingAnimationContainer.rotateLogo{
+
+.LandingAnimationContainer.postRotateLogoDeskTop{
+  -webkit-animation: postRotateLogoDeskTopFrames 1s ease-in-out forwards;
+  -moz-animation: postRotateLogoDeskTopFrames 1s ease-in-out forwards;
+  -ms-animation: postRotateLogoDeskTopFrames 1s ease-in-out forwards;
+  -o-animation: postRotateLogoDeskTopFrames 2s ease-in-out forwards;
+  animation: postRotateLogoDeskTopFrames 2s ease-in-out forwards;
+}
+
+.LandingAnimationContainer.postRotateLogoMobile{
+  -webkit-animation: postRotateLogoMobileFrames 1s ease-in-out forwards;
+  -moz-animation: postRotateLogoMobileFrames 1s ease-in-out forwards;
+  -ms-animation: postRotateLogoMobileFrames 1s ease-in-out forwards;
+  -o-animation: postRotateLogoMobileFrames 2s ease-in-out forwards;
+  animation: postRotateLogoMobileFrames 2s ease-in-out forwards;
+}
+
+.LandingAnimationContainer__Rotate.rotateLogo{
   -webkit-animation: rotateLogoFrames 1s ease-in-out forwards;
   -moz-animation: rotateLogoFrames 1s ease-in-out forwards;
   -ms-animation: rotateLogoFrames 1s ease-in-out forwards;
@@ -14,14 +33,51 @@
   animation: rotateLogoFrames 2s ease-in-out forwards;
 }
 
+
 @keyframes rotateLogoFrames{
   0% {
     transform: rotate(0deg);
   }
-  80% {
+  40% {
     transform: rotate(-90deg);
   }
-  100% {
+  45% {
+    transform: rotate(-30deg);
+  }
+  50% {
     transform: rotate(-60deg);
+  }
+  100%{
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes postRotateLogoDeskTopFrames{
+  0%{
+    transform: translate(0px, 0px); 
+  }
+  40%{
+    transform: translate(-220px, 0px); 
+  }
+  45%{
+    transform: translate(-180px, 0px); 
+  }
+  50%{
+    transform: translate(-200px, 0px); 
+  }
+  100%{
+    transform: translate(-200px, 0px); 
+  }
+}
+
+@keyframes postRotateLogoMobileFrames{
+  0%{
+    transform: translate(0px, 0px);
+  }
+  50%{
+    transform: translate(0px, 0px);
+  }
+  100%{
+    transform: translate(0px, -800px)
   }
 }

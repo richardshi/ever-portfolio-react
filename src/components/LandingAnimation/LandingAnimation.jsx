@@ -7,10 +7,16 @@ import 'assets/sass/components/LandingAnimation.scss';
 import TileGroup from 'components/LandingAnimation/TileGroup/TileGroup'
 import logo from 'assets/images/logo_ever.png';
 
+
+/*
 const containerStyle = {
 	width: window.innerWidth + "px",
 	height: window.innerHeight + "px",
 }
+*/
+
+const windowWidth = window.innerWidth;
+const windowHeight = window.innerHeight;
 const tileColors = {
 	LIGHT: 0,
 	NORMAL: 1,
@@ -25,7 +31,19 @@ const tileLogoType = {
 	TRI_BORROM_RIGHT: 5,
 
 }
-const tileMinNumber = 20;
+const tileMinNumber = 30;
+const everLogo = [
+	[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_BOTTOM_LEFT }],
+	[ { color: tileColors.DEEP, type: tileLogoType.TRI_BORROM_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_TOP_LEFT }],
+	[ { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, null, null, null],
+	[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.NORMAL, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.SQUARE }, { color: tileColors.DEEP, type: tileLogoType.TRI_BOTTOM_LEFT }],
+	[ { color: tileColors.DEEP, type: tileLogoType.TRI_BORROM_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_TOP_LEFT }],
+	[ { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, null, null, null],
+	[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_BOTTOM_LEFT }],
+	[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_LEFT }],
+];
+
+
 class LandingAnimation extends Component {
     constructor(props){
         super(props);
@@ -33,35 +51,38 @@ class LandingAnimation extends Component {
 			rowSize: 20,
 			columSize: 20,
 			tileSize: 40,
+			rowOffSet: 0,
+			columOffSet: 0,
 			animationCompleted: false,
-			centerMap: [
-				[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_BOTTOM_LEFT }],
-				[ { color: tileColors.DEEP, type: tileLogoType.TRI_BORROM_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_TOP_LEFT }],
-				[ { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, null, null, null],
-				[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.NORMAL, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.SQUARE }, { color: tileColors.DEEP, type: tileLogoType.TRI_BOTTOM_LEFT }],
-				[ { color: tileColors.DEEP, type: tileLogoType.TRI_BORROM_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_TOP_LEFT }],
-				[ { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, null, null, null],
-				[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_BOTTOM_LEFT }],
-				[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_LEFT }],
-			],
+			centerMap: everLogo,
 		};   
 		this.setAnimationCompleted = this.setAnimationCompleted.bind(this);     
 		this.handelAnimationCompleted = this.handelAnimationCompleted.bind(this);
     }
 
 	componentWillMount(){
-		let windowWidth = window.innerWidth;
-		let windowHeight = window.innerHeight;
 		let smallerLength = windowWidth;
 		if ( windowHeight < smallerLength ) {
 			smallerLength = windowHeight;
 		}
 
+
+		let mapRowSize = this.state.centerMap.length; 
+		let mapColumSize = this.state.centerMap[0].length;
+
 		let tileSize = ~~(smallerLength / tileMinNumber);
+		let rowSize = ~~(windowHeight / tileSize) + 1;
+		let columSize = ~~(windowWidth / tileSize) + 1;
+
+		let rowOffSet = ~~(rowSize/2 - mapRowSize/2);
+		let columOffSet = ~~(columSize/2 - mapColumSize/2);
+
 		this.setState({
-			rowSize: ~~(windowHeight / tileSize) + 1,
-			columSize: ~~(windowWidth / tileSize) + 1,
+			rowSize: rowSize,
+			columSize: columSize,
 			tileSize: tileSize,
+			rowOffSet: rowOffSet,
+			columOffSet: columOffSet,
 		})
 	}
 
@@ -76,28 +97,45 @@ class LandingAnimation extends Component {
 			this.setState({animationCompleted:true});
 	}
 
+	getContainerStyle(){
+		let tileSize = this.state.tileSize; 
+		let rowOffSet = this.state.rowOffSet;
+		let columOffSet = this.state.columOffSet;
+
+		let mapRowSize = this.state.centerMap.length; 
+		let mapColumSize = this.state.centerMap[0].length;
+
+		let containerStyle = {
+			position: "absolute",
+			width: mapColumSize * tileSize + "px",
+			height: mapRowSize * tileSize + "px",
+			top: rowOffSet * tileSize + "px",
+			left: columOffSet * tileSize + "px",
+		}
+		return containerStyle
+	}
 
     render() {
-		const {rowSize, columSize, tileSize, centerMap, animationCompleted} = this.state;
-
-
+		const {rowSize, columSize, tileSize, rowOffSet, columOffSet, centerMap, animationCompleted} = this.state;
 
 		let containerClassName = "LandingAnimationContainer";
+		let rotateClassName = "LandingAnimationContainer__Rotate";
 		if (animationCompleted) {
-			containerClassName = containerClassName + " rotateLogo";
-			/*
-			return(
-				<div className="LandingAnimationContainer">
-					<img src={logo}>
-					</img>
-				</div>
-			)
-			*/
+			if (windowWidth < 600 ){
+				containerClassName = containerClassName + " postRotateLogoMobile";
+			} else {
+				containerClassName = containerClassName + " postRotateLogoDeskTop";
+			}
+			rotateClassName = rotateClassName + " rotateLogo";
 		}
 
+		let containerStyle = this.getContainerStyle();
+
         return (
-		<div className={containerClassName} style={containerStyle}>    
-			<TileGroup rowSize={rowSize} columSize={columSize} tileSize={tileSize} centerMap={centerMap} setAnimationCompleted={this.setAnimationCompleted}></TileGroup>
+		<div className={containerClassName} style={containerStyle}>  
+			<div className={rotateClassName}>
+				<TileGroup rowSize={rowSize} columSize={columSize} tileSize={tileSize} rowOffSet={rowOffSet} columOffSet={columOffSet} centerMap={centerMap} setAnimationCompleted={this.setAnimationCompleted}></TileGroup>
+			</div>  
 		</div>);
     }
 

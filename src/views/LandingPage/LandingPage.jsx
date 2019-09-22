@@ -12,9 +12,22 @@ class LandingPage extends Component {
 
     render(){
         return(
-            <LandingAnimation></LandingAnimation>
+            <div className="LandingPage__Container">
+                <div className="Nav__Bar">
+
+                </div>
+
+                <div className="Instruction__Container">
+                    <LandingAnimation></LandingAnimation>
+                </div>
+
+                <div>
+
+                </div>
+
+            </div>
         )
     }
 }
 
-export default LandingAnimation;
+export default LandingPage;
