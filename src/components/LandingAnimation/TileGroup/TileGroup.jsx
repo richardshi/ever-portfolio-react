@@ -26,7 +26,7 @@ class TileGroup extends Component {
             tileListDisplay: [],
             isStarted: false,
             
-            setAnimationCompleted: props.setAnimationCompleted,
+            setTileAnimationCompleted: props.setTileAnimationCompleted,
             
         };
 
@@ -238,7 +238,7 @@ class TileGroup extends Component {
             }
         }
 
-        this.state.setAnimationCompleted(maxWaitTime);
+        this.state.setTileAnimationCompleted(maxWaitTime);
         return tileList;
     }
 

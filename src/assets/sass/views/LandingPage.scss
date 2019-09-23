@@ -1,0 +1,51 @@
+.LandingPage__Container{
+    visibility: visible;
+    opacity: 0;
+    transition: all 2s ease-in-out ;
+
+    &.show{
+        //visibility: visible;
+        opacity: 1;
+        //animation: all 2s ease-in-out forwards;
+    }
+
+    .row-section{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .LandingPage__Nav-Bar{
+        height: 129px;
+    }
+
+    .LandingPage__Instruction-Container{
+        .Instruction-Left{
+            display: inline-block;
+            width: 20%;
+
+            .Instruction-Left__Logo-Image{
+                width:100%;
+                transform: rotate(-15deg);
+            }
+        }
+        .Instruction-Right{
+            display: inline-block;
+            margin-left: 10%;
+            width: 60%;
+            text-align: left;
+        }
+    }
+
+    .LandingPage__Designs{
+
+    }
+
+    .LandingPage__Products{
+
+    }
+
+    .LandingPage__Contact{
+
+    }
+}
+

@@ -5,7 +5,7 @@ import 'assets/sass/components/LandingAnimation.scss';
 
 
 import TileGroup from 'components/LandingAnimation/TileGroup/TileGroup'
-import logo from 'assets/images/logo_ever.png';
+
 
 
 /*
@@ -42,6 +42,7 @@ const everLogo = [
 	[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_BOTTOM_LEFT }],
 	[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_LEFT }],
 ];
+const logoAnimationTime = 2000;
 
 
 class LandingAnimation extends Component {
@@ -53,11 +54,12 @@ class LandingAnimation extends Component {
 			tileSize: 40,
 			rowOffSet: 0,
 			columOffSet: 0,
-			animationCompleted: false,
+			tileAnimationCompleted: false,
 			centerMap: everLogo,
+			setLogoAnimationCompleted: props.setLogoAnimationCompleted,
 		};   
-		this.setAnimationCompleted = this.setAnimationCompleted.bind(this);     
-		this.handelAnimationCompleted = this.handelAnimationCompleted.bind(this);
+		this.setTileAnimationCompleted = this.setTileAnimationCompleted.bind(this);     
+		this.handelTileAnimationCompleted = this.handelTileAnimationCompleted.bind(this);
     }
 
 	componentWillMount(){
@@ -86,15 +88,13 @@ class LandingAnimation extends Component {
 		})
 	}
 
-	setAnimationCompleted(animationCompleteTime){
-
-		console.log(this);
-		setTimeout(this.handelAnimationCompleted, animationCompleteTime * 1.1);
+	setTileAnimationCompleted(animationCompleteTime){
+		setTimeout(this.handelTileAnimationCompleted, animationCompleteTime * 1.1);
 	}
 
-	handelAnimationCompleted(){
-			console.log("animation completed");
-			this.setState({animationCompleted:true});
+	handelTileAnimationCompleted(){
+			this.setState({tileAnimationCompleted:true});
+			this.state.setLogoAnimationCompleted(logoAnimationTime);
 	}
 
 	getContainerStyle(){
@@ -116,11 +116,11 @@ class LandingAnimation extends Component {
 	}
 
     render() {
-		const {rowSize, columSize, tileSize, rowOffSet, columOffSet, centerMap, animationCompleted} = this.state;
+		const {rowSize, columSize, tileSize, rowOffSet, columOffSet, centerMap, tileAnimationCompleted} = this.state;
 
 		let containerClassName = "LandingAnimationContainer";
 		let rotateClassName = "LandingAnimationContainer__Rotate";
-		if (animationCompleted) {
+		if (tileAnimationCompleted) {
 			if (windowWidth < 600 ){
 				containerClassName = containerClassName + " postRotateLogoMobile";
 			} else {
@@ -134,7 +134,7 @@ class LandingAnimation extends Component {
         return (
 		<div className={containerClassName} style={containerStyle}>  
 			<div className={rotateClassName}>
-				<TileGroup rowSize={rowSize} columSize={columSize} tileSize={tileSize} rowOffSet={rowOffSet} columOffSet={columOffSet} centerMap={centerMap} setAnimationCompleted={this.setAnimationCompleted}></TileGroup>
+				<TileGroup rowSize={rowSize} columSize={columSize} tileSize={tileSize} rowOffSet={rowOffSet} columOffSet={columOffSet} centerMap={centerMap} setTileAnimationCompleted={this.setTileAnimationCompleted}></TileGroup>
 			</div>  
 		</div>);
     }
