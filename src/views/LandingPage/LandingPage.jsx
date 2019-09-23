@@ -10,20 +10,27 @@ class LandingPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            logoAnimationCompleted: false,
+            logoAnimationCompleted: true,
         };
 
         this.setLogoAnimationCompleted = this.setLogoAnimationCompleted.bind(this);
         this.handleLogoAnimationCompleted = this.handleLogoAnimationCompleted.bind(this);
+        this.renderLogoAnimation = this.renderLogoAnimation.bind(this);
     }
 
     setLogoAnimationCompleted(animationTime){
-        setTimeout(this.handleLogoAnimationCompleted, animationTime * 0.9);
+        setTimeout(this.handleLogoAnimationCompleted, animationTime);
     }
     handleLogoAnimationCompleted(){
         this.setState({
             logoAnimationCompleted: true,
         })
+    }
+    renderLogoAnimation(){
+        if(this.state.logoAnimationCompleted){
+            return <div></div>;
+        }
+        return <LandingAnimation setLogoAnimationCompleted={this.setLogoAnimationCompleted}></LandingAnimation>
     }
 
 
@@ -35,9 +42,12 @@ class LandingPage extends Component {
             LandingPageClass = LandingPageClass + " show";
         }
 
+        let logoAnimation = this.renderLogoAnimation();
+
+
         return(
             <div>
-                <LandingAnimation setLogoAnimationCompleted={this.setLogoAnimationCompleted}></LandingAnimation>
+                {logoAnimation}
                 <div className={LandingPageClass}>
                     <div className="LandingPage__Nav-Bar row-section">
 

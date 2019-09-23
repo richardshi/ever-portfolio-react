@@ -18,7 +18,7 @@
     }
 
     .LandingPage__Nav-Bar{
-        height: 129px;
+        height: 54px;      // 0.06 width
     }
 
     .LandingPage__Instruction-Container{
@@ -33,9 +33,18 @@
         }
         .Instruction-Right{
             display: inline-block;
+            width: 40%;
             margin-left: 10%;
-            width: 60%;
             text-align: left;
+            h1{
+                font-size: 2.5em;                     //0.031 width
+                font-family: Ubuntu;
+            }
+            h2{
+                font-size: 1.25em;                   //0.013 width
+                font-family: ProximaNova;
+                font-weight: normal;
+            }
         }
     }
 

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.css';
+
 import { PATHS } from './routePaths';
 
 import LandingPage from './views/LandingPage/LandingPage';
