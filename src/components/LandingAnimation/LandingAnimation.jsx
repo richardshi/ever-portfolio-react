@@ -31,7 +31,7 @@ const tileLogoType = {
 	TRI_BORROM_RIGHT: 5,
 
 }
-const tileMinNumber = 30;
+const tileMinNumber = 20;
 const everLogo = [
 	[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_BOTTOM_LEFT }],
 	[ { color: tileColors.DEEP, type: tileLogoType.TRI_BORROM_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_TOP_LEFT }],
