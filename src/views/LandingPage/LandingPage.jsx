@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 import 'assets/sass/views/LandingPage.scss';
 
@@ -50,7 +51,19 @@ class LandingPage extends Component {
                 {logoAnimation}
                 <div className={LandingPageClass}>
                     <div className="LandingPage__Nav-Bar row-section">
-
+                        <div className="Nav-Bar-Left">
+                            <Link>
+                                <img className="Nav-Bar-Left__Logo-Image" src={logo}></img>
+                            </Link>
+                        </div>
+                        <div className="Nav-Bar-Right">
+                            <ul className="Nav-Bar-Right__Tabs">
+                                <li>Home</li>
+                                <li>Designs</li>
+                                <li>Marketing</li>
+                                <li>About Me</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div className="LandingPage__Instruction-Container row-section">
