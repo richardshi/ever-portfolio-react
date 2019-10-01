@@ -6,17 +6,44 @@ import 'assets/sass/views/LandingPage.scss';
 import LandingAnimation from 'components/LandingAnimation/LandingAnimation';
 
 import logo from 'assets/images/logo_ever.png';
+import designPicEndLess from 'assets/images/LandingPage/endless.png'
+import designPicIDrink from 'assets/images/LandingPage/iDrink.png'
+import projectPicEatHere from 'assets/images/LandingPage/eatHere.png'
 
 class LandingPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            logoAnimationCompleted: true,
+            logoAnimationCompleted: false,
+            designList: [
+                {
+                    name: "Endless",
+                    id: "endless",
+                    image: designPicEndLess,
+                    link: "",
+                },
+                {
+                    name: "iDrink",
+                    id: "idrink",
+                    image: designPicIDrink,
+                    link: "",
+                },
+            ],
+            projectList: [
+                {
+                    name: "EAThere",
+                    id: "eathere",
+                    image: projectPicEatHere,
+                    link: "",
+                },
+            ],
         };
 
         this.setLogoAnimationCompleted = this.setLogoAnimationCompleted.bind(this);
         this.handleLogoAnimationCompleted = this.handleLogoAnimationCompleted.bind(this);
         this.renderLogoAnimation = this.renderLogoAnimation.bind(this);
+        this.renderDesignBlocks = this.renderDesignBlocks.bind(this);
+        this.renderProjectBlocks = this.renderProjectBlocks.bind(this);
     }
 
     setLogoAnimationCompleted(animationTime){
@@ -33,10 +60,42 @@ class LandingPage extends Component {
         }
         return <LandingAnimation setLogoAnimationCompleted={this.setLogoAnimationCompleted}></LandingAnimation>
     }
+    renderDesignBlocks(){
+        let designList = this.state.designList;
+
+        let designListDisplay = designList.map((designObject, index) => {
+            return(
+                <div className="design-block">
+                    <img className="design-block__Image" src={designObject.image}></img>
+                </div>
+            );
+        })
+        return(
+            <div className="design-blocks-container">
+                {designListDisplay}
+            </div>
+        );
+    }
+    renderProjectBlocks(){
+        let projectList = this.state.projectList;
+
+        let projectListDisplay = projectList.map((projectObject, index) => {
+            return(
+                <div className="project-block">
+                    <img className="project-block__Image" src={projectObject.image}></img>
+                </div>
+            );
+        })
+        return(
+            <div className="project-blocks-container">
+                {projectListDisplay}
+            </div>
+        ) 
+    }
 
 
     render(){
-        const {logoAnimationCompleted} = this.state;
+        const {logoAnimationCompleted, designList, projectList} = this.state;
         
         let LandingPageClass="LandingPage__Container";
         if (logoAnimationCompleted){
@@ -44,6 +103,8 @@ class LandingPage extends Component {
         }
 
         let logoAnimation = this.renderLogoAnimation();
+        let designBlocks = this.renderDesignBlocks();
+        let projectBlocks = this.renderProjectBlocks();
 
 
         return(
@@ -77,15 +138,26 @@ class LandingPage extends Component {
                     </div>
 
                     <div className="LandingPage__Designs row-section">
-
+                        {designBlocks}
                     </div>
 
                     <div className="LandingPage__Products row-section">
-
+                        {projectBlocks}
                     </div>
 
                     <div className="LandingPage__Contact row-section">
+                        <div>
+                            <h1>Let's Connect!</h1>
+                            <h2>Get in touch for any opportunities, or a hello</h2>
+                            <div className="Contact-Icons">
+                                <Link>
+                                    <img></img>
+                                </Link>
+                                <Link>
 
+                                </Link>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

@@ -6,6 +6,9 @@
     -webkit-transition: all 2s ease-in-out;
     transition: all 2s ease-in-out;
 
+    max-width: 1024px;
+    margin: auto;
+
     &.show{
         //visibility: visible;
         opacity: 1;
@@ -88,18 +91,40 @@
                 font-family: ProximaNova;
                 font-weight: normal;
                 color: #777777;
-
-
             }
         }
     }
 
     .LandingPage__Designs{
-
+        .design-blocks-container{
+            width: 100%;
+            margin: 137px 0px;       
+            //padding: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .design-block{
+                //margin: 20px;
+                width: 45%;
+                .design-block__Image{
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .LandingPage__Products{
-
+        .project-blocks-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .project-block{
+                width: 100%;
+                .project-block__Image{
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .LandingPage__Contact{

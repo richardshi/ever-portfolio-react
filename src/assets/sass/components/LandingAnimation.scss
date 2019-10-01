@@ -8,19 +8,19 @@
     transform-origin: center center;
 
     &.rotateLogo{
-      -webkit-animation: rotateLogoFrames 1s ease-in-out forwards;
-      -moz-animation: rotateLogoFrames 1s ease-in-out forwards;
-      -ms-animation: rotateLogoFrames 1s ease-in-out forwards;
+      -webkit-animation: rotateLogoFrames 2s ease-in-out forwards;
+      -moz-animation: rotateLogoFrames 2s ease-in-out forwards;
+      -ms-animation: rotateLogoFrames 2s ease-in-out forwards;
       -o-animation: rotateLogoFrames 2s ease-in-out forwards;
       animation: rotateLogoFrames 2s ease-in-out forwards;
     }
   }
 
   &.postRotateLogoDeskTop{
-    -webkit-animation: postRotateLogoDeskTopFrames 1s ease-in-out forwards;
-    -moz-animation: postRotateLogoDeskTopFrames 1s ease-in-out forwards;
-    -ms-animation: postRotateLogoDeskTopFrames 1s ease-in-out forwards;
-    -o-animation: postRotateLogoDeskTopFrames 2s ease-in-out forwards;
+    -webkit-animation: postRotateLogoDeskTopFrames 4s ease-in-out forwards;
+    -moz-animation: postRotateLogoDeskTopFrames 4s ease-in-out forwards;
+    -ms-animation: postRotateLogoDeskTopFrames 4s ease-in-out forwards;
+    -o-animation: postRotateLogoDeskTopFrames 4s ease-in-out forwards;
     animation: postRotateLogoDeskTopFrames 2s ease-in-out forwards;
   }
 
@@ -85,7 +85,7 @@
     100%{
       //visibility: hidden;
       display: none;
-      opacity:1;
+      opacity:0;
     }
   }
 

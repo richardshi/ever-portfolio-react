@@ -42,7 +42,7 @@ const everLogo = [
 	[ { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_RIGHT }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.LIGHT, type: tileLogoType.SQUARE }, { color: tileColors.NORMAL, type: tileLogoType.TRI_BOTTOM_LEFT }],
 	[ null, null, null, { color: tileColors.DEEP, type: tileLogoType.TRI_TOP_LEFT }],
 ];
-const logoAnimationTime = 20000;
+const logoAnimationTime = 4000;
 
 
 class LandingAnimation extends Component {
