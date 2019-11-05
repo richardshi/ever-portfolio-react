@@ -4,6 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 import 'assets/sass/views/LandingPage.scss';
 
 import LandingAnimation from 'components/LandingAnimation/LandingAnimation';
+import PublicFooter from 'components/PublicFooter/PublicFooter';
 
 import logo from 'assets/images/logo_ever.png';
 import designPicEndLess from 'assets/images/LandingPage/endless.png'
@@ -14,7 +15,7 @@ class LandingPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            logoAnimationCompleted: false,
+            logoAnimationCompleted: true,
             designList: [
                 {
                     name: "Endless",
@@ -159,7 +160,7 @@ class LandingPage extends Component {
                             </div>
                         </div>
                     </div>
-
+                    <PublicFooter/>
                 </div>
             </div>
         )

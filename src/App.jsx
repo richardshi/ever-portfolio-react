@@ -10,6 +10,7 @@ import LandingPage from './views/LandingPage/LandingPage';
 import PublicFooter from './components/PublicFooter/PublicFooter';
 import LandingAnimation from './components/LandingAnimation/LandingAnimation';
 import DesignList from './views/DesignList/DesignList';
+import DesignDetail from './views/DesignList/DesignDetails/DesignDetail'
 
 class AppRouter extends Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class AppRouter extends Component {
         <div className="App">
           <Switch>
             <PublicRoute exact path={PATHS.HOME_PATH} component={LandingPage}></PublicRoute>
-            <PublicRoute path={PATHS.DESIGN_LIST_PATH} component={DesignList}></PublicRoute>
+            <PublicRoute exact path={PATHS.DESIGN_LIST_PATH} component={DesignList}></PublicRoute>
+            <PublicRoute path={PATHS.DESIGN_DETAIL_PATH} component={DesignDetail}></PublicRoute>
             
           </Switch>
         </div>
@@ -38,7 +40,6 @@ const PublicRoute = ({ component: Component, ...rest }) => (
         <div className="App__wrapper">
           <Component {...props} />
         </div>
-        <PublicFooter/>
       </div>
     );
   }
