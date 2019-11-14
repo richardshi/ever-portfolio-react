@@ -1,0 +1,80 @@
+@if variable-exists(font-url--google){
+	@import url($font-url--google);
+}
+
+//Calculate rem values
+@function rem($size){
+  @return ($size/$base__font-size) * 1rem;
+}
+
+//Calculate %age values
+@function pntg($target, $context){
+	@return ($target/$context) * 100%;
+}
+
+//BEM(Block Element Modifier) Naming Convention
+//For Element
+@mixin e($element){
+	&__#{$element}{
+		@content;
+	}
+}
+//For Modifiers
+@mixin m($modifier){
+	&--#{$modifier}{
+		@content;
+	}
+}
+
+// Media queries -- please use this one
+@mixin for-size($break) {
+	@if $break == "medium" {
+		@media(min-width: $medium) { // 800 px > browser width >= 600 px
+			@content;
+		}
+	}
+	@else if $break == "large" {
+		@media(min-width: $large) { // browser width >= 800px
+			@content;
+ 		}
+	}
+	@else if $break == "extra-large" {
+		@media(min-width: $extra-large) { // browser width >= 800px
+			@content;
+ 		}
+	}
+	@else {
+		@error "No value could be retrieved for '#{$break}'";
+	}
+}
+
+//Hover Mixin
+
+//Turn px in rem with px fallback
+@mixin rem($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+//Pseudo-elements
+
+//Set Background
+
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}

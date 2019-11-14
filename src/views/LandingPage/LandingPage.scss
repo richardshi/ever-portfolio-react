@@ -1,3 +1,6 @@
+@import "assets/sass/utilities/_config.scss";
+@import "assets/sass/utilities/_utilities.scss";
+
 .LandingPage__Container{
     visibility: visible;
     opacity: 0;
@@ -6,8 +9,18 @@
     -webkit-transition: all 2s ease-in-out;
     transition: all 2s ease-in-out;
 
-    max-width: 1024px;
+    max-width: 300px;
     margin: auto;
+
+    @include for-size(medium){
+        max-width: 500px;
+    }
+    @include for-size(large){
+        max-width: 670px;
+    }
+    @include for-size(extra-large){
+        max-width: 800px;
+    }
 
     &.show{
         //visibility: visible;
@@ -67,20 +80,13 @@
     }
 
     .LandingPage__Instruction-Container{
-
-        .Instruction-Left{
-            display: inline-block;
-            width: 20%;
-
-            .Instruction-Left__Logo-Image{
-                width:100%;
-                transform: rotate(-15deg);
-            }
-        }
         .Instruction-Right{
             display: inline-block;
-            width: 40%;
-            margin-left: 10%;
+            width: 100%;
+            @include for-size(medium){
+                width: 40%;
+            }
+            margin: auto;
             text-align: left;
             h1{
                 font-size: 2em;                     //0.031 width
@@ -100,13 +106,32 @@
         //margin: 67px 0px;       
         .design-blocks-container{
             //padding: 20px;
-            display: flex;
+            display: block;
+            @include for-size(medium){
+                display: flex;
+            }
             flex-direction: row;
             justify-content: space-between;
             .design-block{
                 //margin: 20px;
-                width: 28vw;
-                height: 28vw;
+                
+                width: 300px;
+                height: 300px;
+                margin-top: 67px;
+
+                @include for-size(medium){
+                    margin-top: 0px;
+                    width: 216px;
+                    height: 216px;
+                }
+                @include for-size(large){
+                    width: 300px;
+                    height: 300px;
+                }
+                @include for-size(extra-large){
+                    width: 366px;
+                    height: 366px;
+                }
                 overflow: hidden;
 
                 .design-block__Image{
