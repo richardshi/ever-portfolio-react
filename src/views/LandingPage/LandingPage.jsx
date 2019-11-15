@@ -75,6 +75,7 @@ class LandingPage extends Component {
             return(
                 <div className="design-block">
                     <img className="design-block__Image" src={designObject.image}></img>
+                    <div className="design-block__Hover">{designObject.name}</div>
                 </div>
             );
         })
@@ -91,6 +92,7 @@ class LandingPage extends Component {
             return(
                 <div className="project-block">
                     <img className="project-block__Image" src={projectObject.image}></img>
+                    <div className="project-block__Hover">{projectObject.name}</div>
                 </div>
             );
         })
@@ -103,13 +105,13 @@ class LandingPage extends Component {
     renderProjectsForSchoolFinal(){
         let schoolDesign = [
             {
-                name: "Kitakata",
+                name: "Kitakata Ramen",
                 id: "kitakata",
                 image: designKitakata,
                 link: "",
             },
             {
-                name: "BigPixel",
+                name: "Big Pixel",
                 id: "bigpixel",
                 image: designBigPixel,
                 link: "",
@@ -117,7 +119,7 @@ class LandingPage extends Component {
         ];
         let schoolProjects = [
             {
-                name: "BabyCostReport",
+                name: "Baby Cost Report",
                 id: "babycostreport",
                 image: projectBabyCostReport,
                 link: "",
@@ -128,6 +130,7 @@ class LandingPage extends Component {
             return(
                 <div className="design-block">
                     <img className="design-block__Image" src={designObject.image}></img>
+                    <div className="design-block__Hover">{designObject.name}</div>
                 </div>
             );
         })
@@ -136,6 +139,7 @@ class LandingPage extends Component {
             return(
                 <div className="project-block">
                     <img className="project-block__Image" src={projectObject.image}></img>
+                    <div className="project-block__Hover">{projectObject.name}</div>
                 </div>
             );
         })
@@ -163,7 +167,7 @@ class LandingPage extends Component {
     render(){
         const {logoAnimationCompleted, designList, projectList, isSchoolProject} = this.state;
         
-        let LandingPageClass="LandingPage__Container";
+        let LandingPageClass="LandingPage";
         if (logoAnimationCompleted){
             LandingPageClass = LandingPageClass + " show";
         }
@@ -183,6 +187,7 @@ class LandingPage extends Component {
             <div>
                 {logoAnimation}
                 <div className={LandingPageClass}>
+                    <div className="LandingPage__Container">
                     <div className="LandingPage__Nav-Bar row-section">
                         <div className="Nav-Bar-Left">
                             <Link>
@@ -227,6 +232,7 @@ class LandingPage extends Component {
                                 </Link>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <PublicFooter/>
                 </div>
