@@ -42,6 +42,11 @@
 		@media(min-width: $extra-large) { // browser width >= 800px
 			@content;
  		}
+    }
+    @else if $break == "super-extra-large" {
+		@media(min-width: $super-extra-large) { // browser width >= 800px
+			@content;
+ 		}
 	}
 	@else {
 		@error "No value could be retrieved for '#{$break}'";

@@ -25,12 +25,14 @@ class LandingPage extends Component {
                     id: "endless",
                     image: designPicEndLess,
                     link: "",
+                    type: "UX/UI Design Project",
                 },
                 {
                     name: "iDrink",
                     id: "idrink",
                     image: designPicIDrink,
                     link: "",
+                    type: "UX/UI Design Project",
                 },
             ],
             projectList: [
@@ -39,6 +41,7 @@ class LandingPage extends Component {
                     id: "eathere",
                     image: projectPicEatHere,
                     link: "",
+                    type: "Website Coding",
                 },
             ],
             isSchoolProject: true,
@@ -75,7 +78,12 @@ class LandingPage extends Component {
             return(
                 <div className="design-block">
                     <img className="design-block__Image" src={designObject.image}></img>
-                    <div className="design-block__Hover">{designObject.name}</div>
+                    <div className="design-block__Hover">
+                        <div className="design-block__Hovered-Text">
+                            <h1>{designObject.name}</h1>
+                            <div>{designObject.type}</div>
+                        </div>
+                    </div>
                 </div>
             );
         })
@@ -92,7 +100,12 @@ class LandingPage extends Component {
             return(
                 <div className="project-block">
                     <img className="project-block__Image" src={projectObject.image}></img>
-                    <div className="project-block__Hover">{projectObject.name}</div>
+                    <div className="project-block__Hover">
+                        <div className="project-block__Hovered-Text">
+                            <h1>{projectObject.name}</h1>
+                            <div>{projectObject.type}</div>
+                        </div>
+                    </div>
                 </div>
             );
         })
@@ -109,12 +122,14 @@ class LandingPage extends Component {
                 id: "kitakata",
                 image: designKitakata,
                 link: "",
+                type: "Branding",
             },
             {
                 name: "Big Pixel",
                 id: "bigpixel",
                 image: designBigPixel,
                 link: "",
+                type: "UX/UI Design Project",
             },
         ];
         let schoolProjects = [
@@ -123,6 +138,7 @@ class LandingPage extends Component {
                 id: "babycostreport",
                 image: projectBabyCostReport,
                 link: "",
+                type: "Motion Graphic",
             },
         ]
 
@@ -130,7 +146,12 @@ class LandingPage extends Component {
             return(
                 <div className="design-block">
                     <img className="design-block__Image" src={designObject.image}></img>
-                    <div className="design-block__Hover">{designObject.name}</div>
+                    <div className="design-block__Hover">
+                        <div className="design-block__Hovered-Text">
+                            <h1>{designObject.name}</h1>
+                            <div>{designObject.type}</div>
+                        </div>
+                    </div>
                 </div>
             );
         })
@@ -139,7 +160,12 @@ class LandingPage extends Component {
             return(
                 <div className="project-block">
                     <img className="project-block__Image" src={projectObject.image}></img>
-                    <div className="project-block__Hover">{projectObject.name}</div>
+                    <div className="project-block__Hover">
+                        <div className="project-block__Hovered-Text">
+                            <h1>{projectObject.name}</h1>
+                            <div>{projectObject.type}</div>
+                        </div>
+                    </div>
                 </div>
             );
         })
