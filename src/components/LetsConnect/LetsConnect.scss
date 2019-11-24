@@ -1,0 +1,49 @@
+@import "assets/sass/utilities/_config.scss";
+@import "assets/sass/utilities/_utilities.scss";
+
+.LetsConnect__Contact{
+    color: #0a8167;
+    font-family: ProximaNova;
+    h1{
+        font-size: 16px;
+        font-weight: bold;
+        @include for-size(medium){
+            font-size: 32px;
+        }
+        @include for-size(extra-large){
+            font-size: 50px;
+        }
+    }
+    h2{
+        text-align: center;
+        font-size: 12px;
+        font-weight: normal;
+        width: 100%;
+        @include for-size(medium){
+            font-size: 22px;
+        }
+        @include for-size(extra-large){
+            font-size: 24px;
+            width: 337px;
+            margin: auto;
+            margin-top: 25px;
+        }
+    }
+    .Contact-Icon__List{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        width: 30%;
+        @include for-size(super-extra-large){
+            width: 19%;
+        }
+
+        .Contact-Icon{
+            width: 23%;
+        }
+        .Contact-Icon-Image{
+            width: 100%;
+        }
+    }
+}

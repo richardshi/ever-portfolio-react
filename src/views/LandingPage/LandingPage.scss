@@ -238,11 +238,12 @@
             }
         }
 
-        .LandingPage__Contact{
-            color: #0a8167;
-            font-family: ProximaNova;
-            h2{
-                font-weight: normal;
+        .LandingPage__LetsConnect { 
+            margin-top: 57px;
+            margin-bottom: 20px;
+            @include for-size(large){
+                margin-top: 167px;
+                margin-bottom: 100px;
             }
         }
     }

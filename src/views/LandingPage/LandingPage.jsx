@@ -4,7 +4,9 @@ import { NavLink, Link } from 'react-router-dom';
 import './LandingPage.scss';
 
 import LandingAnimation from 'components/LandingAnimation/LandingAnimation';
+import PublicHeader from 'components/PublicHeader/PublicHeader';
 import PublicFooter from 'components/PublicFooter/PublicFooter';
+import LetsConnect from 'components/LetsConnect/LetsConnect';
 
 import logo from 'assets/images/logo_ever.png';
 import designPicEndLess from 'assets/images/LandingPage/Brand_P1@2x.png'
@@ -214,51 +216,29 @@ class LandingPage extends Component {
                 {logoAnimation}
                 <div className={LandingPageClass}>
                     <div className="LandingPage__Container">
-                    <div className="LandingPage__Nav-Bar row-section">
-                        <div className="Nav-Bar-Left">
-                            <Link>
-                                <img className="Nav-Bar-Left__Logo-Image" src={logo}></img>
-                            </Link>
-                        </div>
-                        <div className="Nav-Bar-Right">
-                            <ul className="Nav-Bar-Right__Tabs">
-                                <li>Works</li>
-                                <li>About Me</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <div className="LandingPage__Instruction-Container row-section">
-                        <div className="Instruction-Right">
-                            <h1>Hi there, this is Ever Wu</h1>
-                            <h2>A UX/UI, Visual Designer with a focus in user experience, visual and interaction design based in San Francisco and Irvine.</h2>
-                        </div>
-                    </div>
+                        <PublicHeader/>
 
-                    <div className="LandingPage__Designs row-section">
-                        {designBlocks}
-                    </div>
-
-                    <div className="LandingPage__Products row-section">
-                        {projectBlocks}
-                    </div>
-
-                    {dynamicProjects}
-
-                    <div className="LandingPage__Contact row-section">
-                        <div>
-                            <h1>Let's Connect!</h1>
-                            <h2>Get in touch for any opportunities, or a hello</h2>
-                            <div className="Contact-Icons">
-                                <Link>
-                                    <img></img>
-                                </Link>
-                                <Link>
-
-                                </Link>
+                        <div className="LandingPage__Instruction-Container row-section">
+                            <div className="Instruction-Right">
+                                <h1>Hi there, this is Ever Wu</h1>
+                                <h2>A UX/UI, Visual Designer with a focus in user experience, visual and interaction design based in San Francisco and Irvine.</h2>
                             </div>
                         </div>
-                    </div>
+
+                        <div className="LandingPage__Designs row-section">
+                            {designBlocks}
+                        </div>
+
+                        <div className="LandingPage__Products row-section">
+                            {projectBlocks}
+                        </div>
+
+                        {dynamicProjects}
+
+                        <div className="LandingPage__LetsConnect row-section">
+                            <LetsConnect></LetsConnect>
+                        </div>
                     </div>
                     <PublicFooter/>
                 </div>

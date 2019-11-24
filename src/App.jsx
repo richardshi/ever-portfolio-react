@@ -6,6 +6,7 @@ import './App.css';
 import { PATHS } from './routePaths';
 
 import LandingPage from './views/LandingPage/LandingPage';
+import AboutPage from './views/AboutPage/AboutPage';
 
 import PublicFooter from './components/PublicFooter/PublicFooter';
 import LandingAnimation from './components/LandingAnimation/LandingAnimation';
@@ -25,6 +26,7 @@ class AppRouter extends Component {
             <PublicRoute exact path={PATHS.HOME_PATH} component={LandingPage}></PublicRoute>
             <PublicRoute exact path={PATHS.DESIGN_LIST_PATH} component={DesignList}></PublicRoute>
             <PublicRoute path={PATHS.DESIGN_DETAIL_PATH} component={DesignDetail}></PublicRoute>
+            <PublicRoute exact path={PATHS.ABOUT_PATH} component={AboutPage}></PublicRoute>
             
           </Switch>
         </div>
