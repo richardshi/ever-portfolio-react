@@ -16,7 +16,7 @@ class PublicHeader extends Component {
             <div>
                 <div className="PublicHeader__Nav-Bar">
                     <div className="Nav-Bar-Left">
-                        <Link>
+                        <Link to={PATHS.HOME_PATH}>
                             <img className="Nav-Bar-Left__Logo-Image" src={logo}></img>
                         </Link>
                     </div>

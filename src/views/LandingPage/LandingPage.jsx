@@ -15,6 +15,7 @@ import projectPicEatHere from 'assets/images/LandingPage/Brand_P3@2x.png'
 import designKitakata from 'assets/images/LandingPage/Brand_P4@2x.png'
 import designBigPixel from 'assets/images/LandingPage/Brand_P5@2x.png'
 import projectBabyCostReport from 'assets/images/LandingPage/Brand_P6@2x.png'
+import { PATHS } from '../../routePaths';
 
 class LandingPage extends Component {
     constructor(props){
@@ -79,13 +80,15 @@ class LandingPage extends Component {
         let designListDisplay = designList.map((designObject, index) => {
             return(
                 <div className="design-block">
-                    <img className="design-block__Image" src={designObject.image}></img>
-                    <div className="design-block__Hover">
-                        <div className="design-block__Hovered-Text">
-                            <h1>{designObject.name}</h1>
-                            <div>{designObject.type}</div>
+                    <Link to={`/design/${designObject.id}`}>
+                        <img className="design-block__Image" src={designObject.image}></img>
+                        <div className="design-block__Hover">
+                            <div className="design-block__Hovered-Text">
+                                <h1>{designObject.name}</h1>
+                                <div>{designObject.type}</div>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             );
         })

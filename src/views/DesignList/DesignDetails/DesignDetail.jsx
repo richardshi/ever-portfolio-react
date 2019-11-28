@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import EndlessDetail from 'views/DesignList/DesignDetails/EndlessDetail'
+import EndlessDetail from 'views/DesignList/DesignDetails/EndlessDetail/EndlessDetail'
 
 class DesignDetail extends Component {
     constructor(props){
@@ -16,16 +16,13 @@ class DesignDetail extends Component {
         let designDetailComponent = <div></div>;
         switch (name){
             case "endless":
-                designDetailComponent = EndlessDetail;
+                designDetailComponent = <EndlessDetail></EndlessDetail>;
                 break;
             default:
-                    designDetailComponent = <div></div>;
-
+                designDetailComponent = <div></div>;
         }
         return(
             <div id="Design_Detail">
-                <h1>Design Detail</h1>
-                {name}
                 {designDetailComponent}
             </div>
         )
