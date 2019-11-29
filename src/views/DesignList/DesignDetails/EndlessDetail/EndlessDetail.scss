@@ -21,6 +21,34 @@
             max-width: 1140px;
         }
     }
+    .Endless-Detail__Secondary-Container{
+        width: 88%;
+        margin: auto;
+    }
+
+    h4{
+        font-family: $font-family--secondary;
+        text-align: left;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+    h5{
+        font-family: $font-family--secondary;
+        text-align: left;
+        margin-bottom: 1em;
+        font-size: 20px;
+    }
+    p{
+        font-family: $font-family--primary;
+        text-align: left;
+        font-weight: 300;
+        line-height: 1.25;
+    }
+    .title-light{
+        font-weight: normal;
+    }
+
     .Endless-Detail__Banner-Wrapper{
         width: 100%;
         .Endless-Detail__Banner-Background{
@@ -50,7 +78,7 @@
                     .Banner-Menu-Selection__Name{
                         width: 100%;
                         height: auto;
-                        padding: 25% 0;
+                        padding: 20% 0;
                         //text-shadow: 1px 0px 0px white;
                         
                     }
@@ -113,17 +141,66 @@
                 width: 100%;
             }
             .Section__Endless-Banner{
-                
+                width: 100%;
+                height: 166px;
+                background-color: rgba(240, 243, 189, 0.2);
+                .Endless-Banner-Container{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    height: 100%;
+                    .Endless-Banner-Left{
+                        position: relative;
+                        width: 15%;
+                        img{
+                            width: 100%;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .Endless-Banner-Right{
+                        position: relative;
+                        width: 80%;
+                        h4{
+                            position: absolute;
+                            margin: 0;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            font-size: 20px;
+                            font-weight: 300;
+                        }
+                    }  
+                } 
+            }
+            .Section__LeftImage-Sections{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .LeftImage-Sections-Left{
+                    width: 15%;
+                    
+                }
+                .LeftImage-Sections-Right{
+                    width: 60%;
+                }
             }
 
-            h4{
-                font-family: $font-family--secondary;
+            .Section__Three-Sections{
+                width: 100%;
+                margin-top: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .Section__Three-Section{
+                    width: 25%;
+                }
+
             }
-            p{
-                font-family: $font-family--primary;
-                font-weight: 300;
-                line-height: 1.25;
-            }
+
         }
 
     }
