@@ -25,6 +25,12 @@
         width: 88%;
         margin: auto;
     }
+    .Endless-Detail__Image-full-width{
+        width: 100%;
+    }
+    .Endless-Detail__Image-fixed-height{
+        height: 300px;
+    }
 
     h4{
         font-family: $font-family--secondary;
@@ -45,6 +51,24 @@
         font-weight: 300;
         line-height: 1.25;
     }
+    ul {
+        list-style: none;
+
+        li{
+            font-family: $font-family--primary;
+            font-weight: 300;
+            line-height: 1.5;
+            &::before{
+                content: "\2022";
+                color: #047ab1;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+    }
+
     .title-light{
         font-weight: normal;
     }
@@ -73,7 +97,7 @@
                     &:hover, &:active{
                         //text-shadow: 1px 0px 0px white;
                         font-weight: bold;
-                        background-color: black;
+                        //background-color: black;
                     }
                     .Banner-Menu-Selection__Name{
                         width: 100%;
@@ -91,11 +115,21 @@
         }
     }
     .Endless-Detail__Section-List{
+
         .Endless-Detail__Section{
             display: none;
+            /*
+            &.default{
+                display: block;
+                
+            }
             &:target{
                 display: block;
             }
+            &.default :target ~ {
+                display: none;
+            }
+            */
 
             .Section__Title{
                 margin-top: 50px;
@@ -134,13 +168,37 @@
                     width: 40%;
                     text-align: left;
                 }
+                .Section__Half-Section{
+                    width: 50%;
+                    text-align: left;
+                    h4{
+                        margin: 0;
+                    }
+                    ul {
+                        list-style: none;
+
+                        li{
+                            font-family: $font-family--primary;
+                            font-weight: 300;
+                            line-height: 1.5;
+                            &::before{
+                                content: "\2022";
+                                color: #047ab1;
+                                font-weight: bold;
+                                display: inline-block; 
+                                width: 1em;
+                                margin-left: -1em;
+                            }
+                        }
+                    }
+                }
 
             }
 
             .Section__Full-Width-Banner{
                 width: 100%;
             }
-            .Section__Endless-Banner{
+            .Section-Intro__Banner{
                 width: 100%;
                 height: 166px;
                 background-color: rgba(240, 243, 189, 0.2);
@@ -181,7 +239,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 .LeftImage-Sections-Left{
-                    width: 15%;
+                    width: 30%;
                     
                 }
                 .LeftImage-Sections-Right{
@@ -198,11 +256,141 @@
                 .Section__Three-Section{
                     width: 25%;
                 }
+            }
+            .Section-Research__Banner{
+                background-color: rgba(235, 255, 255, 0.69);
+            }
+            .Section__Three-Selection-Bar{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                .Three-Section-Bar__Selection{
+                    position: relative;
+                    width: 33%;
+                    height: 52px;
+                    color: #1b8caa;
+                    background-color: white;
+                    border-radius: 8px 8px 0 0;  
+                    border: solid 1px #24668d;
+                    border-bottom: solid 5px #24668d;
+                    text-align: center;
+                    &:hover, &:active{
+                        //text-shadow: 1px 0px 0px white;
+                        font-weight: bold;
+                        //background-color: black;
+                    }
+                    .Three-Section-Bar__Selection-Name{
+                        position: absolute;
+                        width: 100%;
+                        height: auto;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        //padding: 20% 0;
+                        //text-shadow: 1px 0px 0px white;
+                    }
 
+                }
+                .Three-Selection-Bar-Blue{
+                    &.activated{  
+                        color: white;
+                        background-color: #24668d;
+                        font-weight: bold;
+                    } 
+                }
+                .Three-Selection-Bar-Green{
+                    color: black;
+                    background-color: white;
+                    border: solid 1px #57c49b;
+                    border-bottom: solid 5px #57c49b;
+                    &.activated{  
+                        color: white;
+                        background-color: #57c49b;
+                        font-weight: bold;
+                    } 
+                }
+            }
+            .Section__Three-Selection-List{
+                .Section__Three-Selection-Container{
+                    display: none;
+                    margin-top: 35px;
+                    .Section__Three-Selection-Header{
+                        margin-top: 33px;
+                        margin-bottom: 33px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .Three-Selection-Header-Left{
+                            width: 10%;
+                        }
+                        .Three-Selection-Header-Right{
+                            width: 80%;
+                            img{
+                                display: block;
+                                margin: auto;
+                            }
+                        }
+                    }
+                    h5{
+                        margin: 0;
+                        font-weight: normal;
+                        color: #047ab1;
+                    }
+                }
+                .show {
+                    display: block;
+                }
+            }
+            .Section__Branding-Banner{
+                background-color: rgba(198, 198, 198, 0.24);
+                .Typography-Clarendon{
+                    font-family: ClarendonLTStd;
+                }
+                .Typography-IBM-Plex{
+                    font-family: IBMPlexSans;
+                }
+            }
+            .Section__Key-Screen-List{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                h4{
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+                .Key-Screen-Shot{
+                    width: 23%;
+                    h4{
+                        text-align: center;
+                        margin-top: 20px;
+                        
+                    }
+                }
+                .Key-Screen-Description{
+                    width: 29%;
+                    padding: 0 20px;
+                }
             }
 
         }
-
+        
+        .show {
+            display: block;
+        }
+        /*
+        .default {
+            display:block;
+        }
+        
+        :target {
+            display:block;
+        }
+        
+        :target ~ .default {
+            display:none;
+        }
+        */
     }
+
 
 }
