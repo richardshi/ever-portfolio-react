@@ -104,13 +104,15 @@ class LandingPage extends Component {
         let projectListDisplay = projectList.map((projectObject, index) => {
             return(
                 <div className="project-block">
-                    <img className="project-block__Image" src={projectObject.image}></img>
-                    <div className="project-block__Hover">
-                        <div className="project-block__Hovered-Text">
-                            <h1>{projectObject.name}</h1>
-                            <div>{projectObject.type}</div>
+                    <Link to={`/design/${projectObject.id}`}>
+                        <img className="project-block__Image" src={projectObject.image}></img>
+                        <div className="project-block__Hover">
+                            <div className="project-block__Hovered-Text">
+                                <h1>{projectObject.name}</h1>
+                                <div>{projectObject.type}</div>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             );
         })

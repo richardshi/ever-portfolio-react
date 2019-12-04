@@ -22,7 +22,7 @@ class PublicHeader extends Component {
                     </div>
                     <div className="Nav-Bar-Right">
                         <ul className="Nav-Bar-Right__Tabs">
-                            <Link to={PATHS.ABOUT_PATH} className="Nav-Bar-Right__Tab">About Me</Link>
+                            <Link to={PATHS.ABOUT_PATH} className="Nav-Bar-Right__Tab">About</Link>
                             <Link to={PATHS.HOME_PATH} className="Nav-Bar-Right__Tab">Works</Link>
                         </ul>
                     </div>

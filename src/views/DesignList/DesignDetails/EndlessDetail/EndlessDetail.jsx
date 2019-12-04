@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import PublicHeader from 'components/PublicHeader/PublicHeader'
-import LetsConnect from 'components/LetsConnect/LetsConnect';
 import PublicFooter from 'components/PublicFooter/PublicFooter';
 
 import './EndlessDetail.scss'
@@ -80,8 +79,8 @@ class EndlessDetail extends Component {
                     active: false,
                 },
                 {
-                    name: "VIDEO",
-                    id: "Section_Video",
+                    name: "POSTER",
+                    id: "Section_Poster",
                     active: false,
                 }
             ],
@@ -180,10 +179,13 @@ class EndlessDetail extends Component {
         let navBarMenu = this.state.navBarMenu;
         let SectionClassList = [];
         for(let i=0; i<navBarMenu.length; i++){
+            /*
             SectionClassList[i] = "";
             if(navBarMenu[i].active){
                 SectionClassList[i] = "show";
             }
+            */
+           SectionClassList[i] = "show";
         }
         return SectionClassList;
     }
@@ -314,7 +316,7 @@ class EndlessDetail extends Component {
                                 </div>
                                 <div className="Section__Two-Sections Endless-Detail__Container">
                                     <div className="Section__Two-Section">
-                                        <button>View Case Study</button>
+                                        <button className="button-CaseStudy">View Case Study</button>
                                     </div>
                                     <div className="Section__Two-Section">
                                         <h4>Date Created</h4>
@@ -709,13 +711,7 @@ class EndlessDetail extends Component {
                                     <h4>User Testing</h4>
                                     <img src={EndlessUserTest} className="Endless-Detail__Image-full-width"></img>
                                 </div>
-                                
-                            </div>
-                            <div id="Section_Video" className={`Endless-Detail__Section ${SectionClasses[4]}`}>
-                                <div className="Section__Title Endless-Detail__Container ">
-                                    <h1>05</h1>
-                                    <h2>FINAL DESIGN</h2>
-                                </div>
+
                                 <div className="Endless-Detail__Container">
                                     <h4>Key Screens</h4>
                                     <div className="Section__Key-Screen-List">
@@ -773,28 +769,27 @@ class EndlessDetail extends Component {
                                             <p>Search the interesting book you like, such as “Art book”, or you can sort by the nearby books, then click the “Get Direction” button to find the book.</p>
                                         </div>
                                     </div>
-                                    <div className="Endless-Detail__Container">
-                                        <h4>Advertisements</h4>
-                                        <div className="Endless-Detail__Secondary-Container">
-                                            <img src={EndlessAdvertising} className="Endless-Detail__Image-full-width"></img>
-                                        </div>
+                                </div>
+                                
+                            </div>
+                            <div id="Section_Poster" className={`Endless-Detail__Section ${SectionClasses[4]}`}>
+                                <div className="Section__Title Endless-Detail__Container ">
+                                    <h1>05</h1>
+                                    <h2>POSTER</h2>
+                                </div>
+                                
+                                <div className="Endless-Detail__Container">
+                                    <h4>Advertisements</h4>
+                                    <div className="Endless-Detail__Secondary-Container">
+                                        <img src={EndlessAdvertising} className="Endless-Detail__Image-full-width"></img>
                                     </div>
                                 </div>
-                            </div>
-
-
-
-                            <div className="Section__Three-Sections Endless-Detail__Container">
-                            </div>
-                            <div className="Section__LeftImage">
                             </div>
                             
                         </div>
                     </div>
-                    <div className="Endless-Detail__Container">
-
-                    </div>
                 </div>
+                <PublicFooter></PublicFooter>
             </div>
         )
     }
