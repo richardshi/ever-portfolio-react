@@ -26,7 +26,15 @@ class DesignDetail extends Component {
             case "eathere":
                 designDetailComponent = <EatHereDetail></EatHereDetail>;
                 break;
-
+            case "kitakata":
+                designDetailComponent = <EatHereDetail></EatHereDetail>;
+                break;
+            case "bigpixel":
+                designDetailComponent = <EatHereDetail></EatHereDetail>;
+                break;
+            case "babycostreport":
+                designDetailComponent = <EatHereDetail></EatHereDetail>;
+                break;
             default:
                 designDetailComponent = <div></div>;
         }

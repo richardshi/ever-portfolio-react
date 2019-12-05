@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PublicHeader from 'components/PublicHeader/PublicHeader'
 import PublicFooter from 'components/PublicFooter/PublicFooter';
 
-import './EatHereDetail.scss'
+import './KitakataDetail.scss'
 
 import EatHereBannerSmall from 'assets/images/EatHerePage/Eathere_1.png'
 import EatHereBannerMedium from 'assets/images/EatHerePage/Eathere_1@2x.png'
@@ -39,40 +39,9 @@ import EatHereKFEditProfile from 'assets/images/EatHerePage/Eathere_app_8@3x.png
 import EatHereKFAddFood from 'assets/images/EatHerePage/Eathere_app_9@3x.png';
 
 
-import IDrinkWomen from 'assets/images/IDrinkPage/iDrink-4@3x.png';
-import IDrinkMen from 'assets/images/IDrinkPage/iDrink-4-1@3x.png';
-import IDrinkAmount from 'assets/images/IDrinkPage/iDrink-3@3x.png';
-import IDrinkTargetAudience from 'assets/images/IDrinkPage/iDrink-7@3x.png';
 
 
-/*
-import IDrinkColorPalette from 'assets/images/IDrinkPage/iDrink-12@3x.png';
-import IDrinkTypography from 'assets/images/IDrinkPage/iDrink-13@3x.png'
-import IDrinkLogoDesign from 'assets/images/IDrinkPage/iDrink-14@3x.png';
-*/
-import IDrinkLogoGuideLight from 'assets/images/IDrinkPage/iDrink-15-1@3x.png';
-import IDrinkLogoGuideDark from 'assets/images/IDrinkPage/iDrink-15@3x.png';
-
-
-import IDrinkUserFlow from 'assets/images/IDrinkPage/iDrink-17@3x.png';
-import IDrinkUserTesting from 'assets/images/IDrinkPage/iDrink-testing@3x.png';
-
-
-
-import IDrinkUserFlowWeb from 'assets/images/IDrinkPage/iDrink-21@3x.png'
-
-import IDrinkWebHome from 'assets/images/IDrinkPage/iDrink-22@3x.png'
-import IDrinkWebLanding from 'assets/images/IDrinkPage/iDrink-23@3x.png'
-import IDrinkWebProductDetail from 'assets/images/IDrinkPage/iDrink-24@3x.png'
-import IDrinkWebCart from 'assets/images/IDrinkPage/iDrink-25@3x.png'
-import IDrinkPrototype from 'assets/images/IDrinkPage/iDrink-26@3x.png'
-import IDrinkIOTBottle from 'assets/images/IDrinkPage/iDrink-27@3x.png'
-import IDrinkIOTWatch from 'assets/images/IDrinkPage/iDrink-28@3x.png'
-
-
-
-
-class EatHereDetail extends Component {
+class KitakataDetail extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -371,6 +340,7 @@ class EatHereDetail extends Component {
                                     <img src={EatHereLogoDesign} className="EatHere-Detail__Image-full-width"></img>
                                 </div>
                             </div>
+                            
                             <div className="EatHere-Detail__Container">
                                 <h4>Iconography</h4>
                                 <div className="EatHere-Detail__Secondary-Container">
@@ -491,4 +461,4 @@ class EatHereDetail extends Component {
         )
     }
 }
-export default EatHereDetail;
+export default KitakataDetail;

@@ -50,12 +50,12 @@ import IDrinkIOTBottle from 'assets/images/IDrinkPage/iDrink-27@3x.png'
 import IDrinkIOTWatch from 'assets/images/IDrinkPage/iDrink-28@3x.png'
 
 
-import EndlessPersonas1 from 'assets/images/IDrinkPage/Albert@3x.png'
-import EndlessPersonas1_1 from 'assets/images/IDrinkPage/Albert_1@3x.png'
-import EndlessPersonas2 from 'assets/images/IDrinkPage/Scarlett@3x.png'
-import EndlessPersonas2_1 from 'assets/images/IDrinkPage/Scarlett_1@3x.png'
-import EndlessPersonas3 from 'assets/images/IDrinkPage/Joseph@3x.png'
-import EndlessPersonas3_1 from 'assets/images/IDrinkPage/Joseph_1@3x.png'
+import IDrinkPersonas1 from 'assets/images/IDrinkPage/Albert@3x.png'
+import IDrinkPersonas1_1 from 'assets/images/IDrinkPage/Albert_1@3x.png'
+import IDrinkPersonas2 from 'assets/images/IDrinkPage/Scarlett@3x.png'
+import IDrinkPersonas2_1 from 'assets/images/IDrinkPage/Scarlett_1@3x.png'
+import IDrinkPersonas3 from 'assets/images/IDrinkPage/Joseph@3x.png'
+import IDrinkPersonas3_1 from 'assets/images/IDrinkPage/Joseph_1@3x.png'
 
 
 class IDrinkDetail extends Component {
@@ -89,23 +89,6 @@ class IDrinkDetail extends Component {
                     active: false,
                 }
             ],
-            CABarMenu: [
-                {
-                    name: "Booxup",
-                    id: "CA_Booxup",
-                    active: true,
-                },
-                {
-                    name: "Litsy",
-                    id: "CA_Litsy",
-                    active: false,
-                },
-                {
-                    name: "Bookly",
-                    id: "CA_Bookly",
-                    active: false,
-                }
-            ],
             PersonasBarMenu: [
                 {
                     name: "Albert Conville",
@@ -127,28 +110,10 @@ class IDrinkDetail extends Component {
         this.renderNavMenu = this.renderNavMenu.bind(this);
         this.updateNavMenu = this.updateNavMenu.bind(this);
         this.renderSectionClasses = this.renderSectionClasses.bind(this);
-        this.renderCompetitorsAnalysisBar = this.renderCompetitorsAnalysisBar.bind(this);
-        this.updateCABarMenu = this.updateCABarMenu.bind(this);
-        this.renderCABarClasses = this.renderCABarClasses.bind(this);
         this.renderedPersonasBar = this.renderedPersonasBar.bind(this);
         this.updatePersonasBarMenu = this.updatePersonasBarMenu.bind(this);
-        this.renderCABarClasses = this.renderCABarClasses.bind(this);
-
     }
 
-    /**
-     *      For html and js
-
-                        <div id="Banner-Menu-Endless" className="IDrink-Detail__Banner-Menu">
-                            <nav className="IDrink-Detail__Container Banner-Menu-Wrapper">
-                                <a href="#Section_Intro" class="Banner-Menu-Selection">INTRO</a>
-                                <a href="#Section_Research" class="Banner-Menu-Selection">RESEARCH</a>
-                                <a href="#Section_Branding" class="Banner-Menu-Selection">BRANDING</a>
-                                <a href="#Section_Interaction" class="Banner-Menu-Selection">INTERACTION</a>
-                                <a href="#Section_Video" class="Banner-Menu-Selection">VIDEO</a>
-                            </nav>
-                        </div>
-     */
     renderNavMenu(){
         let navBarMenu = this.state.navBarMenu;
         let navBarSelections = navBarMenu.map((navBarSelection, index) => {
@@ -160,7 +125,7 @@ class IDrinkDetail extends Component {
             )
         })
         return (
-            <div id="Banner-Menu-Endless" className="IDrink-Detail__Banner-Menu">
+            <div id="Banner-Menu-IDrink" className="IDrink-Detail__Banner-Menu">
                 <nav className="IDrink-Detail__Container Banner-Menu-Wrapper">
                     {navBarSelections}
                 </nav>
@@ -193,47 +158,6 @@ class IDrinkDetail extends Component {
            SectionClassList[i] = "show";
         }
         return SectionClassList;
-    }
-    
-    renderCompetitorsAnalysisBar(){
-        let CABarMenu = this.state.CABarMenu;
-        let CABarMenuSelections = CABarMenu.map((navBarSelection, index) => {
-            let activeClass = navBarSelection.active ? " activated" : "";
-            return (
-                <div className={`Three-Section-Bar__Selection Three-Selection-Bar-Blue ${activeClass}`} onClick={()=>this.updateCABarMenu(index)}>
-                    <div className="Three-Section-Bar__Selection-Name">{navBarSelection.name}</div>
-                </div>
-            )
-        })
-        return (
-            <div id="" className="Section__Three-Selection-Bar">
-                {CABarMenuSelections}
-            </div>
-        )
-    }
-
-    updateCABarMenu(index){
-        let CABarMenu = this.state.CABarMenu;
-        for(let i=0; i<CABarMenu.length; i++){
-            if (i == index){
-                CABarMenu[i].active = true;
-            } else {
-                CABarMenu[i].active = false;
-            }
-        }
-        this.setState({CABarMenu: CABarMenu})
-    }
-
-    renderCABarClasses(){
-        let CABarMenu = this.state.CABarMenu;
-        let CASectionClassList = [];
-        for(let i=0; i<CABarMenu.length; i++){
-            CASectionClassList[i] = "";
-            if(CABarMenu[i].active){
-                CASectionClassList[i] = "show";
-            }
-        }
-        return CASectionClassList;
     }
 
     renderedPersonasBar(){
@@ -278,7 +202,7 @@ class IDrinkDetail extends Component {
     }
 
     render(){
-        const{ navBarMenu, CABarMenu } = this.state;
+        const{ navBarMenu } = this.state;
         let renderedNavBarMenu = this.renderNavMenu();
         let SectionClasses = this.renderSectionClasses();
         let renderedPersonasBar = this.renderedPersonasBar();
@@ -337,7 +261,7 @@ class IDrinkDetail extends Component {
                                 <div className="IDrink-Detail__Secondary-Container">
                                     <div className="Section__LeftImage-Sections">
                                         <div className="LeftImage-Sections-Right">
-                                            <p> After the research, I found that for men, that’s drinking five alcoholic beverages more times in a month; and for women, it’s four drinks under the same conditions. From 2015 through 2017,  the rate of Millennials who reported that they had consumed any amount of alcohol in the preceding month remained pretty steady, at more than 60 percent.</p>
+                                            <p>After the research, I found that for men, that’s drinking five alcoholic beverages more times in a month; and for women, it’s four drinks under the same conditions. From 2015 through 2017,  the rate of Millennials who reported that they had consumed any amount of alcohol in the preceding month remained pretty steady, at more than 60 percent.</p>
                                             <p>And also if you don’t drink enough water can cause dehydration and adverse symptoms, including fatigue, headache, weakened immunity, and dry skin.</p>
                                         </div>
                                         <div className="LeftImage-Sections-Left"><img src={IDrinkProblems} className="IDrink-Detail__Image-full-width"></img></div>
@@ -431,14 +355,14 @@ class IDrinkDetail extends Component {
                                             <div className="Section__Half-Section">
                                                 <div className="Section__Inner-Half-Sections">
                                                     <div className="Section__Inner-Half-Section">
-                                                        <img src={EndlessPersonas1} className="IDrink-Detail__Image-full-width"></img>
+                                                        <img src={IDrinkPersonas1} className="IDrink-Detail__Image-full-width"></img>
                                                         <h4>Albert Conville</h4>
                                                     </div>
                                                     <div className="Section__Inner-Half-Section">
                                                         <h5>About</h5>
                                                         <p>Age: 55yrs <br/>Position: Surgeon <br/>Live: Portland<br/>Hobby: Hiking</p>
                                                         <h5>Personality</h5>
-                                                        <img src={EndlessPersonas1_1} className="IDrink-Detail__Image-full-width"></img>
+                                                        <img src={IDrinkPersonas1_1} className="IDrink-Detail__Image-full-width"></img>
                                                     </div>
                                                 </div>
                                                 
@@ -459,14 +383,14 @@ class IDrinkDetail extends Component {
                                             <div className="Section__Half-Section">
                                                 <div className="Section__Inner-Half-Sections">
                                                     <div className="Section__Inner-Half-Section">
-                                                        <img src={EndlessPersonas2} className="IDrink-Detail__Image-full-width"></img>
+                                                        <img src={IDrinkPersonas2} className="IDrink-Detail__Image-full-width"></img>
                                                         <h4>Scarlett Devon</h4>
                                                     </div>
                                                     <div className="Section__Inner-Half-Section">
                                                         <h5>About</h5>
                                                         <p>Age: 31yrs <br />Position: Piano Teacher <br />Live: San Francisco <br />Hobby: Running</p>
                                                         <h5>Personality</h5>
-                                                        <img src={EndlessPersonas2_1} className="IDrink-Detail__Image-full-width"></img>
+                                                        <img src={IDrinkPersonas2_1} className="IDrink-Detail__Image-full-width"></img>
                                                     </div>
                                                 </div>
                                                 
@@ -484,14 +408,14 @@ class IDrinkDetail extends Component {
                                             <div className="Section__Half-Section">
                                                 <div className="Section__Inner-Half-Sections">
                                                     <div className="Section__Inner-Half-Section">
-                                                        <img src={EndlessPersonas3} className="IDrink-Detail__Image-full-width"></img>
+                                                        <img src={IDrinkPersonas3} className="IDrink-Detail__Image-full-width"></img>
                                                         <h4>Joseph Cox</h4>
                                                     </div>
                                                     <div className="Section__Inner-Half-Section">
                                                         <h5>About</h5>
                                                         <p>Age: 21yrs<br/>Position: college student<br/>Live: Saratoga<br/>Hobby: Surfing, Football</p>
                                                         <h5>Personality</h5>
-                                                        <img src={EndlessPersonas3_1} className="IDrink-Detail__Image-full-width"></img>
+                                                        <img src={IDrinkPersonas3_1} className="IDrink-Detail__Image-full-width"></img>
                                                     </div>
                                                 </div>
                                                 

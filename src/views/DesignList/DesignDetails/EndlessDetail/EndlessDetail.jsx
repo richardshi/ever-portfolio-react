@@ -316,7 +316,7 @@ class EndlessDetail extends Component {
                                 </div>
                                 <div className="Section__Two-Sections Endless-Detail__Container">
                                     <div className="Section__Two-Section">
-                                        <button className="button-CaseStudy">View Case Study</button>
+                                        <a href="http://everwudesign.com/Wei_Wu_case_study.pdf"><button className="button-CaseStudy">View Case Study</button></a>
                                     </div>
                                     <div className="Section__Two-Section">
                                         <h4>Date Created</h4>
