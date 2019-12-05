@@ -152,6 +152,7 @@ class LandingPage extends Component {
         let designListDisplay = schoolDesign.map((designObject, index) => {
             return(
                 <div className="design-block">
+                    <Link to={`/design/${designObject.id}`}>
                     <img className="design-block__Image" src={designObject.image}></img>
                     <div className="design-block__Hover">
                         <div className="design-block__Hovered-Text">
@@ -159,6 +160,7 @@ class LandingPage extends Component {
                             <div>{designObject.type}</div>
                         </div>
                     </div>
+                    </Link>
                 </div>
             );
         })
@@ -166,6 +168,7 @@ class LandingPage extends Component {
         let projectListDisplay = schoolProjects.map((projectObject, index) => {
             return(
                 <div className="project-block">
+                    <Link to={`/design/${projectObject.id}`}>
                     <img className="project-block__Image" src={projectObject.image}></img>
                     <div className="project-block__Hover">
                         <div className="project-block__Hovered-Text">
@@ -173,6 +176,7 @@ class LandingPage extends Component {
                             <div>{projectObject.type}</div>
                         </div>
                     </div>
+                    </Link>
                 </div>
             );
         })

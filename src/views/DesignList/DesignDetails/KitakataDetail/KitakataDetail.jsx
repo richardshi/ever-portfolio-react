@@ -5,23 +5,48 @@ import PublicFooter from 'components/PublicFooter/PublicFooter';
 
 import './KitakataDetail.scss'
 
+import KitakataBannerSmall from 'assets/images/KitakataPage/Ramen_1.png';
+import KitakataBannerMedium from 'assets/images/KitakataPage/Ramen_1@2x.png';
+import KitakataBannerLarge from 'assets/images/KitakataPage/Ramen_1@3x.png';
+
+import KitakataCSWeb from 'assets/images/KitakataPage/Ramen_2@3x.png';
+import KitakataCSMenu from 'assets/images/KitakataPage/Ramen_3@3x.png';
+import KitakataCSLogo from 'assets/images/KitakataPage/Ramen_4@3x.png';
+
+import KitakataGoalWeb from 'assets/images/KitakataPage/Ramen_5@3x.png';
+import KitakataGoalMenu from 'assets/images/KitakataPage/Ramen_6@3x.png';
+import KitakataGoalLogo from 'assets/images/KitakataPage/Ramen_7@3x.png';
+
+import KitakataMoodBoard from 'assets/images/KitakataPage/Ramen_8@3x.png';
+import KitakataColorPatternDark from 'assets/images/KitakataPage/Ramen_9@3x.png';
+import KitakataColorPatternLight from 'assets/images/KitakataPage/Ramen_10@3x.png';
+import KitakataTypograph from 'assets/images/KitakataPage/Ramen_11@3x.png';
+import KitakataLogoDesign from 'assets/images/KitakataPage/Ramen_12@3x.png';
+import KitakataLogoApp from 'assets/images/KitakataPage/Ramen_13@3x.png';
+import KitakataLogoDark from 'assets/images/KitakataPage/Ramen_14@3x.png';
+
+import KitakataAdBus from 'assets/images/KitakataPage/Ramen_15@3x.png';
+import KitakataAdStore from 'assets/images/KitakataPage/Ramen_16@3x.png';
+import KitakataAdMobileApp from 'assets/images/KitakataPage/Ramen_17@3x.png';
+import KitakataAdTabletApp from 'assets/images/KitakataPage/Ramen_18@3x.png';
+
+
+
+
 import EatHereBannerSmall from 'assets/images/EatHerePage/Eathere_1.png'
 import EatHereBannerMedium from 'assets/images/EatHerePage/Eathere_1@2x.png'
 import EatHereBannerLarge from 'assets/images/EatHerePage/Eathere_1@3x.png'
 
-import EatHereLogo from 'assets/images/EatHerePage/Eathere_2@3x.png'
+//import EatHereLogo from 'assets/images/EatHerePage/Eathere_2@3x.png'
 import EatHereProblems from 'assets/images/EatHerePage/Eathere_3@3x.png'
 import EatHereGoals from 'assets/images/EatHerePage/Artboard-14@3x.png'
 
-import EatHerePersonal from 'assets/images/EatHerePage/Eathere_7@3x.png'
-import EatHerePersonal_1 from 'assets/images/EatHerePage/Artboard-17@3x.png'
-
-import EatHereMoodBoard from 'assets/images/EatHerePage/Eathere_8@3x.png'
-import EatHereColorPaletten_1 from 'assets/images/EatHerePage/Eathere_9@3x.png'
-import EatHereColorPaletten_2 from 'assets/images/EatHerePage/Eathere_10@3x.png'
-import EatHereColorPaletten_3 from 'assets/images/EatHerePage/Eathere_11@3x.png'
-import EatHereTypography from 'assets/images/EatHerePage/Eathere_16@3x.png'
-import EatHereLogoDesign from 'assets/images/EatHerePage/Eathere_12@3x.png'
+//import EatHereMoodBoard from 'assets/images/EatHerePage/Eathere_8@3x.png'
+//import EatHereColorPaletten_1 from 'assets/images/EatHerePage/Eathere_9@3x.png'
+//import EatHereColorPaletten_2 from 'assets/images/EatHerePage/Eathere_10@3x.png'
+//import EatHereColorPaletten_3 from 'assets/images/EatHerePage/Eathere_11@3x.png'
+//import EatHereTypography from 'assets/images/EatHerePage/Eathere_16@3x.png'
+//import EatHereLogoDesign from 'assets/images/EatHerePage/Eathere_12@3x.png'
 import EatHereAnalysis from 'assets/images/EatHerePage/Artboard-13@3x.png'
 import EatHereIcon from 'assets/images/EatHerePage/Eathere_13@3x.png'
 
@@ -92,9 +117,7 @@ class KitakataDetail extends Component {
         };
         this.renderNavMenu = this.renderNavMenu.bind(this);
         this.updateNavMenu = this.updateNavMenu.bind(this);
-        this.renderSectionClasses = this.renderSectionClasses.bind(this);
-        this.renderedPersonasBar = this.renderedPersonasBar.bind(this);
-        this.updatePersonasBarMenu = this.updatePersonasBarMenu.bind(this);
+        
     }
 
     renderNavMenu(){
@@ -108,8 +131,8 @@ class KitakataDetail extends Component {
             )
         })
         return (
-            <div id="Banner-Menu-IDrink" className="EatHere-Detail__Banner-Menu">
-                <nav className="EatHere-Detail__Container Banner-Menu-Wrapper">
+            <div id="Banner-Menu-IDrink" className="Kitakata-Detail__Banner-Menu">
+                <nav className="Kitakata-Detail__Container Banner-Menu-Wrapper">
                     {navBarSelections}
                 </nav>
             </div>
@@ -143,315 +166,167 @@ class KitakataDetail extends Component {
         return SectionClassList;
     }
 
-    renderedPersonasBar(){
-        let PersonasBarMenu = this.state.PersonasBarMenu;
-        let PersonasSelections = PersonasBarMenu.map((PersonasSelection, index) => {
-            let activeClass = PersonasSelection.active ? " activated" : "";
-            return (
-                <div className={`Three-Section-Bar__Selection Three-Selection-Bar-DarkBlue ${activeClass}`} onClick={()=>this.updatePersonasBarMenu(index)}>
-                    <div className="Three-Section-Bar__Selection-Name">{PersonasSelection.name}</div>
-                </div>
-            )
-        })
-        return (
-            <div id="" className="Section__Three-Selection-Bar ">
-                {PersonasSelections}
-            </div>
-        )
-    }
-
-    updatePersonasBarMenu(index){
-        let PersonasBarMenu = this.state.PersonasBarMenu;
-        for(let i=0; i<PersonasBarMenu.length; i++){
-            if (i == index){
-                PersonasBarMenu[i].active = true;
-            } else {
-                PersonasBarMenu[i].active = false;
-            }
-        }
-        this.setState({PersonasBarMenu: PersonasBarMenu})
-    }
-
-    renderPersonasBarClasses(){
-        let PersonasBarMenu = this.state.PersonasBarMenu;
-        let PersonasSectionClassList = [];
-        for(let i=0; i<PersonasBarMenu.length; i++){
-            PersonasSectionClassList[i] = "";
-            if(PersonasBarMenu[i].active){
-                PersonasSectionClassList[i] = "show";
-            }
-        }
-        return PersonasSectionClassList;
-    }
 
     render(){
         const{ navBarMenu } = this.state;
-        let renderedNavBarMenu = this.renderNavMenu();
-        let SectionClasses = this.renderSectionClasses();
-        let renderedPersonasBar = this.renderedPersonasBar();
-        let PersonasClasses = this.renderPersonasBarClasses();
 
         return(
-            <div id="EatHere_Detail">
-            <div className="EatHere-Detail">
-                <div className="EatHere-Detail__Container">
+            <div id="Kitakata_Detail">
+            <div className="Kitakata-Detail">
+                <div className="Kitakata-Detail__Container">
                     <PublicHeader></PublicHeader>
                 </div>
-                <div className="EatHere-Detail__Banner-Wrapper">
-                    <div className="EatHere-Detail__Banner-Background">
-                        <img    className="EatHere-Detail__Image-full-width"
-                                srcSet={`   ${EatHereBannerSmall} 320w,
-                                            ${EatHereBannerMedium} 500w,
-                                            ${EatHereBannerLarge} 800w`}
-                                src={EatHereBannerSmall} 
+                <div className="Kitakata-Detail__Banner-Wrapper">
+                    <div className="Kitakata-Detail__Banner-Background">
+                        <img    className="Kitakata-Detail__Image-full-width"
+                                srcSet={`   ${KitakataBannerSmall} 320w,
+                                            ${KitakataBannerMedium} 500w,
+                                            ${KitakataBannerLarge} 800w`}
+                                src={KitakataBannerSmall} 
                                 alt="avatar"/>
 
                     </div>
-                    <div className="EatHere-Detail__Section-List">
-                        <div className="EatHere-Detail__Section show">
-                            <div className="Section__Title EatHere-Detail__Container ">
+                    <div className="Kitakata-Detail__Section-List">
+                        <div className="Kitakata-Detail__Section show">
+                            <div className="Section__Title Kitakata-Detail__Container ">
                             </div>
-                            <div className="Section__Two-Sections EatHere-Detail__Container">
+                            <div className="Section__Two-Sections Kitakata-Detail__Container">
                                 <div className="Section__Two-Section">
                                     <h4>Overview</h4>
-                                    <p>EAThere is a mobile application to track your food places including restaurant, ice-cream store, and so on. At the same time, it will make your life easy to find and share your favorite places in the map.</p>
+                                    <p>I rebranded this local Japanese ramen by designing new logos, brand collateral, interactive menus and website.</p>
                                 </div>
                                 <div className="Section__Two-Section">
                                     <h4>Skills</h4>
-                                    <p>Visual and UI design, Web design, Adobe XD, <br/>HTML, CSS, JS Prototyping</p>
+                                    <p>Illustrator, Photoshop, Adobe XD</p>
                                 </div>
                             </div>
-                            <div className="Section__Two-Sections EatHere-Detail__Container">
+                            <div className="Section__Two-Sections Kitakata-Detail__Container">
                                 <div className="Section__Two-Section">
-                                    <a href="#Prototype_Live"><button className="button-CaseStudy">Live App</button></a>
+                                    <a href="http://everwudesign.com/Wei_Wu_Kitakata_Ramen.pdf"><button className="button-CaseStudy">Case Study</button></a>
                                 </div>
                                 <div className="Section__Two-Section">
                                     <h4>Date Created</h4>
                                     <p>Spring 2019 <br />8 weeks</p>
                                 </div>
                             </div>
+
+                            <div className="Kitakata-Detail__Container">
+                                <h4>Current Situation</h4>
+                                <div className="Section__Three-Sections">
+                                    <div className="Section__Three-Section">
+                                        <img src={KitakataCSWeb} className="Kitakata-Detail__Image-full-width Kitakata-Detail__Image-Circle-Masked"></img>
+                                        <h5>Website</h5>
+                                        <p>“Kitakata Ramen” website is non-design and put the branding concept, location and menu, nothing special to attract new customer.</p>
+                                    </div>
+                                    <div className="Section__Three-Section">
+                                        <img src={KitakataCSMenu} className="Kitakata-Detail__Image-full-width Kitakata-Detail__Image-Circle-Masked"></img>
+                                        <h5>Menu</h5>
+                                        <p>The menu is easy to read, but the section is mess for the new customer.</p>
+                                    </div>
+                                    <div className="Section__Three-Section">
+                                        <img src={KitakataCSLogo} className="Kitakata-Detail__Image-full-width Kitakata-Detail__Image-Circle-Masked"></img>
+                                        <h5>Logo</h5>
+                                        <p>The logo is difficult to recognize for Ramen brand identity.</p>
+                                    </div>
+                                </div>
+                            </div>  
+
+
+
+                            <div className="Kitakata-Detail__Container">
+                                <h4>Redesign Goals</h4>
+                            </div>
                             <div className="Section__Full-Width-Banner Section-Intro__Banner">
-                                <div className="EatHere-Detail__Container EatHere-Banner-Container">
-                                    <div className="EatHere-Banner-Left"><img src={EatHereLogo} /></div>
-                                    <div className="EatHere-Banner-Right"><h4>Mark and track your food places to show on the map</h4></div>
+                                <div className="Kitakata-Detail__Container Kitakata-Banner-Container">
+                                    <div className="Kitakata-Banner-Left"><img src={KitakataGoalWeb} /></div>
+                                    <div className="Kitakata-Banner-Middle"><h4>Website</h4></div>
+                                    <div className="Kitakata-Banner-Right"><p>Recreate a website where customers can review menus and locations. To show more ramen dishes and recommend 10 best choice for the new customers.</p></div>
                                 </div>
-                            </div>
-                            <div className="EatHere-Detail__Container">
-                                <h4>Problems</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <div className="Section__LeftImage-Sections">
-                                        <div className="LeftImage-Sections-Left">
-                                            <img src={EatHereProblems} className="EatHere-Detail__Image-full-width"></img>
-                                            <h5>It's so Hard to Decide</h5>
-                                        </div>
-                                        <div className="LeftImage-Sections-Right">
-                                            <p>It’s hard to find and remember the best location near you because too many opinions shows on the different Yelp App. And also, we didn’t go to the same store twice if their food didn’t good enough..</p>
-                                            <p>It’s a timeless, exhausting, and frustrating struggle. Struggling where to eat happens to you and whoever you’re with all the time. It happens enough that maybe you should have something prepared for such occasions. It might sound kind of nerdy, but EAT here app could save you some serious time.</p>
-                                        </div>
-                                    </div>
+                                <div className="Kitakata-Detail__Container Kitakata-Banner-Container">
+                                    <div className="Kitakata-Banner-Left"><img src={KitakataGoalMenu} /></div>
+                                    <div className="Kitakata-Banner-Middle"><h4>Menu</h4></div>
+                                    <div className="Kitakata-Banner-Right"><p>Design a iPad and mobile menu app which enables customers to order their ramen choice in an interactive way, paperless menu.</p></div>
                                 </div>
-                                <h4>Goals</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                <div className="Section__LeftImage-Sections">
-                                    <div className="LeftImage-Sections-Left">
-                                        <img src={EatHereGoals} className="EatHere-Detail__Image-full-width"></img>
-                                    </div>
-                                    <div className="LeftImage-Sections-Right">
-                                        <p>1.  Design EAThere App to track their own food places. </p>
-                                        <p>2. The app will help users to remember locations.</p>
-                                        <p>3. Users are able to add, edit, and delete an information at any time.</p>
-                                    </div>
-                                </div>
-                                   
-                                </div>
-                            </div>
-                            
-                            
-                            <div className="EatHere-Detail__Container">
-                                <h4>Competitiors Analysis</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <img className="EatHere-Detail__Image-full-width" src={EatHereAnalysis}></img>
+                                <div className="Kitakata-Detail__Container Kitakata-Banner-Container">
+                                    <div className="Kitakata-Banner-Left"><img src={KitakataGoalLogo} /></div>
+                                    <div className="Kitakata-Banner-Middle"><h4>Logo</h4></div>
+                                    <div className="Kitakata-Banner-Right"><p>Redesign the logo to reflect the characteristics of the Ramen, and combine the first character “K” with a bowl of ramen.</p></div>
                                 </div>
                             </div>
 
-                            <div className="EatHere-Detail__Container">
-                                <h4>Personas</h4>
-                                <div className="EatHere-Detail__Secondary-Container Section__Three-Selection-List">
-                                    <div id="Albert_Conville" className={`Section__Three-Selection-Container ${PersonasClasses[0]}`}>
-                                        <div className="Section__Three-Sections">
-                                            <div className="Section__Three-Section">
-                                                <img src={EatHerePersonal} className="EatHere-Detail__Image-full-width"></img>
-                                                <h4>Albert Conville</h4>
-                                            </div>
-                                            <div className="Section__Three-Section">
-                                                <div className="Section__Inner-Half-Section">
-                                                    <h5>About</h5>
-                                                    <p>Age: 34yrs <br/>Position: Journalist<br/>Live:  New York<br/>Hobby: Cooking</p>
-                                                    <h5>Personality</h5>
-                                                    <img src={EatHerePersonal_1} className="EatHere-Detail__Image-full-width"></img>
-                                                </div>
-                                            </div>
-                                            <div className="Section__Three-Section">
-                                                <h5>Goals</h5>
-                                                <p>Charlotte is care about her body and health. She uses our EAThere app to choose the eating place in a easy way.</p>
-                                                <h5>Challenges</h5>
-                                                <p>She always spends more than 1 hour to search what to eat and hard to decision.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="EatHere-Detail__Container">
+                            <div className="Kitakata-Detail__Container">
                                 <h4>Moodboard</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <img src={EatHereMoodBoard} className="EatHere-Detail__Image-full-width"></img>
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <img src={KitakataMoodBoard} className="Kitakata-Detail__Image-full-width"></img>
                                 </div>
                                 <h4>Color Palette</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <div className="Section__Three-Sections">
-                                        <div className="Section__Three-Section">
-                                            <img src={EatHereColorPaletten_1} className="EatHere-Detail__Image-full-width"></img>
-                                            <p>HEX: #A03F36<br/>RGB: 160,63,54<br/>CMYK: 0,61,66,37</p>
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <div className="Section__Two-Sections">
+                                        <div className="Section__Two-Section">
+                                            <img src={KitakataColorPatternDark} className="Kitakata-Detail__Image-full-width"></img>
+                                            <p>HEX:#7A0307<br/>RGB: 122,3,7<br/>CMYK：0,98,94,52</p>
                                         </div>
-                                        <div className="Section__Three-Section">
-                                            <img src={EatHereColorPaletten_2} className="EatHere-Detail__Image-full-width"></img>
-                                            <p>HEX: #FAD8A0<br/>RGB: 250,216,160<br/>CMYK: 0,14,36,2</p>
-                                        </div>
-                                        <div className="Section__Three-Section">
-                                            <img src={EatHereColorPaletten_3} className="EatHere-Detail__Image-full-width"></img>
-                                            <p>HEX: #F9F0E4<br/>RGB: 249,240,228<br/>CMYK: 0,4,8,2</p>
+                                        <div className="Section__Two-Section">
+                                            <img src={KitakataColorPatternLight} className="Kitakata-Detail__Image-full-width"></img>
+                                            <p>HEX:#E7B242<br/>RGB: 231,178,66<br/>CMYK：0,23,71,9</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="Section__Full-Width-Banner Section__Branding-Banner">
-                                <div className="EatHere-Detail__Container">
+                                <div className="Kitakata-Detail__Container">
                                     <h4><br/>Typography</h4>
-                                    <div className="EatHere-Detail__Secondary-Container  Section-Typography">
-                                        <img src={EatHereTypography} className="EatHere-Detail__Image-full-width"></img>
+                                    <div className="Kitakata-Detail__Secondary-Container  Section-Typography">
+                                        <img src={KitakataTypograph} className="Kitakata-Detail__Image-full-width"></img>
                                     </div>
                                 </div>
                             </div>
-                            <div className="EatHere-Detail__Container">
+                            <div className="Kitakata-Detail__Container">
                                 <h4>Logo Design</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <p>The idea of logo is the icon of location and the meal.<br/>It combines the brand name EAThere.</p>
-                                    <img src={EatHereLogoDesign} className="EatHere-Detail__Image-full-width"></img>
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <p>Redesign the logo to reflect the characteristics of the Ramen, and combine the first character “K” with a bowl of ramen.</p>
+                                    <img src={KitakataLogoDesign} className="Kitakata-Detail__Image-full-width"></img>
                                 </div>
                             </div>
                             
-                            <div className="EatHere-Detail__Container">
+                            <div className="Kitakata-Detail__Container">
                                 <h4>Iconography</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <div className="Section__Three-Sections">
-                                        <div className="Section__Three-Section">
-                                            <p>App version</p>
-                                            <img src={EatHereIcon} className="EatHere-Detail__Image-full-width"></img>
-                                        </div>
-                                        <div className="Section__Three-Section"></div>
-                                        <div className="Section__Three-Section"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="EatHere-Detail__Container">
-                                <h4>Site Map</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
-                                    <img src={EatHereSiteMap} className="EatHere-Detail__Image-full-width"></img>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div className="EatHere-Detail__Container">
-                                    <h4>WireFrames Flow</h4>
-                                </div>
-                                <div className="Section__Full-Width-Banner Section__Branding-Banner">
-                                    <div className="EatHere-Detail__Container">
-                                        <img src={EatHereWireFramesFlow} className="EatHere-Detail__Image-full-width"></img>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className="EatHere-Detail__Container">
-                                <h4>FINAL DESIGN</h4>
-                                <div className="Section__Key-Screen-List">
-                                    <div className="Key-Screen-Description">
-                                        <h4>Start your own food map</h4>
-                                        <p>Log in to this food tracker app to search the different kinds of food. Then users are able to filter through all the food to quickly find the food that they want. </p>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFLogin} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Login</h4>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFFoodList} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Food List</h4>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFFoodFilter} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Food Filter</h4>
-                                    </div>
-                                </div>
-                                <div className="Section__Key-Screen-List">
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFSelect} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Select</h4>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFFoodDetail} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Food Detail</h4>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFEditFood} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Edit Food info</h4>
-                                    </div>
-                                    <div className="Key-Screen-Description">
-                                        <h4>Select and edit</h4>
-                                        <p>The list page shows all food list in your account and if you spot a food shop in the city, go ahead and pin them on the map, then add their details. <br/>After adding, user can check the list anytime.</p>
-                                    </div>
-                                </div>
-                                <div className="Section__Key-Screen-List">
-                                    <div className="Key-Screen-Description">
-                                        <h4>View and edit the user profile</h4>
-                                        <p>Click the profile page to add and edit the user icon on the map (or on the list page) and see the user profile data and keep them up-to-date. The image is able to change or upload as well.</p>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFProfileDetail} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Profile Page</h4>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFEditProfile} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Edit Profile</h4>
-                                    </div>
-                                    <div className="Key-Screen-Shot">
-                                        <img src={EatHereKFAddFood} className="EatHere-Detail__Image-full-width"></img>
-                                        <h4>Add Food</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div id="Prototype_Live" className="EatHere-Detail__Container">
-                                <h4>Prototype</h4>
-                                <div className="EatHere-Detail__Secondary-Container">
+                                <div className="Kitakata-Detail__Secondary-Container">
                                     <div className="Section__Two-Sections">
-                                        <div className="Section__Two-Section">
-                                            <h4>Mobile App</h4>
-                                            <p>TRY IT OUT!<br/>Use the following info to log in:</p>
-                                            <p>Username: user0 <br/>Password: pass</p>
-                                            <a href="http://www.everwudesign.com/weiwu/AAU/wnm617/m15/tracker.html#page-login">EatHere</a>
+                                        <div className="Section__Half-Section">
+                                            <div className="Section__Inner-Half-Sections">
+                                                <div className="Section__Inner-Half-Section">
+                                                    <p>App version</p>
+                                                    <img src={KitakataLogoApp} className="Kitakata-Detail__Image-full-width"></img>
+                                                </div>
+                                            </div>          
                                         </div>
-                                        <div className="Section__Two-Section">
-                                            <div className="Section__Prototype-Container">
-                                                <iframe className="Section__Prototype" src="http://www.everwudesign.com/weiwu/AAU/wnm617/m15/tracker.html#page-login"></iframe>
-                                            </div>
+                                        <div className="Section__Half-Section">
+                                            <p>red background version</p>
+                                            <img src={KitakataLogoDark} className="Kitakata-Detail__Image-full-width"></img>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                        
+
+                            <div className="Kitakata-Detail__Container">
+                                <h4>Graphic Advertisements</h4>
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <img src={KitakataAdBus} className="Kitakata-Detail__Image-full-width"></img>
+                                </div>
+
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <img src={KitakataAdStore} className="Kitakata-Detail__Image-full-width"></img>
+                                </div>
+
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <img src={KitakataAdMobileApp} className="Kitakata-Detail__Image-full-width"></img>
+                                </div>
+
+                                <div className="Kitakata-Detail__Secondary-Container">
+                                    <img src={KitakataAdTabletApp} className="Kitakata-Detail__Image-full-width"></img>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

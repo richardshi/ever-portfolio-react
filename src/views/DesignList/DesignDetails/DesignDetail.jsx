@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import EndlessDetail from 'views/DesignList/DesignDetails/EndlessDetail/EndlessDetail';
 import IDrinkDetail from 'views/DesignList/DesignDetails/IDrinkDetail/IDrinkDetail';
 import EatHereDetail from 'views/DesignList/DesignDetails/EatHereDetail/EatHereDetail'
+import KitakataDetail from 'views/DesignList/DesignDetails/KitakataDetail/KitakataDetail';
+import BigPixelDetail from 'views/DesignList/DesignDetails/BigPixelDetail/BigPixelDetail';
+//import BabyCostReport from 'views/DesignList/DesignDetails/BabyCostReport/BabyCostReport';
 
 class DesignDetail extends Component {
     constructor(props){
@@ -27,13 +30,13 @@ class DesignDetail extends Component {
                 designDetailComponent = <EatHereDetail></EatHereDetail>;
                 break;
             case "kitakata":
-                designDetailComponent = <EatHereDetail></EatHereDetail>;
+                designDetailComponent = <KitakataDetail></KitakataDetail>;
                 break;
             case "bigpixel":
-                designDetailComponent = <EatHereDetail></EatHereDetail>;
+                designDetailComponent = <BigPixelDetail></BigPixelDetail>;
                 break;
             case "babycostreport":
-                designDetailComponent = <EatHereDetail></EatHereDetail>;
+                //designDetailComponent = <BabyCostReport></BabyCostReport>;
                 break;
             default:
                 designDetailComponent = <div></div>;

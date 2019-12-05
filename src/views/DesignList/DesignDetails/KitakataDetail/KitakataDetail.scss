@@ -2,10 +2,10 @@
 @import "assets/sass/utilities/_utilities.scss";
 
 
-.EatHere-Detail{
+.Kitakata-Detail{
     width: 100%;
     font-family: $font-family--secondary;
-    .EatHere-Detail__Container{
+    .Kitakata-Detail__Container{
         max-width: 300px;
         margin: auto;
         display: block;
@@ -22,16 +22,19 @@
             max-width: 1140px;
         }
     }
-    .EatHere-Detail__Secondary-Container{
+    .Kitakata-Detail__Secondary-Container{
         width: 88%;
         margin: auto;
         margin-top: 50px;
     }
-    .EatHere-Detail__Image-full-width{
+    .Kitakata-Detail__Image-full-width{
         width: 100%;
     }
-    .EatHere-Detail__Image-fixed-height{
+    .Kitakata-Detail__Image-fixed-height{
         height: 300px;
+    }
+    .Kitakata-Detail__Image-Circle-Masked{
+        border-radius: 50%;
     }
 
     h4{
@@ -75,14 +78,14 @@
         font-weight: normal;
     }
 
-    .EatHere-Detail__Banner-Wrapper{
+    .Kitakata-Detail__Banner-Wrapper{
         width: 100%;
-        .EatHere-Detail__Banner-Background{
+        .Kitakata-Detail__Banner-Background{
             width: 100%;
             background-color: #eaf2ff;
         }
 
-        .EatHere-Detail__Banner-Menu{
+        .Kitakata-Detail__Banner-Menu{
             display: none;
             @include for-size(medium){
                 display: block;
@@ -120,10 +123,10 @@
             }
         }
     }
-    .EatHere-Detail__Section-List{
+    .Kitakata-Detail__Section-List{
         margin-top: 100px;
         margin-bottom: 200px;
-        .EatHere-Detail__Section{
+        .Kitakata-Detail__Section{
             display: none;
             /*
             &.default{
@@ -220,14 +223,16 @@
             }
             .Section-Intro__Banner{
                 width: 100%;
-                height: 166px;
-                background-color: rgba(240, 243, 189, 0.2);
-                .EatHere-Banner-Container{
+                //height: 166px;
+                background-color: #7a0307;
+                .Kitakata-Banner-Container{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    height: 100%;
-                    .EatHere-Banner-Left{
+                    //height: 100%;
+                    height: 166px;
+                    color: white;
+                    .Kitakata-Banner-Left{
                         position: relative;
                         width: 10%;
                         img{
@@ -238,9 +243,13 @@
                             transform: translateY(-50%);
                         }
                     }
-                    .EatHere-Banner-Right{
+                    .Kitakata-Banner-Middle{
                         position: relative;
-                        width: 80%;
+                        width: 10%;
+                    }
+                    .Kitakata-Banner-Right{
+                        position: relative;
+                        width: 60%;
                         h4{
                             position: absolute;
                             margin: 0;
