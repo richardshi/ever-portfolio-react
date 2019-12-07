@@ -15,6 +15,7 @@ import projectPicEatHere from 'assets/images/LandingPage/Brand_P3@2x.png'
 import designKitakata from 'assets/images/LandingPage/Brand_P4@2x.png'
 import designBigPixel from 'assets/images/LandingPage/Brand_P5@2x.png'
 import projectBabyCostReport from 'assets/images/LandingPage/Brand_P6@2x.png'
+import scrollDownIcon from 'assets/images/LandingPage/scrolldown@3x.png'
 import { PATHS } from '../../routePaths';
 
 class LandingPage extends Component {
@@ -228,12 +229,21 @@ class LandingPage extends Component {
                     <div className="LandingPage__Container Page-Container">
                         <div className="LandingPage__Instruction-Container row-section">
                             <div className="Instruction-Right">
-                                <h1>Hi there, this is Ever Wu</h1>
+                                <h1 className="Instruction-Type">Hi there, this is Ever Wu</h1>
+                                <div className="Instruction-Type-Mobile">
+                                    <h1>Hi there, this is</h1>
+                                    <h1>Ever Wu</h1>
+                                </div>
                                 <h2>A UX/UI, Visual Designer with a focus in user experience, visual and interaction design based in San Francisco and Irvine.</h2>
+                            </div>
+                            <div className="LandingPage__Scroll-Down-Button">
+                                <a href="#DesignList">
+                                    <img src={scrollDownIcon}></img>
+                                </a>
                             </div>
                         </div>
 
-                        <div className="LandingPage__Designs row-section">
+                        <div id="DesignList" className="LandingPage__Designs row-section">
                             {designBlocks}
                         </div>
 

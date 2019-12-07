@@ -87,6 +87,7 @@
         .LandingPage__Instruction-Container{
             height: 70vh;
             margin-top: 30vh;
+            position: relative;
             //margin-bottom: 500px;
             .Instruction-Right{
                 width: 260px;
@@ -105,6 +106,17 @@
                     font-family: ProximaNova;
                     font-weight: normal;
                     color: #777777;
+                }
+            }
+            .LandingPage__Scroll-Down-Button{
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                img{
+                    width: 30px;
+                    @include for-size(medium){
+                        width: 40px;
+                    }
                 }
             }
         }
@@ -181,6 +193,20 @@
 
                 }
             }
+
+            &::before { 
+                display: block; 
+                content: " "; 
+                //74
+                margin-top: -$mobile-menu-height; 
+                height: $mobile-menu-height; 
+                @include for-size(medium){
+                    margin-top: -$desktop-menu-height; 
+                    height: $desktop-menu-height; 
+                }
+                visibility: hidden; 
+                pointer-events: none;
+            }
         }
 
         .LandingPage__Products{
@@ -255,6 +281,90 @@
                 margin-bottom: 100px;
             }
         }
+
+        .Instruction-Type{
+            display: none;
+            @include for-size(medium){
+                display: block;
+            }
+            color: black;
+            height: 60px;
+            font-family: $font-family--primary;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #0d5734; /* The typwriter cursor */
+            //white-space: nowrap; /* Keeps the content on a single line */
+            word-break: break-all;
+            margin-left: 0; /* Gives that scrolling effect as the typing happens */
+            animation: typing 3.5s steps(25, end), blink-caret .5s step-end infinite;
+        }
+
+        .Instruction-Type-Mobile{
+            display: block;
+            @include for-size(medium){
+                display: none;
+            }
+            h1{
+                height: 60px;
+                font-family: $font-family--primary;
+                overflow: hidden; /* Ensures the content is not revealed until the animation */
+                border-right: .15em solid #0d5734; /* The typwriter cursor */
+                word-break: break-all;
+                //white-space: nowrap; /* Keeps the content on a single line */
+            }
+
+            margin-left: 0; /* Gives that scrolling effect as the typing happens */
+            h1:nth-child(1){
+                width: 224px;
+                border-right: none;
+                animation: typing1 3.2s steps(16, end);
+                animation-fill-mode: forwards;
+            }
+            h1:nth-child(2){
+                width: 0;
+                border-right: none;
+                animation: typing2 1.8s steps(9, end), blink-caret .5s step-end infinite;
+                -webkit-animation-delay: 3.2s;
+                animation-delay: 3.2s;
+                animation-fill-mode: forwards;
+            }
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes typing1 {
+            0%{ 
+                width: 0; 
+                border-right: .15em solid #0d5734; /* The typwriter cursor */
+            }
+            99%{
+                width: 224px;
+                border-right: .15em solid #0d5734; /* The typwriter cursor */
+            }
+            100%{ 
+                opacity: 1;
+                border: none;
+             }
+        }
+
+        @keyframes typing2 {
+            from { 
+                width: 0;
+                border-right: .15em solid #0d5734; /* The typwriter cursor */
+            }
+            to { 
+                width: 130px;
+                border-right: .15em solid #0d5734; /* The typwriter cursor */
+            }
+        }
+          
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #0d5734 }
+        }
+
     }
 }
 
