@@ -24,9 +24,9 @@ class AboutPage extends Component {
     render(){
         return (
             <div>
-                <div className="AboutPage">
+                <PublicHeader/>
+                <div className="AboutPage Page-Container">
                     <div className="AboutPage__Container">
-                        <PublicHeader/>
                         <div className="AboutPage__Personal row-section">
                             <div className="Personal-Left">
                                 <img    srcSet={`${ProfileImageSmall} 320w,
