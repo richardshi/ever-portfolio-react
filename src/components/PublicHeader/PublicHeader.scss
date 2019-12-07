@@ -13,12 +13,14 @@
         width: 100%;
         height: 54px;      // 0.06 width
         margin: auto;
-        margin-top: 30px;
-        margin-bottom: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         font-family: ProximaNova;
 
         @include for-size(medium){
             max-width: 500px;
+            margin-top: 30px;
+            margin-bottom: 40px;
         }
         @include for-size(large){
             max-width: 670px;
@@ -39,6 +41,7 @@
             .Nav-Bar-Left__Logo-Image{
                 height: 80%;
                 margin: 10px 0px;
+                transform-origin: top;
                 transform: rotate(-15deg);
             }
         }
