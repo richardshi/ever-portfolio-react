@@ -8,12 +8,12 @@ import './EndlessDetail.scss'
 import EndlessBannerSmall from 'assets/images/EndlessPage/Endless_1.png';
 import EndlessBannerMedium from 'assets/images/EndlessPage/Endless_1@2x.png';
 import EndlessBannerLarge from 'assets/images/EndlessPage/Endless_1@3x.png';
-import EndlessLogoSmall from 'assets/images/EndlessPage/Endless_2.png';
-import EndlessWasteBooksSmall from 'assets/images/EndlessPage/Endless_3.png';
+import EndlessLogoSmall from 'assets/images/EndlessPage/Endless_2@3x.png';
+import EndlessWasteBooksSmall from 'assets/images/EndlessPage/Endless_3@3x.png';
 import EndlessBGImage from 'assets/images/EndlessPage/Endless_4.png';
-import EndlessTrashSmall from 'assets/images/EndlessPage/Endless_5.png';
-import EndlessDonateSmall from 'assets/images/EndlessPage/Endless_6.png';
-import EndlessStreetBooks from 'assets/images/EndlessPage/Endless_7.png';
+import EndlessTrashSmall from 'assets/images/EndlessPage/Endless_5@3x.png';
+import EndlessDonateSmall from 'assets/images/EndlessPage/Endless_6@3x.png';
+import EndlessStreetBooks from 'assets/images/EndlessPage/Endless_7@3x.png';
 import EndlessQuestionnaireGraph from 'assets/images/EndlessPage/Endless_8@3x.png';
 import EndlessBooxupLogo from 'assets/images/EndlessPage/Booxup_logo@3x.png';
 import EndlessBooxupScreenShot from 'assets/images/EndlessPage/BooxupScreenScalde@3x.png';
@@ -329,7 +329,7 @@ class EndlessDetail extends Component {
                                 </div>
                                 <div className="Section__Full-Width-Banner Section-Intro__Banner">
                                     <div className="Endless-Detail__Container Endless-Banner-Container">
-                                        <div className="Endless-Banner-Left"><img src={EndlessLogoSmall} /></div>
+                                        <div className="Endless-Banner-Left"><img src={EndlessLogoSmall} className="Endless-Detail__Image-full-width"/></div>
                                         <div className="Endless-Banner-Right"><h4>Share the books they’ve read and find the nearby books. </h4></div>
                                     </div>
                                 </div>
@@ -337,7 +337,7 @@ class EndlessDetail extends Component {
                                     <h4>Problems</h4>
                                     <div className="Endless-Detail__Secondary-Container">
                                         <div className="Section__LeftImage-Sections">
-                                            <div className="LeftImage-Sections-Left"><img src={EndlessWasteBooksSmall}></img></div>
+                                            <div className="LeftImage-Sections-Left"><img src={EndlessWasteBooksSmall} className="Endless-Detail__Image-full-width" ></img></div>
                                             <div className="LeftImage-Sections-Right"><p>You may be an avid reader, but the dusty pile of books in your room is starting to be a nuisance. You don’t have the heart to throw your old books away, but you don’t have much of a use for them anymore. Also, you may have extra time to spend in the waiting room and forget to bring your own book.</p></div>
                                         </div>
                                     </div>
@@ -389,24 +389,24 @@ class EndlessDetail extends Component {
                                             <div className="Section__LeftImage-Sections">
                                                 <div className="LeftImage-Sections-Left"><img src={EndlessTrashSmall} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="LeftImage-Sections-Right">
-                                                    <h5 className="title-light">Throw</h5>
+                                                    <h4 className="title-light">Throw</h4>
                                                     <p>Not a good idea</p>
                                                 </div>
                                             </div>
                                             <div className="Section__LeftImage-Sections">
                                                 <div className="LeftImage-Sections-Left"><img src={EndlessDonateSmall} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="LeftImage-Sections-Right">
-                                                    <h5 className="title-light">Donate</h5>
+                                                    <h4 className="title-light">Donate</h4>
                                                     <p>Good for the charities and needy families in your area.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="Endless-Detail__Secondary-Container">
-                                        <div className="Section__LeftImage-Sections">
-                                            <div className="LeftImage-Sections-Left"><img src={EndlessStreetBooks}></img></div>
-                                            <div className="LeftImage-Sections-Right">
-                                                <h5 className="title-light">The Street Books</h5>
+                                        <div className="Section__Two-Sections">
+                                            <div className="Section__Two-Section"><img src={EndlessStreetBooks} className="Endless-Detail__Image-full-width"></img></div>
+                                            <div className="Section__Two-Section">
+                                                <h4 className="title-light">The Street Books</h4>
                                                 <p>Laura Moulton and Matt Tufaro in Portland, Ore. Ms. Moulton founded Street Books, a nonprofit book service for “people living outside.”</p>
                                                 <p>Thomas Patterson for The New York Times</p>
                                             </div>

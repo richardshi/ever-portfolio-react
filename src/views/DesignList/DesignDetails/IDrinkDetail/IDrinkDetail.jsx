@@ -281,7 +281,7 @@ class IDrinkDetail extends Component {
                             </div>
                             <div className="IDrink-Detail__Container">
                                 <h4>Inspiration</h4>
-                                <div className="IDrink-Detail__Secondary-Container">
+                                <div className="IDrink-Detail__Secondary-Container Non-Mobile">
                                     <div className="Section__Two-Sections">
                                         <div className="Section__LeftImage-Sections">
                                             <div className="LeftImage-Sections-Left"><img src={IDrinkWomen} className="IDrink-Detail__Image-full-width"></img></div>
@@ -348,8 +348,8 @@ class IDrinkDetail extends Component {
                             <div className="IDrink-Detail__Container">
                                 <h4>Personas</h4>
                                 {renderedPersonasBar}
-                                <div className="IDrink-Detail__Secondary-Container Section__Three-Selection-List">
-                                    <div id="Albert_Conville" className={`Section__Three-Selection-Container ${PersonasClasses[0]}`}>
+                                <div className="Section__Three-Selection-List">
+                                    <div id="Albert_Conville" className={`IDrink-Detail__Secondary-Container Section__Three-Selection-Container ${PersonasClasses[0]}`}>
                                         <div className="Section__Two-Sections">
                                             <div className="Section__Half-Section">
                                                 <div className="Section__Inner-Half-Sections">
@@ -377,7 +377,7 @@ class IDrinkDetail extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Scarlett_Devon" className={`Section__Three-Selection-Container ${PersonasClasses[1]}`}>
+                                    <div id="Scarlett_Devon" className={`IDrink-Detail__Secondary-Container Section__Three-Selection-Container ${PersonasClasses[1]}`}>
                                         <div className="Section__Two-Sections">
                                             <div className="Section__Half-Section">
                                                 <div className="Section__Inner-Half-Sections">
@@ -402,7 +402,7 @@ class IDrinkDetail extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Joseph_Cox" className={`Section__Three-Selection-Container ${PersonasClasses[2]}`}>
+                                    <div id="Joseph_Cox" className={`IDrink-Detail__Secondary-Container Section__Three-Selection-Container ${PersonasClasses[2]}`}>
                                         <div className="Section__Two-Sections">
                                             <div className="Section__Half-Section">
                                                 <div className="Section__Inner-Half-Sections">

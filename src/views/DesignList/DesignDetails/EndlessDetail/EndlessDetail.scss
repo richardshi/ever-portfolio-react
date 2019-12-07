@@ -3,6 +3,7 @@
 
 .Endless-Detail{
     width: 100%;
+    font-family: $font-family--secondary;
     .Endless-Detail__Container{
         max-width: 300px;
         margin: auto;
@@ -299,6 +300,9 @@
                         width: 60%;
                     }
                 }
+                h4{
+                    margin: 0;
+                }
             }
             
 
@@ -498,12 +502,18 @@
                     flex-direction: row;
                     justify-content: space-between;
                     .LeftImage-Sections-Left{
-                        width: 30%;
+                        width: 40%;
+                        @include for-size(medium){
+                            width: 30%
+                        }
                     }
                     .LeftImage-Sections-Right{
-                        width: 60%;
+                        width: 40%;
+                        @include for-size(medium){
+                            width: 60%
+                        }
                     }
-                    h5{
+                    h4{
                         margin: 0;
                     }
                 }
