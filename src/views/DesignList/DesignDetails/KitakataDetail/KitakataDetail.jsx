@@ -165,7 +165,7 @@ class KitakataDetail extends Component {
                             </div>
                             <div className="Section__Two-Sections Kitakata-Detail__Container">
                                 <div className="Section__Two-Section">
-                                    <a href="http://everwudesign.com/Wei_Wu_Kitakata_Ramen.pdf"><button className="button-CaseStudy">Case Study</button></a>
+                                    <a href="http://everwudesign.com/Wei_Wu_Kitakata_Ramen.pdf"><button className="button-CaseStudy">View More</button></a>
                                 </div>
                                 <div className="Section__Two-Section">
                                     <h4>Date Created</h4>

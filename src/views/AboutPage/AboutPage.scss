@@ -107,6 +107,22 @@
                 }
             }
 
+            .button-CaseStudy{
+                width: 50%;
+                height: 51px;
+                border-radius: 8px;
+                border: solid 2px #0d5734;
+                background-color: transparent;
+                font-size: 16px;
+                font-family: $font-family--secondary;
+                color: #0d5734;
+                cursor: pointer;
+                &:hover, :active{
+                    color: white;
+                    background-color: #0d5734;
+                }
+            }
+
             @include for-size(large){
                 position: relative;
                 display: table-cell;

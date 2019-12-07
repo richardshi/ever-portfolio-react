@@ -220,19 +220,19 @@ class BigPixelDetail extends Component {
                             <div className="BigPixel-Detail__Container">
                                 <h4>Team Members</h4>
                                 <p>Roles &#38; Responsibilities</p>
-                                <div className="Section__Two-Sections"> 
-                                    <div className="Section__Half-Section">
+                                <div className="Section__Team-Two-Sections"> 
+                                    <div className="Section__Team-Half-Section">
                                         <div className="Section__Two-Sections">
                                             <div className="Section__Two-Section">
                                                 <img src={BigPixelProfile} className="BigPixel-Detail__Image-full-width"></img>
                                             </div>
                                             <div className="Section__Half-Section">
-                                                <h5>MARKETING DIRECTOR</h5>
+                                                <h4>MARKETING DIRECTOR</h4>
                                                 <p>Researches and develops marketing strategy: sales opportunities, target audience, competition, and new customer acquisition. </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="Section__Half-Section">
+                                    <div className="Section__Team-Half-Section">
                                         <img src={BigPixelTeam} className="BigPixel-Detail__Image-full-width"></img>
                                     </div>
                                 </div>

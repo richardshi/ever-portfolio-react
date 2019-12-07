@@ -58,7 +58,7 @@
         line-height: 1.25;
         font-size: 14px;
         @include for-size(medium){
-            font-size: 20px;
+            font-size: 18px;
         }
     }
     ul {
@@ -240,7 +240,6 @@
                     font-size: 16px;
                     font-weight: normal;
                 }
-
             }
 
             .Section__Full-Width-Banner{
@@ -432,9 +431,7 @@
                     display: block;
                 }
                 border: solid 1px #666666;
-                @include for-size(medium){
-                    border: none;
-                }
+
             }
             .Section__Branding-Banner{
                 background-color: rgba(198, 198, 198, 0.24);
@@ -473,6 +470,10 @@
                 font-family: $font-family--secondary;
                 color: #24668d;
                 cursor: pointer;
+                &:hover, :active{
+                    color: white;
+                    background-color: #24668d;
+                }
             }
             .Section__Design-Banner{
                 width: 100%;
@@ -495,7 +496,6 @@
                     .Section__IOT-Cell{
                         position: absolute;
                         bottom: 0;
-
                     }
                 }
             }
@@ -517,6 +517,46 @@
             .Section-Typography{
                 padding: 50px 0;
             }
+
+
+            .Section__Team-Two-Sections{
+                width: 100%;
+                margin-top: 25px;
+                @include for-size(large){
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                .Section__Team-Half-Section{
+                    text-align: left;
+                    margin-top: 25px;
+                    h4{
+                        font-size: 18px;
+                        @include for-size(large){
+                            margin: 0;
+                            font-size: 20px;
+                        }
+                    }
+                    width: 100%;
+                    @include for-size(large){
+                        width: 45%;
+                    }
+
+                    .Section__Two-Sections{
+                        margin-top: 0px;
+                        .Section__Two-Section{
+                            position: relative;
+                            height: 300px;
+
+                            @include for-size(medium){
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
 
         }
         

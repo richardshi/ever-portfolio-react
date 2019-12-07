@@ -233,7 +233,7 @@ class IDrinkDetail extends Component {
                             <div className="Section__Two-Sections IDrink-Detail__Container">
                                 <div className="Section__Two-Section">
                                     <h4>Overview</h4>
-                                    <p>iDrink is a water tracker and water reminder app to develop daily drinking habit. </p>
+                                    <p>iDrink is a water tracker and water reminder application. It’s easy to drink water and develop daily drinking habit. </p>
                                 </div>
                                 <div className="Section__Two-Section">
                                     <h4>Skills</h4>
@@ -260,8 +260,8 @@ class IDrinkDetail extends Component {
                                 <div className="IDrink-Detail__Secondary-Container">
                                     <div className="Section__LeftImage-Sections">
                                         <div className="LeftImage-Sections-Right">
-                                            <p>After the research, I found that for men, that’s drinking five alcoholic beverages more times in a month; and for women, it’s four drinks under the same conditions. From 2015 through 2017,  the rate of Millennials who reported that they had consumed any amount of alcohol in the preceding month remained pretty steady, at more than 60 percent.</p>
-                                            <p>And also if you don’t drink enough water can cause dehydration and adverse symptoms, including fatigue, headache, weakened immunity, and dry skin.</p>
+                                            <p>Through researches and interviews, one of the common responses was that many people didn’t feel thirsty and forget to drink buckets of water every day.</p>
+                                            <p className="IDrink__Problem-Question">“How might we help people who feel dehydration reaction and adverse symptoms when they don’t drink enough water?”</p>
                                         </div>
                                         <div className="LeftImage-Sections-Left"><img src={IDrinkProblems} className="IDrink-Detail__Image-full-width"></img></div>
                                     </div>

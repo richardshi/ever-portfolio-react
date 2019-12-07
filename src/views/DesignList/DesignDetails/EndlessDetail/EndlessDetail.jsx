@@ -310,7 +310,7 @@ class EndlessDetail extends Component {
                                     <div className="Section__Two-Sections">
                                         <div className="Section__Two-Section">
                                             <h4>Overview</h4>
-                                            <p>Book Endless is to share and search good books with our free sensor sticker in public places, so the next reader can find and share endlessly. </p>
+                                            <p>Endless is the one-stop interactive book sharing application. Easy to share books they’ve read and find the nearby books with the free sticker. Specifically for people who like to read, and to share the books they’ve read.</p>
                                         </div>
                                         <div className="Section__Two-Section">
                                             <h4>Skills</h4>
@@ -338,7 +338,10 @@ class EndlessDetail extends Component {
                                     <div className="Endless-Detail__Secondary-Container">
                                         <div className="Section__LeftImage-Sections">
                                             <div className="LeftImage-Sections-Left"><img src={EndlessWasteBooksSmall} className="Endless-Detail__Image-full-width" ></img></div>
-                                            <div className="LeftImage-Sections-Right"><p>You may be an avid reader, but the dusty pile of books in your room is starting to be a nuisance. You don’t have the heart to throw your old books away, but you don’t have much of a use for them anymore. Also, you may have extra time to spend in the waiting room and forget to bring your own book.</p></div>
+                                            <div className="LeftImage-Sections-Right">
+                                                <p>Too many books are thrown away and we can’t find the book sharing community.</p>
+                                                <p className="Endless__Problem-Question">“How might we help the book lovers to share their own books endlessly or find a book near by them to read?”</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <h4>Goals</h4>
@@ -762,11 +765,11 @@ class EndlessDetail extends Component {
                                         </div>
                                         <div className="Key-Screen-Shot">
                                             <img src={EndlessSCSelect} className="Endless-Detail__Image-full-width"></img>
-                                            <h4>Login</h4>
+                                            <h4>Select</h4>
                                         </div>
                                         <div className="Key-Screen-Shot">
                                             <img src={EndlessSCFind} className="Endless-Detail__Image-full-width"></img>
-                                            <h4>Sign Up</h4>
+                                            <h4>Find</h4>
                                         </div>
                                         <div className="Key-Screen-Description">
                                             <h4>Find the interesting books</h4>

@@ -58,7 +58,7 @@
         line-height: 1.25;
         font-size: 14px;
         @include for-size(medium){
-            font-size: 20px;
+            font-size: 18px;
         }
     }
     ul {
@@ -532,6 +532,11 @@
             }
             .Section-Typography{
                 padding: 50px 0;
+            }
+
+            .EatHere__Problem-Question{
+                color: #0D5734;
+                font-size: 16px;
             }
 
         }

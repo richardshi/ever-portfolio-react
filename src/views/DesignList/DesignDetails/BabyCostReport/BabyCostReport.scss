@@ -57,7 +57,7 @@
         line-height: 1.25;
         font-size: 14px;
         @include for-size(medium){
-            font-size: 20px;
+            font-size: 18px;
         }
     }
     ul {
@@ -467,6 +467,10 @@
                 font-family: $font-family--secondary;
                 color: #24668d;
                 cursor: pointer;
+                &:hover, :active{
+                    color: white;
+                    background-color: #24668d;
+                }
             }
             .Section__Design-Banner{
                 width: 100%;

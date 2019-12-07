@@ -106,8 +106,8 @@ class EatHereDetail extends Component {
                                             <h5>It's so Hard to Decide</h5>
                                         </div>
                                         <div className="LeftImage-Sections-Right">
-                                            <p>It’s hard to find and remember the best location near you because too many opinions shows on the different Yelp App. And also, we didn’t go to the same store twice if their food didn’t good enough..</p>
-                                            <p>It’s a timeless, exhausting, and frustrating struggle. Struggling where to eat happens to you and whoever you’re with all the time. It happens enough that maybe you should have something prepared for such occasions. It might sound kind of nerdy, but EAT here app could save you some serious time.</p>
+                                            <p>It’s a timeless, exhausting, and frustrating struggle. Struggling where to eat happens to you and whoever you’re with all the time. It happens enough that maybe you should have something prepared for such occasions. </p>
+                                            <p className="EatHere__Problem-Question">“How might we help people to decide when they are struggling where to eat?”</p>
                                         </div>
                                     </div>
                                 </div>

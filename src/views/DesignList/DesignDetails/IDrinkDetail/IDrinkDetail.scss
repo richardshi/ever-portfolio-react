@@ -58,7 +58,7 @@
         line-height: 1.25;
         font-size: 14px;
         @include for-size(medium){
-            font-size: 20px;
+            font-size: 18px;
         }
     }
     ul {
@@ -431,9 +431,7 @@
                 }
 
                 border: solid 1px #666666;
-                @include for-size(medium){
-                    border: none;
-                }
+
             }
             .Section__Branding-Banner{
                 background-color: rgba(198, 198, 198, 0.24);
@@ -560,6 +558,12 @@
                         margin: 0;
                     }
                 }
+            }
+
+
+            .IDrink__Problem-Question{
+                color: #0D5734;
+                font-size: 16px;
             }
 
         }
