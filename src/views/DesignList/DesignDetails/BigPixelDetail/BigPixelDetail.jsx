@@ -214,7 +214,7 @@ class BigPixelDetail extends Component {
                                 </div>
                                 <div className="Section__Two-Section">
                                     <h4>Date Created</h4>
-                                    <p>Sumer 2019 <br />8 weeks<br/>Group Project</p>
+                                    <p>Summer 2019 <br />8 weeks<br/>Group Project</p>
                                 </div>
                             </div>
                             

@@ -1,0 +1,483 @@
+@import "assets/sass/utilities/_config.scss";
+@import "assets/sass/utilities/_utilities.scss";
+
+
+.BabyCostReport-Detail{
+    width: 100%;
+    font-family: $font-family--secondary;
+    .BabyCostReport-Detail__Container{
+        max-width: 300px;
+        margin: auto;
+        display: block;
+        @include for-size(medium){
+            max-width: 500px;
+        }
+        @include for-size(large){
+            max-width: 670px;
+        }
+        @include for-size(extra-large){
+            max-width: 800px;
+        }
+        @include for-size(super-extra-large){
+            max-width: 1140px;
+        }
+    }
+    .BabyCostReport-Detail__Secondary-Container{
+        width: 88%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    .BabyCostReport-Detail__Image-full-width{
+        width: 100%;
+    }
+    .BabyCostReport-Detail__Image-fixed-height{
+        height: 300px;
+    }
+
+    h4{
+        font-family: $font-family--secondary;
+        text-align: left;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+    h5{
+        font-family: $font-family--secondary;
+        text-align: left;
+        margin-bottom: 1em;
+        font-size: 20px;
+    }
+    p{
+        font-family: $font-family--primary;
+        text-align: left;
+        font-weight: 300;
+        line-height: 1.25;
+    }
+    ul {
+        list-style: none;
+        text-align: left;
+        li{
+            font-family: $font-family--primary;
+            font-weight: 300;
+            line-height: 1.5;
+            &::before{
+                content: "\2022";
+                color: #868282;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+    }
+
+    .title-light{
+        font-weight: normal;
+    }
+
+    .BabyCostReport-Detail__Banner-Wrapper{
+        width: 100%;
+        .BabyCostReport-Detail__Banner-Background{
+            width: 100%;
+            background-color: #fff2f2;
+        }
+
+        .BabyCostReport-Detail__Banner-Menu{
+            display: none;
+            @include for-size(medium){
+                display: block;
+                width: 100%;
+                //height: 83px;
+                background-color: #24668d;
+                .Banner-Menu-Wrapper{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .Banner-Menu-Selection{
+                        width: 20%;
+                        height: 100%;
+                        color: white;
+                        text-decoration: none;
+                        &:hover, &:active{
+                            //text-shadow: 1px 0px 0px white;
+                            font-weight: bold;
+                            //background-color: black;
+                        }
+                        .Banner-Menu-Selection__Name{
+                            width: 100%;
+                            height: auto;
+                            padding: 20% 0;
+                            //text-shadow: 1px 0px 0px white;
+                            
+                        }
+                    }
+                    .activated{
+                        background-color: black;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .BabyCostReport-Detail__Section-List{
+        margin-top: 100px;
+        margin-bottom: 200px;
+        .BabyCostReport-Detail__Section{
+            display: none;
+            /*
+            &.default{
+                display: block;
+                
+            }
+            &:target{
+                display: block;
+            }
+            &.default :target ~ {
+                display: none;
+            }
+            */
+
+            .Section__Title{
+                margin-top: 50px;
+                margin-bottom: 100px;
+                font-family: $font-family--secondary;
+                h1{
+                    margin: 0;
+                    font-size: 60px;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.15;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #b8d7ea;
+                }
+                h2{
+                    margin: 0;
+                    font-size: 24px;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.17;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #24668d;
+                }
+            }
+            .Section__Two-Sections{
+                width: 100%;
+                //margin-top: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .Section__Two-Section{
+                    width: 40%;
+                    text-align: left;
+                    h4{
+                        margin: 0;
+                    }
+                }
+                .Section__Half-Section{
+                    width: 45%;
+                    text-align: left;
+                    h4{
+                        margin: 0;
+                    }
+                    ul {
+                        list-style: none;
+
+                        li{
+                            font-family: $font-family--primary;
+                            font-weight: 300;
+                            line-height: 1.5;
+                            &::before{
+                                content: "\2022";
+                                color: #047ab1;
+                                font-weight: bold;
+                                display: inline-block; 
+                                width: 1em;
+                                margin-left: -1em;
+                            }
+                        }
+                    }
+                }
+                .Section__Inner-Half-Sections{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .Section__Inner-Half-Section{
+                        width: 45%;
+                        text-align: left;
+                    }
+                }
+                h5{
+                    font-family: $font-family--primary;
+                    font-size: 16px;
+                    font-weight: normal;
+                }
+
+            }
+
+            .Section__Full-Width-Banner{
+                width: 100%;
+            }
+            .Section-Intro__Banner{
+                width: 100%;
+                height: 166px;
+                background-color: rgba(240, 243, 189, 0.2);
+                .BabyCostReport-Banner-Container{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    height: 100%;
+                    .BabyCostReport-Banner-Left{
+                        position: relative;
+                        width: 10%;
+                        img{
+                            width: 100%;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .BabyCostReport-Banner-Right{
+                        position: relative;
+                        width: 80%;
+                        h4{
+                            position: absolute;
+                            margin: 0;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            font-size: 20px;
+                            font-weight: 300;
+                        }
+                    }  
+                } 
+            }
+            .Section__LeftImage-Sections{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .LeftImage-Sections-Left{
+                    width: 30%;
+                    
+                }
+                .LeftImage-Sections-Right{
+                    width: 60%;
+                }
+            }
+
+            .Section__RightImage-Sections{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .RightImage-Sections-Left{
+                    width: 60%;
+                    
+                }
+                .RightImage-Sections-Right{
+                    width: 30%;
+                }
+                h5{
+                    margin-top: 0;
+                }
+            }
+
+            .Section__Three-Sections{
+                width: 100%;
+                margin-top: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                .Section__Three-Section{
+                    width: 25%;
+                    display: table-cell;
+                }
+                h5{
+                    font-family: $font-family--primary;
+                    font-size: 20px;
+                    font-weight: normal;
+                    text-align: center;
+                }
+            }
+            .Section-Research__Banner{
+                background-color: white;
+            }
+            .Section__Three-Selection-Bar{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                .Three-Section-Bar__Selection{
+                    position: relative;
+                    width: 33%;
+                    height: 52px;
+                    color: #1b8caa;
+                    background-color: white;
+                    border-radius: 8px 8px 0 0;  
+                    border: solid 1px #24668d;
+                    border-bottom: solid 5px #24668d;
+                    text-align: center;
+                    &:hover, &:active{
+                        //text-shadow: 1px 0px 0px white;
+                        font-weight: bold;
+                        //background-color: black;
+                    }
+                    .Three-Section-Bar__Selection-Name{
+                        position: absolute;
+                        width: 100%;
+                        height: auto;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        //padding: 20% 0;
+                        //text-shadow: 1px 0px 0px white;
+                    }
+
+                }
+                .Three-Selection-Bar-Blue{
+                    &.activated{  
+                        color: white;
+                        background-color: #24668d;
+                        font-weight: bold;
+                    } 
+                }
+                .Three-Selection-Bar-DarkBlue{
+                    color: 021a47;
+                    background-color: white;
+                    border: solid 1px #021a47;
+                    border-bottom: solid 5px #021a47;
+                    &.activated{  
+                        color: white;
+                        background-color: #021a47;
+                        font-weight: bold;
+                    } 
+                }
+            }
+            .Section__Three-Selection-List{
+                .Section__Three-Selection-Container{
+                    display: none;
+                    margin-top: 35px;
+                    .Section__Three-Selection-Header{
+                        margin-top: 33px;
+                        margin-bottom: 33px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .Three-Selection-Header-Left{
+                            width: 10%;
+                        }
+                        .Three-Selection-Header-Right{
+                            width: 80%;
+                            img{
+                                display: block;
+                                margin: auto;
+                            }
+                        }
+                    }
+                    h5{
+                        margin: 0;
+                        font-weight: normal;
+                        color: #021a47;
+                    }
+                    h4{
+                        font-size: 20px;
+                        margin-top: 10px;
+                        text-align: left;
+                    }
+                }
+                .show {
+                    display: block;
+                }
+            }
+            .Section__Branding-Banner{
+                background-color: rgba(198, 198, 198, 0.24);
+                background-color: #f7f7f7;
+                width: 100%;
+            }
+            .Section__Key-Screen-List{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                h4{
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+                .Key-Screen-Shot{
+                    width: 23%;
+                    h4{
+                        text-align: center;
+                        margin-top: 20px;
+                        
+                    }
+                }
+                .Key-Screen-Description{
+                    width: 29%;
+                    padding: 0 20px;
+                }
+            }
+            .button-CaseStudy{
+                width: 50%;
+                height: 51px;
+                border-radius: 8px;
+                border: solid 2px #24668d;
+                background-color: transparent;
+                font-size: 16px;
+                font-family: $font-family--secondary;
+                color: #24668d;
+                cursor: pointer;
+            }
+            .Section__Design-Banner{
+                width: 100%;
+                background-color: #000125;
+                img{
+                    display: block;
+                }
+            }
+            
+            .Section__IOT-Products{
+                .Section__IOT-Cell-Container{
+                    display: table-cell;
+                    position: relative;
+                    h5{
+                        text-align: center;
+                        font-size: 20px;
+                        font-weight: normal;
+                        font-family: $font-family--primary;
+                    }
+                    .Section__IOT-Cell{
+                        position: absolute;
+                        bottom: 0;
+
+                    }
+                }
+            }
+            
+            .Section__Video-Container{
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                padding-top: 56.25%;
+                .Section__Video{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                }
+            }
+
+        }
+        
+        .show {
+            display: block;
+        }
+
+    }
+}

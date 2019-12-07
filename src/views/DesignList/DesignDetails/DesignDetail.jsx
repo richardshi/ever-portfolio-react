@@ -5,7 +5,7 @@ import IDrinkDetail from 'views/DesignList/DesignDetails/IDrinkDetail/IDrinkDeta
 import EatHereDetail from 'views/DesignList/DesignDetails/EatHereDetail/EatHereDetail'
 import KitakataDetail from 'views/DesignList/DesignDetails/KitakataDetail/KitakataDetail';
 import BigPixelDetail from 'views/DesignList/DesignDetails/BigPixelDetail/BigPixelDetail';
-//import BabyCostReport from 'views/DesignList/DesignDetails/BabyCostReport/BabyCostReport';
+import BabyCostReport from 'views/DesignList/DesignDetails/BabyCostReport/BabyCostReport';
 
 class DesignDetail extends Component {
     constructor(props){
@@ -36,7 +36,7 @@ class DesignDetail extends Component {
                 designDetailComponent = <BigPixelDetail></BigPixelDetail>;
                 break;
             case "babycostreport":
-                //designDetailComponent = <BabyCostReport></BabyCostReport>;
+                designDetailComponent = <BabyCostReport></BabyCostReport>;
                 break;
             default:
                 designDetailComponent = <div></div>;
