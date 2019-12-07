@@ -87,8 +87,6 @@
         .Endless-Detail__Banner-Background{
             width: 100%;
             background-color: #d3ede4;
-            position: sticky;
-            top: 0;
         }
     }
     
@@ -103,13 +101,13 @@
             top: 124px;
             z-index: 1;
             .Banner-Menu-Wrapper{
-                height: 100%;
+                //height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 .Banner-Menu-Selection{
                     width: 20%;
-                    height: 100%;
+                    //height: 100%;
                     color: white;
                     text-decoration: none;
                     &:hover, &:active{
@@ -330,7 +328,7 @@
                 flex-direction: row;
                 .Three-Section-Bar__Selection{
                     position: relative;
-                    width: 33%;
+                    width: 33.33%;
                     height: 52px;
                     color: #1b8caa;
                     background-color: white;

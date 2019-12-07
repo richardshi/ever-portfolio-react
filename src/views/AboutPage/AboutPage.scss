@@ -62,7 +62,7 @@
         }
         .Personal-Right{
             width: 94%;
-            font-family: ProximaNova;
+            font-family: $font-family--primary;
             margin: auto;
             h1{
                 font-size: 24px;
@@ -148,7 +148,7 @@
                     }
                 }
                 p{
-                    font-family: ProximaNova;
+                    font-family: $font-family--primary;
                     @include for-size(large){
                         margin-top: 20px;
                     }
@@ -163,7 +163,7 @@
     }
     .AboutPage__Passions-Skills{
         h1{  
-            font-family: ProximaNova;
+            font-family: $font-family--primary;
             font-weight: normal;
             font-size: 16px;
             margin-top: 80px;
@@ -205,7 +205,7 @@
 
                 }
                 .Passion-Skills__Item-Name{
-                    font-family: ProximaNova;
+                    font-family: $font-family--primary;
                     margin: auto;
                     margin-top: 35px;
                     font-size: 16px;

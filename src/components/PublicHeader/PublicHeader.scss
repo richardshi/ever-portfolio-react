@@ -15,7 +15,7 @@
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
-        font-family: ProximaNova;
+        font-family: $font-family--primary;
 
         @include for-size(medium){
             max-width: 500px;
