@@ -282,8 +282,8 @@ class BigPixelDetail extends Component {
                                     <h4>Competitiors Analysis</h4>
                                     {renderedCompetitorsAnalysisBar}
 
-                                    <div className="BigPixel-Detail__Secondary-Container Section__Three-Selection-List"> 
-                                        <div id="LG" class={`Section__Three-Selection-Container ${CASectionClasses[0]}`}>
+                                    <div className="Section__Three-Selection-List"> 
+                                        <div id="LG" class={`BigPixel-Detail__Secondary-Container Section__Three-Selection-Container ${CASectionClasses[0]}`}>
                                             <div className="Section__Two-Sections">
                                                 <div className="Section__Two-Section">
                                                     <div className="Section__Half-Section">
@@ -308,7 +308,7 @@ class BigPixelDetail extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="SONY" class={`Section__Three-Selection-Container ${CASectionClasses[1]}`}>
+                                        <div id="SONY" class={`BigPixel-Detail__Secondary-Container Section__Three-Selection-Container ${CASectionClasses[1]}`}>
                                             <div className="Section__Two-Sections">
                                                 <div className="Section__Two-Section">
                                                     <div className="Section__Half-Section">
@@ -333,7 +333,7 @@ class BigPixelDetail extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="Hisense" class={`Section__Three-Selection-Container ${CASectionClasses[2]}`}>
+                                        <div id="Hisense" class={`BigPixel-Detail__Secondary-Container Section__Three-Selection-Container ${CASectionClasses[2]}`}>
                                             <div className="Section__Two-Sections">
                                                 <div className="Section__Two-Section">
                                                     <div className="Section__Half-Section">

@@ -30,42 +30,6 @@ import KitakataAdStore from 'assets/images/KitakataPage/Ramen_16@3x.png';
 import KitakataAdMobileApp from 'assets/images/KitakataPage/Ramen_17@3x.png';
 import KitakataAdTabletApp from 'assets/images/KitakataPage/Ramen_18@3x.png';
 
-
-
-
-import EatHereBannerSmall from 'assets/images/EatHerePage/Eathere_1.png'
-import EatHereBannerMedium from 'assets/images/EatHerePage/Eathere_1@2x.png'
-import EatHereBannerLarge from 'assets/images/EatHerePage/Eathere_1@3x.png'
-
-//import EatHereLogo from 'assets/images/EatHerePage/Eathere_2@3x.png'
-import EatHereProblems from 'assets/images/EatHerePage/Eathere_3@3x.png'
-import EatHereGoals from 'assets/images/EatHerePage/Artboard-14@3x.png'
-
-//import EatHereMoodBoard from 'assets/images/EatHerePage/Eathere_8@3x.png'
-//import EatHereColorPaletten_1 from 'assets/images/EatHerePage/Eathere_9@3x.png'
-//import EatHereColorPaletten_2 from 'assets/images/EatHerePage/Eathere_10@3x.png'
-//import EatHereColorPaletten_3 from 'assets/images/EatHerePage/Eathere_11@3x.png'
-//import EatHereTypography from 'assets/images/EatHerePage/Eathere_16@3x.png'
-//import EatHereLogoDesign from 'assets/images/EatHerePage/Eathere_12@3x.png'
-import EatHereAnalysis from 'assets/images/EatHerePage/Artboard-13@3x.png'
-import EatHereIcon from 'assets/images/EatHerePage/Eathere_13@3x.png'
-
-import EatHereSiteMap from 'assets/images/EatHerePage/Eathere_14@3x.png'
-import EatHereWireFramesFlow from 'assets/images/EatHerePage/Eathere_15@3x.png'
-
-import EatHereKFLogin from 'assets/images/EatHerePage/Eathere_app_1@3x.png';
-import EatHereKFFoodList from 'assets/images/EatHerePage/Eathere_app_2@3x.png';
-import EatHereKFFoodFilter from 'assets/images/EatHerePage/Eathere_app_3@3x.png';
-import EatHereKFSelect from 'assets/images/EatHerePage/Eathere_app_4@3x.png';
-import EatHereKFFoodDetail from 'assets/images/EatHerePage/Eathere_app_5@3x.png';
-import EatHereKFEditFood from 'assets/images/EatHerePage/Eathere_app_6@3x.png';
-import EatHereKFProfileDetail from 'assets/images/EatHerePage/Eathere_app_7@3x.png';
-import EatHereKFEditProfile from 'assets/images/EatHerePage/Eathere_app_8@3x.png';
-import EatHereKFAddFood from 'assets/images/EatHerePage/Eathere_app_9@3x.png';
-
-
-
-
 class KitakataDetail extends Component {
     constructor(props){
         super(props);
@@ -238,18 +202,24 @@ class KitakataDetail extends Component {
                             <div className="Section__Full-Width-Banner Section-Intro__Banner">
                                 <div className="Kitakata-Detail__Container Kitakata-Banner-Container">
                                     <div className="Kitakata-Banner-Left"><img src={KitakataGoalWeb} /></div>
-                                    <div className="Kitakata-Banner-Middle"><h4>Website</h4></div>
-                                    <div className="Kitakata-Banner-Right"><p>Recreate a website where customers can review menus and locations. To show more ramen dishes and recommend 10 best choice for the new customers.</p></div>
+                                    <div className="Kitakata-Banner-Right">
+                                        <div className="Kitakata-Banner-Right-Middle"><h4>Website</h4></div>
+                                        <div className="Kitakata-Banner-Right-Right"><p>Recreate a website where customers can review menus and locations. To show more ramen dishes and recommend 10 best choice for the new customers.</p></div>
+                                    </div>
                                 </div>
                                 <div className="Kitakata-Detail__Container Kitakata-Banner-Container">
                                     <div className="Kitakata-Banner-Left"><img src={KitakataGoalMenu} /></div>
-                                    <div className="Kitakata-Banner-Middle"><h4>Menu</h4></div>
-                                    <div className="Kitakata-Banner-Right"><p>Design a iPad and mobile menu app which enables customers to order their ramen choice in an interactive way, paperless menu.</p></div>
+                                    <div className="Kitakata-Banner-Right">
+                                         <div className="Kitakata-Banner-Right-Middle"><h4>Menu</h4></div>
+                                        <div className="Kitakata-Banner-Right-Right"><p>Design a iPad and mobile menu app which enables customers to order their ramen choice in an interactive way, paperless menu.</p></div>
+                                    </div>
                                 </div>
                                 <div className="Kitakata-Detail__Container Kitakata-Banner-Container">
                                     <div className="Kitakata-Banner-Left"><img src={KitakataGoalLogo} /></div>
-                                    <div className="Kitakata-Banner-Middle"><h4>Logo</h4></div>
-                                    <div className="Kitakata-Banner-Right"><p>Redesign the logo to reflect the characteristics of the Ramen, and combine the first character “K” with a bowl of ramen.</p></div>
+                                    <div className="Kitakata-Banner-Right">
+                                        <div className="Kitakata-Banner-Right-Middle"><h4>Logo</h4></div>
+                                        <div className="Kitakata-Banner-Right-Right"><p>Redesign the logo to reflect the characteristics of the Ramen, and combine the first character “K” with a bowl of ramen.</p></div>
+                                    </div>
                                 </div>
                             </div>
 
