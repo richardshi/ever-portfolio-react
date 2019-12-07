@@ -52,7 +52,7 @@ import EndlessPersonas1 from 'assets/images/EndlessPage/Endless_Jane@3x.png'
 import EndlessPersonas2 from 'assets/images/EndlessPage/Endless_Emma@3x.png'
 import EndlessPersonas3 from 'assets/images/EndlessPage/Endless_Sherry@3x.png'
 
-import EndlessVideo from 'assets/images/EndlessPage/Endless_Prototype.mp4'
+import EndlessVideo from 'assets/images/EndlessPage/Endless_Prototype_Video.mp4'
 
 
 class EndlessDetail extends Component {
