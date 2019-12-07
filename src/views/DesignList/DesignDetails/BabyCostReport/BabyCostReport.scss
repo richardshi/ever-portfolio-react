@@ -33,13 +33,16 @@
     .BabyCostReport-Detail__Image-fixed-height{
         height: 300px;
     }
-
     h4{
         font-family: $font-family--secondary;
         text-align: left;
         margin-top: 50px;
-        margin-bottom: 30px;
-        font-size: 24px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        @include for-size(medium){
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
     }
     h5{
         font-family: $font-family--secondary;
@@ -52,6 +55,10 @@
         text-align: left;
         font-weight: 300;
         line-height: 1.25;
+        font-size: 14px;
+        @include for-size(medium){
+            font-size: 20px;
+        }
     }
     ul {
         list-style: none;
@@ -167,22 +174,32 @@
             }
             .Section__Two-Sections{
                 width: 100%;
-                //margin-top: 50px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                margin-top: 25px;
+                @include for-size(medium){
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .Section__Two-Section{
-                    width: 40%;
                     text-align: left;
                     h4{
                         margin: 0;
                     }
+                    width: 100%;
+                    margin-top: 25px;
+                    @include for-size(medium){
+                        width: 40%;
+                        margin-top: 0;
+                    }
                 }
                 .Section__Half-Section{
-                    width: 45%;
                     text-align: left;
                     h4{
-                        margin: 0;
+                        margin-top: 20px;
+                        @include for-size(medium){
+                            margin: 0;
+                        }
                     }
                     ul {
                         list-style: none;
@@ -200,6 +217,10 @@
                                 margin-left: -1em;
                             }
                         }
+                    }
+                    width: 100%;
+                    @include for-size(medium){
+                        width: 45%;
                     }
                 }
                 .Section__Inner-Half-Sections{
@@ -260,29 +281,44 @@
             }
             .Section__LeftImage-Sections{
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include for-size(medium){ 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .LeftImage-Sections-Left{
-                    width: 30%;
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 30%;
+                    }
                     
                 }
                 .LeftImage-Sections-Right{
-                    width: 60%;
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 60%;
+                    }
                 }
             }
 
             .Section__RightImage-Sections{
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include for-size(medium){ 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .RightImage-Sections-Left{
-                    width: 60%;
-                    
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 60%;
+                    }
                 }
                 .RightImage-Sections-Right{
-                    width: 30%;
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 30%;
+                    }
                 }
                 h5{
                     margin-top: 0;

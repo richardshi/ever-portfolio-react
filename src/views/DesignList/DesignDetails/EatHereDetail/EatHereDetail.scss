@@ -38,8 +38,12 @@
         font-family: $font-family--secondary;
         text-align: left;
         margin-top: 50px;
-        margin-bottom: 30px;
-        font-size: 24px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        @include for-size(medium){
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
     }
     h5{
         font-family: $font-family--secondary;
@@ -52,6 +56,10 @@
         text-align: left;
         font-weight: 300;
         line-height: 1.25;
+        font-size: 14px;
+        @include for-size(medium){
+            font-size: 20px;
+        }
     }
     ul {
         list-style: none;
@@ -167,19 +175,28 @@
             }
             .Section__Two-Sections{
                 width: 100%;
-                margin-top: 50px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                margin-top: 25px;
+                @include for-size(medium){
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .Section__Two-Section{
-                    width: 40%;
+                    //width: 40%;
                     text-align: left;
                     h4{
                         margin: 0;
                     }
+                    width: 100%;
+                    margin-top: 25px;
+                    @include for-size(medium){
+                        width: 40%;
+                        margin-top: 0;
+                    }
                 }
                 .Section__Half-Section{
-                    width: 45%;
+                    //width: 45%;
                     text-align: left;
                     h4{
                         margin: 0;
@@ -201,18 +218,22 @@
                             }
                         }
                     }
-                }
-                .Section__Inner-Half-Sections{
                     width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    .Section__Inner-Half-Section{
+                    @include for-size(medium){
                         width: 45%;
-                        text-align: left;
                     }
                 }
+            }
 
+            .Section__Inner-Half-Sections{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .Section__Inner-Half-Section{
+                    width: 45%;
+                    text-align: left;
+                }
             }
 
             .Section__Full-Width-Banner{
@@ -255,29 +276,47 @@
             }
             .Section__LeftImage-Sections{
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include for-size(large){ 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .LeftImage-Sections-Left{
-                    width: 30%;
+                    width: 100%;
+                    @include for-size(large){ 
+                        width: 30%;
+                    }
                     
                 }
                 .LeftImage-Sections-Right{
-                    width: 60%;
+                    width: 100%;
+                    @include for-size(large){ 
+                        width: 60%;
+                    }
+                }
+                h4{
+                    margin: 0;
                 }
             }
 
             .Section__RightImage-Sections{
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include for-size(medium){ 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .RightImage-Sections-Left{
-                    width: 60%;
-                    
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 60%;
+                    }
                 }
                 .RightImage-Sections-Right{
-                    width: 30%;
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 30%;
+                    }
                 }
                 h5{
                     margin-top: 0;
@@ -376,6 +415,7 @@
                     h4{
                         font-size: 20px;
                         margin-top: 10px;
+                        margin-bottom: 10px;
                         text-align: center;
                     }
                 }
@@ -396,24 +436,47 @@
                 width: 100%;
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: space-between;
+                margin-bottom: 50px;
                 h4{
                     font-size: 20px;
                     font-weight: 300;
+                    margin-top: 0px;
+                    @include for-size(large){
+                        margin-top: 50px;
+                        font-size: 24px;
+                    }
                 }
                 .Key-Screen-Shot{
-                    width: 23%;
+                    width: 30%;
                     h4{
                         text-align: center;
-                        margin-top: 20px;
+                        font-size: 12px;
+                        margin-top: 10px;
+                        @include for-size(medium){
+                            font-size: 16px;
+                            margin-top: 20px;
+                        }
+                        @include for-size(extra-large){
+                            font-size: 16px;
+                            margin-top: 20px;
+                        }
                         
+                    }
+                    @include for-size(medium){
+                        width: 20%;
                     }
                 }
                 .Key-Screen-Description{
-                    width: 29%;
+                    width: 100%;
                     padding: 0 20px;
+                    @include for-size(medium){
+                        width: 29%;
+                    }
                 }
             }
+
             .button-CaseStudy{
                 width: 50%;
                 height: 51px;
@@ -424,6 +487,10 @@
                 font-family: $font-family--secondary;
                 color: #24668d;
                 cursor: pointer;
+                &:hover, :active{
+                    color: white;
+                    background-color: #24668d;
+                }
             }
             .Section__Design-Banner{
                 width: 100%;
@@ -452,17 +519,21 @@
             }
             
             .Section__Prototype-Container{
-                width: 375px;
-                height: 667px;
-                position: relative;
-                
-                .Section__Prototype{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: 0;
+                display: none;
+                @include for-size(medium){
+                    display: block;
+                    width: 375px;
+                    height: 667px;
+                    position: relative;
+                    
+                    .Section__Prototype{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                    }
                 }
             }
             .Section-Typography{

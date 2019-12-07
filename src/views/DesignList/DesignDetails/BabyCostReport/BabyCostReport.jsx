@@ -16,28 +16,6 @@ import BabyCostReportTypography from 'assets/images/BabyCostReport/Babycost_6@3x
 import BabyCostReportStoryboardSketch from 'assets/images/BabyCostReport/Babycost_7@3x.png';
 import BabyCostReportStoryboardDigital from 'assets/images/BabyCostReport/Babycost_8@3x.png';
 
-
-import BigPixelBannerSmall from 'assets/images/BigPixelPage/Artboard-3.png';
-import BigPixelBannerMedium from 'assets/images/BigPixelPage/Artboard-3@2x.png';
-import BigPixelBannerLarge from 'assets/images/BigPixelPage/Artboard-3@3x.png';
-
-import BigPixelProfile from 'assets/images/BigPixelPage/Artboard-4@3x.png';
-import BigPixelTeam from 'assets/images/BigPixelPage/Artboard-5@3x.png';
-
-import BigPixelCompetitive from 'assets/images/BigPixelPage/Artboard-10@3x.png';
-import BigPixel4P from 'assets/images/BigPixelPage/Artboard-11@3x.png';
-import BigPixelSWOT from 'assets/images/BigPixelPage/Artboard-12@3x.png';
-import BigPixelWebSite from 'assets/images/BigPixelPage/Bigpixel_Web@3x.png';
-
-
-import BigPixelMobileHome from 'assets/images/BigPixelPage/Artboard-18@3x.png';
-import BigPixelMobileProduct from 'assets/images/BigPixelPage/Artboard-19@3x.png';
-import BigPixelMobileDetail from 'assets/images/BigPixelPage/Artboard-20@3x.png';
-
-import BigPixelSchedule from 'assets/images/BigPixelPage/Artboard-15@3x.png';
-import BigPixelAd from 'assets/images/BigPixelPage/Artboard-16@3x.png';
-
-
 class BabyCostReport extends Component {
     constructor(props){
         super(props);

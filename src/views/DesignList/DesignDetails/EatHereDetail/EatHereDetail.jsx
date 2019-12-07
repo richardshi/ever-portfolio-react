@@ -39,188 +39,19 @@ import EatHereKFEditProfile from 'assets/images/EatHerePage/Eathere_app_8@3x.png
 import EatHereKFAddFood from 'assets/images/EatHerePage/Eathere_app_9@3x.png';
 
 
-import IDrinkWomen from 'assets/images/IDrinkPage/iDrink-4@3x.png';
-import IDrinkMen from 'assets/images/IDrinkPage/iDrink-4-1@3x.png';
-import IDrinkAmount from 'assets/images/IDrinkPage/iDrink-3@3x.png';
-import IDrinkTargetAudience from 'assets/images/IDrinkPage/iDrink-7@3x.png';
-
-
-/*
-import IDrinkColorPalette from 'assets/images/IDrinkPage/iDrink-12@3x.png';
-import IDrinkTypography from 'assets/images/IDrinkPage/iDrink-13@3x.png'
-import IDrinkLogoDesign from 'assets/images/IDrinkPage/iDrink-14@3x.png';
-*/
-import IDrinkLogoGuideLight from 'assets/images/IDrinkPage/iDrink-15-1@3x.png';
-import IDrinkLogoGuideDark from 'assets/images/IDrinkPage/iDrink-15@3x.png';
-
-
-import IDrinkUserFlow from 'assets/images/IDrinkPage/iDrink-17@3x.png';
-import IDrinkUserTesting from 'assets/images/IDrinkPage/iDrink-testing@3x.png';
-
-
-
-import IDrinkUserFlowWeb from 'assets/images/IDrinkPage/iDrink-21@3x.png'
-
-import IDrinkWebHome from 'assets/images/IDrinkPage/iDrink-22@3x.png'
-import IDrinkWebLanding from 'assets/images/IDrinkPage/iDrink-23@3x.png'
-import IDrinkWebProductDetail from 'assets/images/IDrinkPage/iDrink-24@3x.png'
-import IDrinkWebCart from 'assets/images/IDrinkPage/iDrink-25@3x.png'
-import IDrinkPrototype from 'assets/images/IDrinkPage/iDrink-26@3x.png'
-import IDrinkIOTBottle from 'assets/images/IDrinkPage/iDrink-27@3x.png'
-import IDrinkIOTWatch from 'assets/images/IDrinkPage/iDrink-28@3x.png'
-
-
-
 
 class EatHereDetail extends Component {
     constructor(props){
         super(props);
         this.state = {
-            navBarMenu:[
-                {
-                    name: "INTRO",
-                    id: "Section_Intro",
-                    active: true,
-                },
-                {
-                    name: "RESEARCH",
-                    id: "Section_Research",
-                    active: false,
-                },
-                {
-                    name: "BRANDING",
-                    id: "Section_Branding",
-                    active: false,
-                },
-                {
-                    name: "INTERACTION",
-                    id: "Section_Interaction",
-                    active: false,
-                },
-                {
-                    name: "POSTER",
-                    id: "Section_Poster",
-                    active: false,
-                }
-            ],
-            PersonasBarMenu: [
-                {
-                    name: "Albert Conville",
-                    id: "Albert_Conville",
-                    active: true,
-                },
-                {
-                    name: "Scarlett Devon",
-                    id: "Scarlett_Devon",
-                    active: false,
-                },
-                {
-                    name: "Joseph Cox",
-                    id: "Joseph_Cox",
-                    active: false,
-                }
-            ]
         };
-        this.renderNavMenu = this.renderNavMenu.bind(this);
-        this.updateNavMenu = this.updateNavMenu.bind(this);
-        this.renderSectionClasses = this.renderSectionClasses.bind(this);
-        this.renderedPersonasBar = this.renderedPersonasBar.bind(this);
-        this.updatePersonasBarMenu = this.updatePersonasBarMenu.bind(this);
     }
 
-    renderNavMenu(){
-        let navBarMenu = this.state.navBarMenu;
-        let navBarSelections = navBarMenu.map((navBarSelection, index) => {
-            let activeClass = navBarSelection.active ? " activated" : "";
-            return (
-                <a href={`#${navBarSelection.id}`} className={`Banner-Menu-Selection ${activeClass}`} onClick={()=>this.updateNavMenu(index)}>
-                    <div className="Banner-Menu-Selection__Name">{navBarSelection.name}</div>
-                </a>
-            )
-        })
-        return (
-            <div id="Banner-Menu-IDrink" className="EatHere-Detail__Banner-Menu">
-                <nav className="EatHere-Detail__Container Banner-Menu-Wrapper">
-                    {navBarSelections}
-                </nav>
-            </div>
-        )
-    }
-    
-    updateNavMenu(index){
-        let navBarMenu = this.state.navBarMenu;
-        for(let i=0; i<navBarMenu.length; i++){
-            if (i == index){
-                navBarMenu[i].active = true;
-            } else {
-                navBarMenu[i].active = false;
-            }
-        }
-        this.setState({navBarMenu: navBarMenu})
-    }
 
-    renderSectionClasses(){
-        let navBarMenu = this.state.navBarMenu;
-        let SectionClassList = [];
-        for(let i=0; i<navBarMenu.length; i++){
-            /*
-            SectionClassList[i] = "";
-            if(navBarMenu[i].active){
-                SectionClassList[i] = "show";
-            }
-            */
-           SectionClassList[i] = "show";
-        }
-        return SectionClassList;
-    }
 
-    renderedPersonasBar(){
-        let PersonasBarMenu = this.state.PersonasBarMenu;
-        let PersonasSelections = PersonasBarMenu.map((PersonasSelection, index) => {
-            let activeClass = PersonasSelection.active ? " activated" : "";
-            return (
-                <div className={`Three-Section-Bar__Selection Three-Selection-Bar-DarkBlue ${activeClass}`} onClick={()=>this.updatePersonasBarMenu(index)}>
-                    <div className="Three-Section-Bar__Selection-Name">{PersonasSelection.name}</div>
-                </div>
-            )
-        })
-        return (
-            <div id="" className="Section__Three-Selection-Bar ">
-                {PersonasSelections}
-            </div>
-        )
-    }
-
-    updatePersonasBarMenu(index){
-        let PersonasBarMenu = this.state.PersonasBarMenu;
-        for(let i=0; i<PersonasBarMenu.length; i++){
-            if (i == index){
-                PersonasBarMenu[i].active = true;
-            } else {
-                PersonasBarMenu[i].active = false;
-            }
-        }
-        this.setState({PersonasBarMenu: PersonasBarMenu})
-    }
-
-    renderPersonasBarClasses(){
-        let PersonasBarMenu = this.state.PersonasBarMenu;
-        let PersonasSectionClassList = [];
-        for(let i=0; i<PersonasBarMenu.length; i++){
-            PersonasSectionClassList[i] = "";
-            if(PersonasBarMenu[i].active){
-                PersonasSectionClassList[i] = "show";
-            }
-        }
-        return PersonasSectionClassList;
-    }
 
     render(){
         const{ navBarMenu } = this.state;
-        let renderedNavBarMenu = this.renderNavMenu();
-        let SectionClasses = this.renderSectionClasses();
-        let renderedPersonasBar = this.renderedPersonasBar();
-        let PersonasClasses = this.renderPersonasBarClasses();
 
         return(
             <div id="EatHere_Detail">
@@ -307,25 +138,27 @@ class EatHereDetail extends Component {
                             <div className="EatHere-Detail__Container">
                                 <h4>Personas</h4>
                                 <div className="EatHere-Detail__Secondary-Container Section__Three-Selection-List">
-                                    <div id="Albert_Conville" className={`Section__Three-Selection-Container ${PersonasClasses[0]}`}>
-                                        <div className="Section__Three-Sections">
-                                            <div className="Section__Three-Section">
+                                    <div id="Albert_Conville" className={`Section__Three-Selection-Container show`}>
+                                        <div className="Section__LeftImage-Sections">
+                                            <div className="LeftImage-Sections-Left">
                                                 <img src={EatHerePersonal} className="EatHere-Detail__Image-full-width"></img>
                                                 <h4>Albert Conville</h4>
                                             </div>
-                                            <div className="Section__Three-Section">
-                                                <div className="Section__Inner-Half-Section">
-                                                    <h5>About</h5>
-                                                    <p>Age: 34yrs <br/>Position: Journalist<br/>Live:  New York<br/>Hobby: Cooking</p>
-                                                    <h5>Personality</h5>
-                                                    <img src={EatHerePersonal_1} className="EatHere-Detail__Image-full-width"></img>
+                                            <div className="LeftImage-Sections-Right">
+                                                <div className="Section__Inner-Half-Sections"> 
+                                                    <div className="Section__Inner-Half-Section">
+                                                        <h5>About</h5>
+                                                        <p>Age: 34yrs <br/>Position: Journalist<br/>Live:  New York<br/>Hobby: Cooking</p>
+                                                        <h5>Personality</h5>
+                                                        <img src={EatHerePersonal_1} className="EatHere-Detail__Image-full-width"></img>
+                                                    </div>
+                                                    <div className="Section__Inner-Half-Section">
+                                                        <h5>Goals</h5>
+                                                        <p>Charlotte is care about her body and health. She uses our EAThere app to choose the eating place in a easy way.</p>
+                                                        <h5>Challenges</h5>
+                                                        <p>She always spends more than 1 hour to search what to eat and hard to decision.</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="Section__Three-Section">
-                                                <h5>Goals</h5>
-                                                <p>Charlotte is care about her body and health. She uses our EAThere app to choose the eating place in a easy way.</p>
-                                                <h5>Challenges</h5>
-                                                <p>She always spends more than 1 hour to search what to eat and hard to decision.</p>
                                             </div>
                                         </div>
                                     </div>
