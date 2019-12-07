@@ -1,7 +1,6 @@
 @import "assets/sass/utilities/_config.scss";
 @import "assets/sass/utilities/_utilities.scss";
 
-
 .Endless-Detail{
     width: 100%;
     .Endless-Detail__Container{
@@ -24,6 +23,7 @@
     .Endless-Detail__Secondary-Container{
         width: 88%;
         margin: auto;
+        margin-bottom: 25px;
     }
     .Endless-Detail__Image-full-width{
         width: 100%;
@@ -36,8 +36,12 @@
         font-family: $font-family--secondary;
         text-align: left;
         margin-top: 50px;
-        margin-bottom: 30px;
-        font-size: 24px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        @include for-size(medium){
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
     }
     h5{
         font-family: $font-family--secondary;
@@ -50,6 +54,10 @@
         text-align: left;
         font-weight: 300;
         line-height: 1.25;
+        font-size: 14px;
+        @include for-size(medium){
+            font-size: 20px;
+        }
     }
     ul {
         list-style: none;
@@ -78,50 +86,58 @@
         .Endless-Detail__Banner-Background{
             width: 100%;
             background-color: #d3ede4;
+            position: sticky;
+            top: 0;
         }
-
-        .Endless-Detail__Banner-Menu{
-            display: none;
-            @include for-size(medium){
-                display: block;
-                width: 100%;
-                //height: 83px;
-                background-color: #24668d;
-                .Banner-Menu-Wrapper{
+    }
+    
+    .Endless-Detail__Banner-Menu{
+        display: none;
+        @include for-size(medium){
+            display: block;
+            width: 100%;
+            //height: 83px;
+            background-color: #24668d;
+            position: sticky;
+            top: 124px;
+            z-index: 1;
+            .Banner-Menu-Wrapper{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .Banner-Menu-Selection{
+                    width: 20%;
                     height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    .Banner-Menu-Selection{
-                        width: 20%;
-                        height: 100%;
-                        color: white;
-                        text-decoration: none;
-                        &:hover, &:active{
-                            //text-shadow: 1px 0px 0px white;
-                            font-weight: bold;
-                            //background-color: black;
-                        }
-                        .Banner-Menu-Selection__Name{
-                            width: 100%;
-                            height: auto;
-                            padding: 20% 0;
-                            //text-shadow: 1px 0px 0px white;
-                            
-                        }
-                    }
-                    .activated{
-                        background-color: black;
+                    color: white;
+                    text-decoration: none;
+                    &:hover, &:active{
+                        //text-shadow: 1px 0px 0px white;
                         font-weight: bold;
+                        //background-color: black;
                     }
+                    .Banner-Menu-Selection__Name{
+                        width: 100%;
+                        height: auto;
+                        padding: 20% 0;
+                        //text-shadow: 1px 0px 0px white;
+                        
+                    }
+                }
+                .activated{
+                    background-color: black;
+                    font-weight: bold;
                 }
             }
         }
     }
+
+
     .Endless-Detail__Section-List{
-        margin-top: 100px;
+        //margin-top: 100px;
         margin-bottom: 200px;
         .Endless-Detail__Section{
+            margin-top: 100px;
             display: none;
             /*
             &.default{
@@ -136,8 +152,18 @@
             }
             */
 
+            &::before { 
+                display: block; 
+                content: " "; 
+                //124+82
+                margin-top: -206px; 
+                height: 206px; 
+                visibility: hidden; 
+                pointer-events: none;
+            }
+
             .Section__Title{
-                margin-top: 50px;
+                //margin-top: 50px;
                 margin-bottom: 100px;
                 font-family: $font-family--secondary;
                 h1{
@@ -165,16 +191,27 @@
             }
             .Section__Two-Sections{
                 width: 100%;
-                margin-top: 50px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                margin-top: 25px;
+                @include for-size(medium){
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .Section__Two-Section{
-                    width: 40%;
+                    //width: 40%;
                     text-align: left;
+                    h4{
+                        margin: 0;
+                    }
+                    width: 100%;
+                    margin-top: 25px;
+                    @include for-size(medium){
+                        width: 40%;
+                        margin-top: 0;
+                    }
                 }
                 .Section__Half-Section{
-                    width: 50%;
                     text-align: left;
                     h4{
                         margin: 0;
@@ -195,6 +232,10 @@
                                 margin-left: -1em;
                             }
                         }
+                    }
+                    width: 100%;
+                    @include for-size(medium){
+                        width: 50%;
                     }
                 }
 
@@ -240,26 +281,40 @@
             }
             .Section__LeftImage-Sections{
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include for-size(medium){ 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .LeftImage-Sections-Left{
-                    width: 30%;
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 30%;
+                    }
                     
                 }
                 .LeftImage-Sections-Right{
-                    width: 60%;
+                    width: 100%;
+                    @include for-size(medium){ 
+                        width: 60%;
+                    }
                 }
             }
+            
 
             .Section__Three-Sections{
                 width: 100%;
                 margin-top: 50px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include for-size(medium){
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
                 .Section__Three-Section{
-                    width: 25%;
+                    width: 100%;
+                    @include for-size(medium){                    
+                        width: 25%;
+                    }
                 }
             }
             .Section-Research__Banner{
@@ -344,6 +399,11 @@
                 .show {
                     display: block;
                 }
+
+                border: solid 1px #666666;
+                @include for-size(medium){
+                    border: none;
+                }
             }
             .Section__Branding-Banner{
                 background-color: rgba(198, 198, 198, 0.24);
@@ -358,22 +418,44 @@
                 width: 100%;
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: space-between;
+                margin-bottom: 50px;
                 h4{
                     font-size: 20px;
                     font-weight: 300;
+                    margin-top: 0px;
+                    @include for-size(large){
+                        margin-top: 50px;
+                        font-size: 24px;
+                    }
                 }
                 .Key-Screen-Shot{
-                    width: 23%;
+                    width: 30%;
                     h4{
                         text-align: center;
-                        margin-top: 20px;
+                        font-size: 12px;
+                        margin-top: 10px;
+                        @include for-size(medium){
+                            font-size: 16px;
+                            margin-top: 20px;
+                        }
+                        @include for-size(extra-large){
+                            font-size: 16px;
+                            margin-top: 20px;
+                        }
                         
+                    }
+                    @include for-size(medium){
+                        width: 20%;
                     }
                 }
                 .Key-Screen-Description{
-                    width: 29%;
+                    width: 100%;
                     padding: 0 20px;
+                    @include for-size(medium){
+                        width: 29%;
+                    }
                 }
             }
 
@@ -382,6 +464,49 @@
                 height: 51px;
                 border-radius: 8px;
                 border: solid 2px #24668d;
+                background-color: transparent;
+                font-size: 16px;
+                font-family: $font-family--secondary;
+                color: #24668d;
+                cursor: pointer;
+                &:hover, :active{
+                    color: white;
+                    background-color: #24668d;
+                }
+            }
+
+            .Endless-Intro__Background-Image{
+                
+                background-position: center; 
+                background-repeat: no-repeat; 
+                background-size: contain; 
+                @include for-size(medium){
+                    background-image: url("../../../../assets/images/EndlessPage/Endless_4.png");
+                }
+            }
+
+            .Endless__Prototype{
+                width: 310px;
+                height: 593px;
+            }
+
+
+            .Non-Mobile{
+                .Section__LeftImage-Sections{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .LeftImage-Sections-Left{
+                        width: 30%;
+                    }
+                    .LeftImage-Sections-Right{
+                        width: 60%;
+                    }
+                    h5{
+                        margin: 0;
+                    }
+                }
             }
 
         }
@@ -389,19 +514,7 @@
         .show {
             display: block;
         }
-        /*
-        .default {
-            display:block;
-        }
         
-        :target {
-            display:block;
-        }
-        
-        :target ~ .default {
-            display:none;
-        }
-        */
     }
 
 

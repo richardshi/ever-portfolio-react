@@ -51,22 +51,21 @@ class BabyCostReport extends Component {
 
         return(
             <div id="BigPixel_Detail">
-            <div className="BabyCostReport-Detail">
-                <div className="BabyCostReport-Detail__Container">
-                    <PublicHeader></PublicHeader>
-                </div>
-                <div className="BabyCostReport-Detail__Banner-Wrapper">
-                    <div className="BabyCostReport-Detail__Banner-Background">
-                        <div className="BabyCostReport-Detail__Container">
-                            <img    className="BabyCostReport-Detail__Image-full-width"
-                                    srcSet={`   ${BabyCostReportBannerSmall} 320w,
-                                                ${BabyCostReportBannerMedium} 500w,
-                                                ${BabyCostReportBannerLarge} 800w`}
-                                    src={BabyCostReportBannerSmall} 
-                                    alt="avatar"/>
+                <PublicHeader></PublicHeader>
+                <div className="BabyCostReport-Detail Page-Container">
+                    <div className="BabyCostReport-Detail__Banner-Wrapper">
+                        <div className="BabyCostReport-Detail__Banner-Background">
+                            <div className="BabyCostReport-Detail__Container">
+                                <img    className="BabyCostReport-Detail__Image-full-width"
+                                        srcSet={`   ${BabyCostReportBannerSmall} 320w,
+                                                    ${BabyCostReportBannerMedium} 500w,
+                                                    ${BabyCostReportBannerLarge} 800w`}
+                                        src={BabyCostReportBannerSmall} 
+                                        alt="avatar"/>
+                            </div>
                         </div>
-
                     </div>
+
                     <div className="BabyCostReport-Detail__Section-List">
                         <div className="BabyCostReport-Detail__Section show">
                             <div className="Section__Title BabyCostReport-Detail__Container ">
@@ -162,9 +161,8 @@ class BabyCostReport extends Component {
                         </div>
                     </div>
                 </div>
+                <PublicFooter></PublicFooter>
             </div>
-            <PublicFooter></PublicFooter>
-        </div>
         )
     }
 }

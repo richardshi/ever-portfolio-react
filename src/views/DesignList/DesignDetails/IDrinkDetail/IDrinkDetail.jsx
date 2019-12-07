@@ -210,19 +210,18 @@ class IDrinkDetail extends Component {
 
         return(
             <div id="IDrink_Detail">
-            <div className="IDrink-Detail">
-                <div className="IDrink-Detail__Container">
-                    <PublicHeader></PublicHeader>
-                </div>
-                <div className="IDrink-Detail__Banner-Wrapper">
-                    <div className="IDrink-Detail__Banner-Background">
-                        <img    className="IDrink-Detail__Image-full-width"
-                                srcSet={`   ${IDrinkBannerSmall} 320w,
-                                            ${IDrinkBannerMedium} 500w,
-                                            ${IDrinkBannerLarge} 800w`}
-                                src={IDrinkBannerSmall} 
-                                alt="avatar"/>
+                <PublicHeader></PublicHeader>
+                <div className="IDrink-Detail Page-Container">
+                    <div className="IDrink-Detail__Banner-Wrapper">
+                        <div className="IDrink-Detail__Banner-Background">
+                            <img    className="IDrink-Detail__Image-full-width"
+                                    srcSet={`   ${IDrinkBannerSmall} 320w,
+                                                ${IDrinkBannerMedium} 500w,
+                                                ${IDrinkBannerLarge} 800w`}
+                                    src={IDrinkBannerSmall} 
+                                    alt="avatar"/>
 
+                        </div>
                     </div>
                     {renderedNavBarMenu}
                     <div className="IDrink-Detail__Section-List">
@@ -640,9 +639,8 @@ class IDrinkDetail extends Component {
                         
                     </div>
                 </div>
+                <PublicFooter></PublicFooter>
             </div>
-            <PublicFooter></PublicFooter>
-        </div>
         )
     }
 }

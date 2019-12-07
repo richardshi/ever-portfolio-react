@@ -224,10 +224,8 @@ class LandingPage extends Component {
             <div>
                 {logoAnimation}
                 <div className={LandingPageClass}>
-                    <div className="LandingPage__Container">
-
-                        <PublicHeader/>
-
+                    <PublicHeader/>
+                    <div className="LandingPage__Container Page-Container">
                         <div className="LandingPage__Instruction-Container row-section">
                             <div className="Instruction-Right">
                                 <h1>Hi there, this is Ever Wu</h1>

@@ -224,19 +224,18 @@ class EatHereDetail extends Component {
 
         return(
             <div id="EatHere_Detail">
-            <div className="EatHere-Detail">
-                <div className="EatHere-Detail__Container">
-                    <PublicHeader></PublicHeader>
-                </div>
-                <div className="EatHere-Detail__Banner-Wrapper">
-                    <div className="EatHere-Detail__Banner-Background">
-                        <img    className="EatHere-Detail__Image-full-width"
-                                srcSet={`   ${EatHereBannerSmall} 320w,
-                                            ${EatHereBannerMedium} 500w,
-                                            ${EatHereBannerLarge} 800w`}
-                                src={EatHereBannerSmall} 
-                                alt="avatar"/>
+                <PublicHeader></PublicHeader>
+                <div className="EatHere-Detail Page-Container">
+                    <div className="EatHere-Detail__Banner-Wrapper">
+                        <div className="EatHere-Detail__Banner-Background">
+                            <img    className="EatHere-Detail__Image-full-width"
+                                    srcSet={`   ${EatHereBannerSmall} 320w,
+                                                ${EatHereBannerMedium} 500w,
+                                                ${EatHereBannerLarge} 800w`}
+                                    src={EatHereBannerSmall} 
+                                    alt="avatar"/>
 
+                        </div>
                     </div>
                     <div className="EatHere-Detail__Section-List">
                         <div className="EatHere-Detail__Section show">
@@ -485,9 +484,8 @@ class EatHereDetail extends Component {
                         </div>
                     </div>
                 </div>
+                <PublicFooter></PublicFooter>
             </div>
-            <PublicFooter></PublicFooter>
-        </div>
         )
     }
 }

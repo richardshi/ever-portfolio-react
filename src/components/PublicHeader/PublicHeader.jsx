@@ -13,7 +13,7 @@ class PublicHeader extends Component {
     }
     render(){
         return (
-            <div>
+            <div className="PublicHeader__Nav-Bar-Container">
                 <div className="PublicHeader__Nav-Bar">
                     <div className="Nav-Bar-Left">
                         <Link to={PATHS.HOME_PATH}>
@@ -22,8 +22,8 @@ class PublicHeader extends Component {
                     </div>
                     <div className="Nav-Bar-Right">
                         <ul className="Nav-Bar-Right__Tabs">
-                            <Link to={PATHS.ABOUT_PATH} className="Nav-Bar-Right__Tab">About</Link>
-                            <Link to={PATHS.HOME_PATH} className="Nav-Bar-Right__Tab">Works</Link>
+                            <Link to={PATHS.ABOUT_PATH} className="Nav-Bar-Right__Tab">ABOUT</Link>
+                            <Link to={PATHS.HOME_PATH} className="Nav-Bar-Right__Tab">WORK</Link>
                         </ul>
                     </div>
                 </div>

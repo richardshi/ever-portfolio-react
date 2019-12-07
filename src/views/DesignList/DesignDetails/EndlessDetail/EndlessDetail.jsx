@@ -52,6 +52,8 @@ import EndlessPersonas1 from 'assets/images/EndlessPage/Endless_Jane@3x.png'
 import EndlessPersonas2 from 'assets/images/EndlessPage/Endless_Emma@3x.png'
 import EndlessPersonas3 from 'assets/images/EndlessPage/Endless_Sherry@3x.png'
 
+import EndlessVideo from 'assets/images/EndlessPage/Endless_Prototype.mp4'
+
 
 class EndlessDetail extends Component {
     constructor(props){
@@ -195,7 +197,7 @@ class EndlessDetail extends Component {
         let CABarMenuSelections = CABarMenu.map((navBarSelection, index) => {
             let activeClass = navBarSelection.active ? " activated" : "";
             return (
-                <div class={`Three-Section-Bar__Selection Three-Selection-Bar-Blue ${activeClass}`} onClick={()=>this.updateCABarMenu(index)}>
+                <div className={`Three-Section-Bar__Selection Three-Selection-Bar-Blue ${activeClass}`} onClick={()=>this.updateCABarMenu(index)}>
                     <div className="Three-Section-Bar__Selection-Name">{navBarSelection.name}</div>
                 </div>
             )
@@ -236,7 +238,7 @@ class EndlessDetail extends Component {
         let PersonasSelections = PersonasBarMenu.map((PersonasSelection, index) => {
             let activeClass = PersonasSelection.active ? " activated" : "";
             return (
-                <div class={`Three-Section-Bar__Selection Three-Selection-Bar-Green ${activeClass}`} onClick={()=>this.updatePersonasBarMenu(index)}>
+                <div className={`Three-Section-Bar__Selection Three-Selection-Bar-Green ${activeClass}`} onClick={()=>this.updatePersonasBarMenu(index)}>
                     <div className="Three-Section-Bar__Selection-Name">{PersonasSelection.name}</div>
                 </div>
             )
@@ -283,10 +285,8 @@ class EndlessDetail extends Component {
 
         return(
             <div id="Endless_Detail">
-                <div className="Endless-Detail">
-                    <div className="Endless-Detail__Container">
-                        <PublicHeader></PublicHeader>
-                    </div>
+                <PublicHeader></PublicHeader>
+                <div className="Endless-Detail Page-Container">
                     <div className="Endless-Detail__Banner-Wrapper">
                         <div className="Endless-Detail__Banner-Background">
                             <img    className="Endless-Detail__Container Banner-Background-Image"
@@ -295,32 +295,36 @@ class EndlessDetail extends Component {
                                                 ${EndlessBannerLarge} 800w`}
                                     src={EndlessBannerSmall} 
                                     alt="avatar"/>
-
                         </div>
-                        {renderedNavBarMenu}
+                    </div>
+
+                    {renderedNavBarMenu}
+                    
                         <div className="Endless-Detail__Section-List">
                             <div id="Section_Intro" className={`Endless-Detail__Section ${SectionClasses[0]}`}>
                                 <div className="Section__Title Endless-Detail__Container ">
                                     <h1>01</h1>
                                     <h2>INTRODUCTION</h2>
                                 </div>
-                                <div className="Section__Two-Sections Endless-Detail__Container">
-                                    <div className="Section__Two-Section">
-                                        <h4>Overview</h4>
-                                        <p>Book Endless is to share and search good books with our free sensor sticker in public places, so the next reader can find and share endlessly. </p>
+                                <div className="Endless-Detail__Container">
+                                    <div className="Section__Two-Sections">
+                                        <div className="Section__Two-Section">
+                                            <h4>Overview</h4>
+                                            <p>Book Endless is to share and search good books with our free sensor sticker in public places, so the next reader can find and share endlessly. </p>
+                                        </div>
+                                        <div className="Section__Two-Section">
+                                            <h4>Skills</h4>
+                                            <p>Visual and UI design, UX research, Adobe XD, Illustration, Sketch，Human-Centered Design </p>
+                                        </div>
                                     </div>
-                                    <div className="Section__Two-Section">
-                                        <h4>Skills</h4>
-                                        <p>Visual and UI design, UX research, Adobe XD, Illustration, Sketch，Human-Centered Design </p>
-                                    </div>
-                                </div>
-                                <div className="Section__Two-Sections Endless-Detail__Container">
-                                    <div className="Section__Two-Section">
-                                        <a href="http://everwudesign.com/Wei_Wu_case_study.pdf"><button className="button-CaseStudy">View Case Study</button></a>
-                                    </div>
-                                    <div className="Section__Two-Section">
-                                        <h4>Date Created</h4>
-                                        <p>Spring 2019 <br />8 weeks</p>
+                                    <div className="Section__Two-Sections">
+                                        <div className="Section__Two-Section">
+                                            <a href="http://everwudesign.com/Wei_Wu_case_study.pdf"><button className="button-CaseStudy">View Case Study</button></a>
+                                        </div>
+                                        <div className="Section__Two-Section">
+                                            <h4>Date Created</h4>
+                                            <p>Spring 2019 <br />8 weeks</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="Section__Full-Width-Banner Section-Intro__Banner">
@@ -353,7 +357,7 @@ class EndlessDetail extends Component {
                                         <p>The Book Endless can be anywhere, and could be anyone you know. If you want to share books, you can get free stickers in every public places. If you are a book lover, keep your eye out for a book hiding near you!</p>
                                     </div>
                                 </div>
-                                <div className="Endless-Detail__Container">
+                                <div className="Endless-Detail__Container Endless-Intro__Background-Image">
                                     <div className="Endless-Detail__Secondary-Container">
                                         <div className="Section__Three-Sections">
                                             <div className="Section__Three-Section">
@@ -380,17 +384,17 @@ class EndlessDetail extends Component {
                                 </div>
                                 <div className="Endless-Detail__Container">
                                     <h4>Inspiration</h4>
-                                    <div className="Endless-Detail__Secondary-Container">
-                                        <div className="Section__Two-Sections Endless-Detail__Container">
+                                    <div id="Endless_Inspiration" className="Endless-Detail__Secondary-Container">
+                                        <div className="Section__Two-Sections Endless-Detail__Container Non-Mobile">
                                             <div className="Section__LeftImage-Sections">
-                                                <div className="LeftImage-Sections-Left"><img src={EndlessTrashSmall}></img></div>
+                                                <div className="LeftImage-Sections-Left"><img src={EndlessTrashSmall} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="LeftImage-Sections-Right">
                                                     <h5 className="title-light">Throw</h5>
                                                     <p>Not a good idea</p>
                                                 </div>
                                             </div>
                                             <div className="Section__LeftImage-Sections">
-                                                <div className="LeftImage-Sections-Left"><img src={EndlessDonateSmall}></img></div>
+                                                <div className="LeftImage-Sections-Left"><img src={EndlessDonateSmall} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="LeftImage-Sections-Right">
                                                     <h5 className="title-light">Donate</h5>
                                                     <p>Good for the charities and needy families in your area.</p>
@@ -416,8 +420,8 @@ class EndlessDetail extends Component {
                                 <div className="Endless-Detail__Container">
                                     <h4>Competitiors Analysis</h4>
                                     {renderedCompetitorsAnalysisBar}
-                                    <div className="Endless-Detail__Secondary-Container Section__Three-Selection-List"> 
-                                        <div id="CA_Booxup" class={`Section__Three-Selection-Container ${CASectionClasses[0]}`}>
+                                    <div className="Section__Three-Selection-List"> 
+                                        <div id="CA_Booxup" className={`Section__Three-Selection-Container Endless-Detail__Secondary-Container  ${CASectionClasses[0]}`}>
                                             <div className="Section__Three-Selection-Header">
                                                 <div className="Three-Selection-Header-Left"><img src={EndlessBooxupLogo} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="Three-Selection-Header-Right">
@@ -445,7 +449,7 @@ class EndlessDetail extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="CA_Litsy" class={`Section__Three-Selection-Container ${CASectionClasses[1]}`}>
+                                        <div id="CA_Litsy" className={`Section__Three-Selection-Container Endless-Detail__Secondary-Container  ${CASectionClasses[1]}`}>
                                             <div className="Section__Three-Selection-Header">
                                                 <div className="Three-Selection-Header-Left"><img src={EndlessLitsyLogo} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="Three-Selection-Header-Right">
@@ -472,7 +476,7 @@ class EndlessDetail extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="CA_Bookly" class={`Section__Three-Selection-Container ${CASectionClasses[2]}`}>
+                                        <div id="CA_Bookly" className={`Section__Three-Selection-Container Endless-Detail__Secondary-Container  ${CASectionClasses[2]}`}>
                                             <div className="Section__Three-Selection-Header">
                                                 <div className="Three-Selection-Header-Left"><img src={EndlessBooklyLogo} className="Endless-Detail__Image-full-width"></img></div>
                                                 <div className="Three-Selection-Header-Right">
@@ -547,8 +551,8 @@ class EndlessDetail extends Component {
                                 <div className="Endless-Detail__Container">
                                     <h4>Personas</h4>
                                     {renderedPersonasBar}
-                                    <div className="Endless-Detail__Secondary-Container Section__Three-Selection-List">
-                                        <div id="Enjoy_Reading" class={`Section__Three-Selection-Container ${PersonasClasses[0]}`}>
+                                    <div className="Section__Three-Selection-List">
+                                        <div id="Enjoy_Reading" className={`Endless-Detail__Secondary-Container Section__Three-Selection-Container ${PersonasClasses[0]}`}>
                                             <div className="Section__LeftImage-Sections">
                                                 <div className="LeftImage-Sections-Left">
                                                     <img src={EndlessPersonas1} className="Endless-Detail__Image-full-width"></img>
@@ -579,7 +583,7 @@ class EndlessDetail extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="Happy_to_share_book" class={`Section__Three-Selection-Container ${PersonasClasses[1]}`}>
+                                        <div id="Happy_to_share_book" className={`Endless-Detail__Secondary-Container Section__Three-Selection-Container ${PersonasClasses[1]}`}>
                                             <div className="Section__LeftImage-Sections">
                                                 <div className="LeftImage-Sections-Left">
                                                     <img src={EndlessPersonas2} className="Endless-Detail__Image-full-width"></img>
@@ -610,7 +614,7 @@ class EndlessDetail extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="Share_book_endlessly" class={`Section__Three-Selection-Container ${PersonasClasses[2]}`}>
+                                        <div id="Share_book_endlessly" className={`Endless-Detail__Secondary-Container Section__Three-Selection-Container ${PersonasClasses[2]}`}>
                                             <div className="Section__LeftImage-Sections">
                                                 <div className="LeftImage-Sections-Left">
                                                     <img src={EndlessPersonas3} className="Endless-Detail__Image-full-width"></img>
@@ -784,10 +788,14 @@ class EndlessDetail extends Component {
                                         <img src={EndlessAdvertising} className="Endless-Detail__Image-full-width"></img>
                                     </div>
                                 </div>
-                            </div>
-                            
+
+                                <div className="Endless-Detail__Container">
+                                    <h4>Prototype</h4>
+                                    <video controls src={EndlessVideo} type="video/mp4" className="Endless__Prototype"></video>
+                                </div>
+                            </div>                            
                         </div>
-                    </div>
+
                 </div>
                 <PublicFooter></PublicFooter>
             </div>

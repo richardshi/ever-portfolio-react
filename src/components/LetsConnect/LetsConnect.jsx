@@ -20,9 +20,9 @@ class LetsConnect extends Component {
                 <div>
                     <h1>Let's Connect!</h1>
                     <div className="Contact-Icon__List">
-                        <Link className="Contact-Icon"><img className="Contact-Icon-Image" src={IconHome}></img></Link>
-                        <Link className="Contact-Icon"><img className="Contact-Icon-Image" src={IconEmail}></img></Link>
-                        <Link className="Contact-Icon"><img className="Contact-Icon-Image" src={IconLinkedIn}></img></Link>
+                        <a href="http://www.everwudesign.com" className="Contact-Icon"><img className="Contact-Icon-Image" src={IconHome}></img></a>
+                        <a href="everweiwu@gmail.com" className="Contact-Icon"><img className="Contact-Icon-Image" src={IconEmail}></img></a>
+                        <a href="https://www.linkedin.com/in/ever-wu-2b1561129" className="Contact-Icon"><img className="Contact-Icon-Image" src={IconLinkedIn}></img></a>
                     </div>
                     <h2>Get in touch for any opportunities, or a hello</h2>
                 </div>

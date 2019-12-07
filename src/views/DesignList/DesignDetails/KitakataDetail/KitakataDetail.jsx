@@ -172,19 +172,18 @@ class KitakataDetail extends Component {
 
         return(
             <div id="Kitakata_Detail">
-            <div className="Kitakata-Detail">
-                <div className="Kitakata-Detail__Container">
-                    <PublicHeader></PublicHeader>
-                </div>
-                <div className="Kitakata-Detail__Banner-Wrapper">
-                    <div className="Kitakata-Detail__Banner-Background">
-                        <img    className="Kitakata-Detail__Image-full-width"
-                                srcSet={`   ${KitakataBannerSmall} 320w,
-                                            ${KitakataBannerMedium} 500w,
-                                            ${KitakataBannerLarge} 800w`}
-                                src={KitakataBannerSmall} 
-                                alt="avatar"/>
+                <PublicHeader></PublicHeader>
+                <div className="Kitakata-Detail Page-Container">
+                    <div className="Kitakata-Detail__Banner-Wrapper">
+                        <div className="Kitakata-Detail__Banner-Background">
+                            <img    className="Kitakata-Detail__Image-full-width"
+                                    srcSet={`   ${KitakataBannerSmall} 320w,
+                                                ${KitakataBannerMedium} 500w,
+                                                ${KitakataBannerLarge} 800w`}
+                                    src={KitakataBannerSmall} 
+                                    alt="avatar"/>
 
+                        </div>
                     </div>
                     <div className="Kitakata-Detail__Section-List">
                         <div className="Kitakata-Detail__Section show">
@@ -329,10 +328,9 @@ class KitakataDetail extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
+                <PublicFooter></PublicFooter>
             </div>
-            <PublicFooter></PublicFooter>
-        </div>
         )
     }
 }

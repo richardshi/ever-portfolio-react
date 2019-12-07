@@ -85,17 +85,20 @@
         }
 
         .LandingPage__Instruction-Container{
+            height: 70vh;
+            margin-top: 30vh;
+            //margin-bottom: 500px;
             .Instruction-Right{
-                display: inline-block;
-                width: 100%;
+                width: 260px;
                 @include for-size(medium){
-                    width: 40%;
+                    width: 350px;
                 }
                 margin: auto;
                 text-align: left;
                 h1{
-                    font-size: 2em;                     //0.031 width
+                    font-size: 30px;                     //0.031 width
                     font-family: Ubuntu;
+                    line-height: 2;
                 }
                 h2{
                     font-size: 1.25em;                   //0.013 width

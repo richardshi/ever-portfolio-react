@@ -180,19 +180,18 @@ class BigPixelDetail extends Component {
 
         return(
             <div id="BigPixel_Detail">
-            <div className="BigPixel-Detail">
-                <div className="BigPixel-Detail__Container">
-                    <PublicHeader></PublicHeader>
-                </div>
-                <div className="BigPixel-Detail__Banner-Wrapper">
-                    <div className="BigPixel-Detail__Banner-Background">
-                        <img    className="BigPixel-Detail__Image-full-width"
-                                srcSet={`   ${BigPixelBannerSmall} 320w,
-                                            ${BigPixelBannerMedium} 500w,
-                                            ${BigPixelBannerLarge} 800w`}
-                                src={BigPixelBannerSmall} 
-                                alt="avatar"/>
+                <PublicHeader></PublicHeader>
+                <div className="BigPixel-Detail Page-Container">
+                    <div className="BigPixel-Detail__Banner-Wrapper">
+                        <div className="BigPixel-Detail__Banner-Background">
+                            <img    className="BigPixel-Detail__Image-full-width"
+                                    srcSet={`   ${BigPixelBannerSmall} 320w,
+                                                ${BigPixelBannerMedium} 500w,
+                                                ${BigPixelBannerLarge} 800w`}
+                                    src={BigPixelBannerSmall} 
+                                    alt="avatar"/>
 
+                        </div>
                     </div>
                     <div className="BigPixel-Detail__Section-List">
                         <div className="BigPixel-Detail__Section show">
@@ -449,9 +448,8 @@ class BigPixelDetail extends Component {
                         </div>
                     </div>
                 </div>
+                <PublicFooter></PublicFooter>
             </div>
-            <PublicFooter></PublicFooter>
-        </div>
         )
     }
 }
